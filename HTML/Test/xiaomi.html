@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xiaomi official mall</title>
+</head>
+<style>
+        /* 导航栏超链接 */
+        .container:link{ color: rgb(164, 164, 164);text-decoration:none;}
+        .container:visited{ color: rgb(164, 164, 164);text-decoration:none;}
+        .container:hover{ color:white;text-decoration:none;}
+        .container:hover{ color:white;text-decoration:none;}
+
+        /* 导航栏宽度 */
+        .container{
+            width: 1226px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        /* 主页置顶导航 */
+        .site-topbar {
+            position: relative;
+            z-index: 30;
+            height: 40px;
+            font-size: 12px;
+            color: #b0b0b0;
+            background-color: #333;
+            padding: 0px;
+        }
+        /* 置顶导航内置   左侧的选择栏 */
+        .site-topbar .topbar-lef{
+            float: left;
+            height: 40px;
+            line-height: 40px;
+        }
+        /* 置顶导航内置   右侧的选择栏 */
+        .site-topbar .topbar-rig{
+            float: right;
+            height: 40px;
+            line-height: 40px;
+        }
+        /* 导航栏字体 */
+        .topbar-lef a{
+            color: rgb(164, 164, 164);
+            line-height: 40px;
+            display: inline-block;
+        }
+        /* 导航栏字体间隔 "|"  */
+        .sep {
+            margin: 0 .3em;
+            color: #424242;
+        }
+        /* 右侧悬浮栏 */
+        .sus-nav{  
+            width: 70px;
+            height: 520px;
+            background-color:gray ;
+            position: fixed;
+            right: 0;
+            top: 150px;
+            bottom: 200px;
+        }
+        /* 悬浮栏里面的功能每一个单独使用灰色边框 */
+        /* 悬浮栏单独功能区盒子 */
+        .sus-nav .tag{
+            width: 70px;
+            height: 100px;
+            text-align: center;
+            border: 2px solid rgb(164, 164, 164);
+        }
+        /* 悬浮栏功能区字体（图片插入） */
+        .sus-nav .tag a{
+            font-size: 20px;
+            text-decoration: none;
+        }
+        .header{
+            position: relative;
+            height: 120px;
+            font-size: 20px;
+            padding: 0px;
+            z-index: 30;
+        }
+        /* 目录左侧logo */
+        .header .header-logo{
+            position: absolute;
+            width: 62px;
+            line-height: 40px;
+            float: left;
+            padding: 20px 0px;
+        }
+        /* 目录右侧导航 */
+        .header .header-nav{
+            position: relative;
+            width: 1000px;
+            line-height: 40px;
+            float: right;
+            display: block;
+        }
+        .header-nav .nav-box{
+            position: relative;
+            width: 200px;
+            min-width: 40px;
+            display: inline-block;
+            /* background-color: aqua; */
+            line-height: 40px;
+            border: 10px solid rgb(164, 164, 164);
+            justify-content: space-between;
+        }
+        .nav-box a{
+            display: block;
+            font-size: 40px;
+        }
+        /* 目录导航字体 */
+        .header-nav a{
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            padding: 40px 20px;
+            float: left;
+            color: black;
+        }
+        目录显示的隐藏项目
+        .nav-box .header-hid{
+            position: absolute;
+            height: 220px;
+            width: 1226px;
+            /* background-color: aqua; */
+            display: none;
+            padding: 120px 0 0 0;
+        }
+        .header-nav:hover .header-hid{
+            display: block;
+
+        }
+
+
+
+
+</style>
+<body>
+    <div class="site-topbar">
+        <div class="container">
+            <!-- 左导航 -->
+            <div class="topbar-lef">
+
+            <a href="#">小米官网</a>
+            <span class="sep">|</span>
+            <a href="#">小米商城</a>
+            <span class="sep">|</span>
+            <a href="#">MIUI</a>
+            <span class="sep">|</span>
+            <a href="#">loT</a>
+            <span class="sep">|</span>
+            <a href="#">云服务</a>
+            <span class="sep">|</span>
+            <a href="#">小爱开发平台</a>
+            <span class="sep">|</span>
+            <a href="#">企业团购</a>
+            <span class="sep">|</span>
+            <a href="#">下载app</a>
+            <span class="sep">|</span>
+                </div> 
+            <!-- 右导航 -->
+            <div class="topbar-rig">
+                <a href="#">帮助1</a>
+                <span class="sep">|</span>
+                <a href="#">帮助2</a>
+                <span class="sep">|</span>
+                <a href="#">帮助3</a>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="sus-nav">
+        <div class="tag">
+            <a href="#">123</a>
+        </div>
+        <div class="tag">
+            <a href="#">123</a>
+        </div>
+        <div class="tag">
+            <a href="#">123</a>
+        </div>
+        <div class="tag">
+            <a href="#">123</a>
+        </div>
+        <div class="tag">
+            <a href="#">123</a>
+        </div>
+    </div>
+    <div class="header">   
+        <div class="container">
+            <div class="header-logo">
+                <img src="../pic/mi.png" width="80px" height="80px">
+            </div>
+            <div class="header-nav">
+                <div class="nav-box">
+                    <a href="#">Xiaomi手机</a>
+                </div>
+                <div class="nav-box">
+                    <a href="#">Readmi手机</a>
+                </div>
+                <div class="nav-box">
+                    <a href="#">Xiaomi手机</a>
+                </div>
+                    
+                <!-- <a href="#">Readmi手机</a>
+                <div class="header-hid">
+                    <a>asdsadsadd0</a>
+            </div>
+                <a href="#">电视</a> 
+                <div class="header-hid">
+                    <a>608946546628
+                    </a> -->
+            </div>
+            </div>
+            
+
+        </div>
+        
+    </div>
+    
+
+
+
+
+    
+</body>
+</html>
