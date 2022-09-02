@@ -8,6 +8,7 @@ body{
     align-items: center;
     justify-content: center;
     display: flex;
+    /* 桌面渐变色 */
     background-color: red; /* 浏览器不支持时显示 */
     background-image: linear-gradient(#e66465, #9198e5);
 }
@@ -16,26 +17,37 @@ body{
     border-radius: 10px;
     /* 左边小点消去 */
     list-style: none;
+    /* 竖状展示 */
     display: flex;
-    /* 竖状排序 */
+    /* 竖状排序 （没这一步内容会横向排序）*/
     flex-direction: column;
+
     justify-content:space-between;
+    /* 边距 */
     padding: 0 12px 12px 12px;
+    /* 阴影 */
     box-shadow: 0 10px 20px greenyellow;
 }
 .icon-sus li{
+    /* 顶部留白 */
     margin-top: 12px;
 }
 .icon-sus li.fenge{
+    /* 顶部留白 */
     margin-top: 80px;
+    /* 顶部分割线 */
     border-top: 1px solid red;
+    /* 内容顶部留白 */
     padding-top: 20px;
 }
 .icon-sus a{
+    /* 超链接下划线去掉 */
     text-decoration: none;
     display: flex;
+    /* 内容居中 */
     justify-content: center;
     align-items: center;
+
     width: 50px;
     height: 50px;
     position: relative;
@@ -47,26 +59,35 @@ body{
 .icon-sus a span{
     position: absolute;
     font-size: 20px;
+    /* 位置 */
     left: calc(100% + 24px);
     background-color: red;
+    /* 边框 */
     padding: 8px 16px;
     border-radius: 10px;
     white-space: nowrap;
+    /* 隐藏且不占用空间 */
     transform: scale(0);
+    /* 透明度 */
     opacity: 0;
+
     transform-origin: center left;
+    /* 出现时间和动画 */
     transition: 0.5s ease;
 }
 
+/* 左侧图标鼠标移动时的动画 */
 .icon-sus a:hover,
 .icon-sus a:focus,
 .icon-sus a:active{
     background-color: green;
     outline: none;
 }
+/* 右侧说明框显示动画 */
 .icon-sus a:hover span,
 .icon-sus a:focus span,
 .icon-sus a:active span{
+    /* 不隐藏且占用空间，不透明 */
     transform: scale(1);
     opacity: 1;
 }
