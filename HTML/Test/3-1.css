@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 800px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: red; /* 浏览器不支持时显示 */
+    background-image: linear-gradient(#e66465, #9198e5);
+}
+.icon-sus{
+    background-color: aqua;
+    border-radius: 10px;
+    /* 左边小点消去 */
+    list-style: none;
+    display: flex;
+    /* 竖状排序 */
+    flex-direction: column;
+    justify-content:space-between;
+    padding: 0 12px 12px 12px;
+    box-shadow: 0 10px 20px greenyellow;
+}
+.icon-sus li{
+    margin-top: 12px;
+}
+.icon-sus li.fenge{
+    margin-top: 80px;
+    border-top: 1px solid red;
+    padding-top: 20px;
+}
+.icon-sus a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 10px;
+}
+.icon-sus a i{
+    font-size: 30px;
+}
+.icon-sus a span{
+    position: absolute;
+    font-size: 20px;
+    left: calc(100% + 24px);
+    background-color: red;
+    padding: 8px 16px;
+    border-radius: 10px;
+    white-space: nowrap;
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: center left;
+    transition: 0.5s ease;
+}
+
+.icon-sus a:hover,
+.icon-sus a:focus,
+.icon-sus a:active{
+    background-color: green;
+    outline: none;
+}
+.icon-sus a:hover span,
+.icon-sus a:focus span,
+.icon-sus a:active span{
+    transform: scale(1);
+    opacity: 1;
+}
