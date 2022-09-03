@@ -27,11 +27,23 @@
     color: #B0B0B0;
     margin: 5px;
     line-height: 40px;
+    position: relative;
 }
 .sep {
     margin: 0 .3em;
     color: #424242;
 }
+.daohang-top .left a img{
+    width: 64px;
+    height: 64px;
+    transform: calc(0);
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: calc(100% - 55px);
+    background-color: white;
+}
+
 /* 分割线 */
 .mulu{
     width: 1220px;
@@ -44,6 +56,7 @@
     height: 150px;
     width: auto;
     position: absolute;
+    display: block;
 }
 .mulu img{
     width: 64px;
@@ -52,9 +65,8 @@
     margin:16px 0 0;
 }
 .mulu .right{
-    background-color: aqua;
     position: relative;
-    width: 1000px;
+    width: 800px;
     line-height: 40px;
     display:block;
     float: right;
@@ -77,25 +89,53 @@
 .mulu .right a span{
     width: 1220px;
     position: absolute;
-    display: inline-block;
-    border-color: aquamarine;
+    display: block;
     white-space: nowrap;
     top: calc(100%+20px);
     transform: scale(0);
     opacity: 0;
     transition: 0.5s ease ;
+    transform-origin: center left;
+    /* -webkit-transition:ease 2s; */
+    background-color: aqua;
 }
+.mulu .sousuo{
+    display: block;
+    float: right;
+    position: relative;
+    width: 270px;
+    height: 80px;
+}
+
+
+
+
+
+.daohang-top .left a:hover,
+.daohang-top .left a:focus,
+.daohang-top .left a:active{
+    color: aliceblue;
+}
+
+.daohang-top .left a:hover img,
+.daohang-top .left a:focus img,
+.daohang-top .left a:active  img{
+    transform: scale(1);
+    opacity: 1;
+}
+
 
 
 .mulu .right a:hover,
 .mulu .right a:focus,
-.mulu .right a:focus{
-    border-color: green;
+.mulu .right a:active{
+    color: orange;
     outline: none;
 }
 .mulu .right a:hover span,
 .mulu .right a:focus span,
-.mulu .right a:focus span{
+.mulu .right a:active span{
+    color: black;
     transform: scale(1);
     opacity: 1;
 }
