@@ -10,7 +10,7 @@
 
     div{
         width: 800px;
-        height: 800px;
+        height: 400px;
         background-color: aqua;
         /* 行间距 */
         line-height: 200px;
@@ -28,12 +28,24 @@
         border: 2px solid green;
         border-radius: 10px;
 
-        line-height: 800px;
+        line-height: 400px;
         
     }
     h1{
         letter-spacing: 20px;
-        text-decoration: line-through;
+        /* 划线line-through    下划线underline */
+        text-decoration: line-through underline;
+    }
+    input{
+        /* 取消标签自带的边框 */
+        border: none;
+        /* 取消轮廓线 */
+        outline: none;
+        background-color: blue;
+    }
+    li{
+        /* 取消列表样式 */
+        list-style: none;
     }
 
 
@@ -43,6 +55,13 @@
 <body>
     <div>明天不下雨</div>
     <h1>明天下雨吗</h1>
+
+    <input type="text">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
     
 </body>
 </html>
