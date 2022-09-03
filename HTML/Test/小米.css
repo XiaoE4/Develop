@@ -57,6 +57,7 @@
     width: auto;
     position: absolute;
     display: block;
+    float: left;
 }
 .mulu img{
     width: 64px;
@@ -69,7 +70,7 @@
     width: 800px;
     line-height: 40px;
     display:block;
-    float: right;
+    
     
 }
 .mulu .right a{
