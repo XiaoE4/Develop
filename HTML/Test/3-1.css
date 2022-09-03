@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    /* box-sizing: border-box */
 }
 
 body{
@@ -12,6 +13,7 @@ body{
     background-color: red; /* 浏览器不支持时显示 */
     background-image: linear-gradient(#e66465, #9198e5);
 }
+
 .icon-sus{
     background-color: aqua;
     border-radius: 10px;
@@ -28,10 +30,12 @@ body{
     /* 阴影 */
     box-shadow: 0 10px 20px greenyellow;
 }
+
 .icon-sus li{
     /* 顶部留白 */
     margin-top: 12px;
 }
+
 .icon-sus li.fenge{
     /* 顶部留白 */
     margin-top: 80px;
@@ -40,6 +44,7 @@ body{
     /* 内容顶部留白 */
     padding-top: 20px;
 }
+
 .icon-sus a{
     /* 超链接下划线去掉 */
     text-decoration: none;
@@ -53,9 +58,11 @@ body{
     position: relative;
     border-radius: 10px;
 }
+
 .icon-sus a i{
     font-size: 30px;
 }
+
 .icon-sus a span{
     position: absolute;
     font-size: 20px;
@@ -83,6 +90,7 @@ body{
     background-color: green;
     outline: none;
 }
+
 /* 右侧说明框显示动画 */
 .icon-sus a:hover span,
 .icon-sus a:focus span,
