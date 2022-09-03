@@ -4,150 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>提示导航栏</title>
+    <title>Document</title>
+
+    <style>
+        .ben{
+            width: 1200px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .left{
+            width: 200px;
+            height: 100px;
+            float: left;
+            border-color: aqua;
+        }
+        .center{
+            width: 800px;
+            height: 100px;
+            left: 200px;
+            float: left;
+        }
+        .right{
+            width: 200px;
+            height: 100px;
+            left: 1000px;
+            float: right;
+        }
+
+
+    </style>
 </head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    body{
-        height: 700px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: aliceblue;
-    }
-    .icon-nav{
-        list-style: none;
-        background-color: gray;
-        padding: 0 12px 12px 12px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        /* 平滑处理 */
-        border-radius: 10px;
-        box-shadow: 0 10px 50px gray;
-    }
-    .icon-nav li{
-        margin-top: 12px;
-    }
-    .icon-nav li.split{
-        margin-top: 80px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.15)
-    }
-    .icon-nav a{
-        color: #fff;
-        text-decoration: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 48px;
-        height: 48px;
-        border-radius: 8px;
-        position: relative;
-    }
-    .icon-nav a i{
-        font-size: 20px;
-    }
-    .icon-nav a span{
-        position: absolute;
-        left: calc(100% + 24px);
-        background-color: rgb(226, 20, 20);
-        font-size: 15px;
-        white-space: nowrap;
-        padding: 8px 16px;
-        border-radius: 6px;
-        transform: scale(0);
-        opacity: 0;
-        transform-origin: center left;
-        transition: 0.15s ease;  
-    }
-
-
-/* 提示层 小三角 */
-.icon-nav a span::before{
-    content: "";
-    width: 12px;
-    height: 12px;
-    background-color: #fa5c51;
-    position: absolute;
-    left: -5px;
-    top: 50%;
-    border-radius: 3px;
-    transform: translateY(-50%) rotate(45deg);
-}
-
-
-    .icon-nav a:hover,
-.icon-nav a:focus,
-.icon-nav a:active{
-    background-color: #fa5c51;
-    outline: none;
-}
-.icon-nav a:hover span,
-.icon-nav a:focus span,
-.icon-nav a:active span{
-    transform: scale(1);
-    opacity: 1;
-}
-
-
-
-
-</style>
 <body>
-<ul class="icon-nav">
+    <div class="ben">
+        <div class="left">123
 
-    <li><a href="#">
-        <i>1</i>
-        <span>首页</span></a>
-    </li>
-    <li>
-        <a href="#">
-            <i>2</i>
-            <span>产品管理</span></a>
-        </li>
-    <li>
-        <a href="#">
-            <i>3</i>
-            <span>会员管理</span></a>
-        </li>
-    <li>
-        <a href="#">
-            <i>4</i>
-            <span>订单管理</span></a>
-        </li>
-    <li>
-        <a href="#">
-            <i>5</i>
-            <span>财务中心</span></a>
-        </li>
-    <li class="split">
-        <a href="#">
-            <i>6</i>
-            <span>消息</span></a>
-        </li>
-    <li>
-        <a href="#">
-            <i>7</i>
-            <span>系统配置</span></a>
-        </li>
-    <li>
-        <a href="#">
-            <i>8</i>
-            <span>用户中心</span></a>
-        </li>
-    
-</ul>
-    
-    
-    
-    
-    
-    
+        </div>
+        <div class="center">456
 
+        </div>
+        <div class="right">789
+
+        </div>
+
+    </div>
+    
 </body>
 </html>

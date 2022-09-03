@@ -46,16 +46,15 @@
 
 /* 分割线 */
 .mulu{
-    width: 1220px;
+    width: 1200px;
     height: 80px;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
+    /* position: relative; */
 }
 .mulu .left{
-    height: 150px;
-    width: auto;
-    position: absolute;
+    width: 100px;
+    /* position: absolute; */
     display: block;
     float: left;
 }
@@ -66,10 +65,12 @@
     margin:16px 0 0;
 }
 .mulu .right{
-    position: relative;
+    /* position: relative; */
     width: 800px;
     line-height: 40px;
     display:block;
+    left: 100px;
+    float: left;
     
     
 }
@@ -103,10 +104,12 @@
 .mulu .sousuo{
     display: block;
     float: right;
-    position: relative;
-    width: 270px;
+    /* position: absolute; */
+    width: 300px;
     height: 80px;
+    left: 900px;
 }
+
 
 
 
