@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 导航栏 */
+.daohang-top{
+    text-align: left;
+    height: 40px;
+    width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #333;
+    justify-content: center;
+}
+.daohang-top .left{
+    margin-right: auto;
+    float: left;
+
+}
+.daohang-top .right{
+    margin-left: auto;
+    float: right;
+}
+.daohang-top a{
+    font-size: 12px;
+    text-decoration: none;
+    color: #B0B0B0;
+    margin: 5px;
+    line-height: 40px;
+}
+.sep {
+    margin: 0 .3em;
+    color: #424242;
+}
+/* 分割线 */
+.mulu{
+    width: 1220px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.mulu .left{
+    height: 150px;
+    width: auto;
+    position: absolute;
+}
+.mulu img{
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    margin:16px 0 0;
+}
+.mulu .right{
+    background-color: aqua;
+    position: relative;
+    width: 1000px;
+    line-height: 40px;
+    display:block;
+    float: right;
+    
+}
+.mulu .right a{
+    text-decoration: none;
+    color: #333;
+    display:inline-block;
+    position: relative;
+    list-style: none;
+}
+.mulu .right a li{
+    font-size: 20px;
+    padding: 30px;
+    line-height: 40px;
+    position: relative;
+    display: block;
+}
+.mulu .right a span{
+    width: 1220px;
+    position: absolute;
+    display: inline-block;
+    border-color: aquamarine;
+    white-space: nowrap;
+    top: calc(100%+20px);
+    transform: scale(0);
+    opacity: 0;
+    transition: 0.5s ease ;
+}
+
+
+.mulu .right a:hover,
+.mulu .right a:focus,
+.mulu .right a:focus{
+    border-color: green;
+    outline: none;
+}
+.mulu .right a:hover span,
+.mulu .right a:focus span,
+.mulu .right a:focus span{
+    transform: scale(1);
+    opacity: 1;
+}
+
+
