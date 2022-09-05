@@ -31,7 +31,7 @@
         let age = prompt('你的年龄是：')
         document.write(`大家好，我是<span>${userName}</span>,今年${age}岁了！`)
     </script> -->
-    <script>    // 练习4
+    <!-- <script>    // 练习4
         let num = 10
         console.log(typeof num + '11')      //number11
         console.log(num + '11')             //1011
@@ -39,7 +39,45 @@
         console.log(num + '11')             //1011
         console.log(typeof(num + + '11'))   //number
         console.log(num + + '11')           //21
-    </script>   
+    </script>    -->
+    <!-- <script>    // 练习5
+        let num1 = prompt("请输入第一个数")
+        let num2 = prompt("请输入第二个数")
+        parseInt(num1)
+        console.log(num1)
+        alert(num1 + +num2)
+
+    </script> -->
+    <script>
+        let price = prompt('输入价格：')
+        let num = prompt('输入数量')
+        let address = prompt('输入地址：')
+        let total = Number(price) * Number(num)
+
+
+        document.write(`
+        <table>
+            <caption>
+                <h2>订单</h2>
+            </caption>
+        <tr>
+            <th>名称</th>
+            <th>单价</th>
+            <th>数量</th>
+            <th>地址</th>
+            <th>总价</th>
+        </tr>
+        <tr>
+            <td>小苏打</td>
+            <td>${price}元</td>
+            <td>${num}</td>
+            <td>${address}</td>
+            <td>${total}元</td>
+        </tr>
+        </table>
+        `)
+    </script>
+
 
 
 
