@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        span{
+            color: aqua;
+        }
+    </style>
 </head>
 <body>
 <!-- 
@@ -15,11 +20,16 @@
         temp=num1,num1=num2,num2=temp
         console.log(num1,num2);
     </script> -->
-    <script>    // 练习2
+    <!-- <script>    // 练习2
         let arr=['星期一','星期二']
         console.log(arr[0]);
         console.log(arr[1])
 
+    </script> -->
+    <script>    // 练习3
+        let userName = prompt('你的名字是：')
+        let age = prompt('你的年龄是：')
+        document.write(`大家好，我是<span>${userName}</span>,今年${age}岁了！`)
     </script>
 
 
