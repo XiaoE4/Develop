@@ -1,13 +1,13 @@
+[TOC]
+
+
+
 # css 文本内容
 - `<input type="text" placeholder="手机号">`
 - `<img src="../pic/logo-zhiyou.png" alt="" title="智游">`
 # 网页布局
-aside侧边
+  aside侧边
 ![布局](2022-09-06-14-59-36.png)
-
-
-
-
 
 
 # css 概念
@@ -61,13 +61,17 @@ aside侧边
   <font color='red'>3、必须添加top、left、right、bottom其中一个才有效果</font>
 
 
-
-
 ## 标签转换
 - <font color='blue'>块标签：</font>
   独占一行，上下排布，可以直接设置宽高
 - <font color='blue'>行标签：</font>
   不独占一行，左右排布，不能直接设置宽高
+
+  `<span>`显示一段文字信息
+  `<a>`超链接   `target="_blank"`新页面打开
+  `<base href="">`配置应用于整个html的所有a标签，如果a标签已经有超文本引用`href`的话，`base`标签不会覆盖已有引用。
+
+
 - <font color='blue'>行内块：</font>
   默认水平排布，可以直接设置宽高
 - <font color='blue'>p标签：</font>
