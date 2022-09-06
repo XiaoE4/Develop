@@ -18,7 +18,7 @@ lang语言
 - 网页布局三大核心：盒子模型、浮动、定位
 - `border`边框 `content`内容 `padding`内边距 `margin`外边距
 - 标签转换
-# 定位
+## 定位
 #### 定位的组成：
 -定位：将盒子定在某个位置，所以定位也是摆放盒子，按照定位的方式移动盒子
 - 定位=定位模式+边偏移
@@ -52,6 +52,18 @@ lang语言
   2、占有原先的位置，不脱离文档流（相对定位的特点）
   <font color='red'>3、必须添加top、left、right、bottom其中一个才有效果</font>
 
-  <font color='blue'>盒子阴影</font>`box-border`
+- <font color='blue'>盒子阴影</font>`box-border`
   水平阴影，垂直阴影，模糊的距离，以及阴影的颜色：
   `text-shadow: 5px 5px 5px #FF0000;`
+
+- <font color='blue'>伪类、伪元素</font>
+
+  `a:link {color:#FF0000;} /* 未访问的链接 */
+  a:visited {color:#00FF00;} /* 已访问的链接 */
+  a:hover {color:#FF00FF;} /* 鼠标划过链接 */
+  a:active {color:#0000FF;} /* 已选中的链接 */`
+
+
+
+  # 截图未整理
+
