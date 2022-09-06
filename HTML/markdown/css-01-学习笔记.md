@@ -51,3 +51,7 @@ lang语言
   1、以浏览器的可视窗口为参照点移动元素（固定定位的特点），
   2、占有原先的位置，不脱离文档流（相对定位的特点）
   <font color='red'>3、必须添加top、left、right、bottom其中一个才有效果</font>
+
+  <font color='blue'>盒子阴影</font>`box-border`
+  水平阴影，垂直阴影，模糊的距离，以及阴影的颜色：
+  `text-shadow: 5px 5px 5px #FF0000;`
