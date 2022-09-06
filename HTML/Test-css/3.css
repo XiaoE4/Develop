@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    /* color: #999999; */
+    color: black;
+}
+/* 头部导航开始 */
+.head{
+    width: 1220px;
+    height: 30px;
+    background-color: aqua;
+    display: block;
+    margin-left:auto ;
+    margin-right: auto;
+}
+.head .left{
+    height: 30px;
+    width: 50px;
+    float: left;
+    position: relative;
+    /* position: absolute; */
+}
+.head .left a{
+    font-size: 15px;
+    position: absolute;
+    margin: 5px 0;
+    display: block;
+}
+.head .right{
+    float: right;
+    display: flex;
+}
+.head .right a,span,p{
+    font-size: 13px;
+    margin: 5px 10px;
+}
+.head .right a:hover{
+    color: red;
+}
+.head .right .line{
+    margin: 0 .4em;
+    color: #424242;
+    align-self: center;
+}
+/* 头部导航结束 */
+/* 导航栏开始 */
+.navbar{
+    position: sticky;
+    width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 64px;
+    background-color: black;
+    top: 0;
+}
+.navbar .left{
+    height: 64px;
+    width: 90px;
+    display: flex;
+    position: absolute;
+}
+.navbar .left img{
+    width: 90px;
+    height: 64px;
+    display: block;
+}
+.navbar .center {
+    width: 900px;
+    height: 64px;
+    display: flex;
+    position: relative;
+}
+.navbar .center .enter a{
+    width: 200px;
+
+}
+.navbar .center a{
+    width: 100px;
+    color: aliceblue;
+    font-size: 20px;
+    display: inline-block;
+    margin: 22px 30px;
+    text-align: center;    
+}
+.navbar .right{
+    width: 230px;
+    display: flex;
+    position: absolute;
+    right: 0;
+    float: right;
+}
+.navbar .right input{
+    width: 200px;
+    height: 40px;
+    margin: 12px 10px;
+    right: 0;
+}
+/* 导航栏结束 */
+/* 城市目录开始 */
+.city{
+    width: 1220px;
+    height: 350px;
+    background-color: bisque;
+    margin: 50px auto;
+}
+/* 城市目录结束 */
+/* 装修效果图开始 */
+.design-sketch{
+    width: 1220px;
+    height: 450px;
+    margin: 80px auto;
+    background-color: bisque;
+
+}
+.design-sketch .title{
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 50px;
+    font-weight: 700;
+    background-color: aqua;
+}
+.design-sketch .box{
+    height: 360px;
+    width: 1220px;
+
+}
+
+
+/* 装修效果图结束 */
