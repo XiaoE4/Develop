@@ -15,6 +15,12 @@
     如果页面的内容过少或没有到达单页上限，则不适合使用“目录”</font>
   `<a href="#1">1</a>`
 
+## table表格
+- `tr`行&emsp; `td`单元格&emsp;`th`定义单元格
+- `border-collapse: collapse`合并边框
+- `colspan="num"`合并列     `rowspan="num"`合并行 (在td和th中使用)
+- 
+
 
 
 
