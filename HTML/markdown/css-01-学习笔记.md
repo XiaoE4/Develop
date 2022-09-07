@@ -17,9 +17,13 @@
 
 ## table表格
 - `tr`行&emsp; `td`单元格&emsp;`th`定义单元格
+- `<th>`单元格自带字体加粗和居中效果
 - `border-collapse: collapse`合并边框
 - `colspan="num"`合并列     `rowspan="num"`合并行 (在td和th中使用)
-- 
+
+
+
+
 
 
 
@@ -124,16 +128,28 @@
 
 
 
-- <font color='blue'>盒子阴影</font>`box-border`
+### <font color='blue'>盒子阴影</font>`box-border`
   水平阴影，垂直阴影，模糊的距离，以及阴影的颜色：
   `text-shadow: 5px 5px 5px #FF0000;`
 
-- <font color='blue'>伪类、伪元素</font>
+### <font color='blue'>伪类、伪元素</font>
 
   `a:link {color:#FF0000;} /* 未访问的链接 */`
   `a:visited {color:#00FF00;} /* 已访问的链接 */`
   `a:hover {color:#FF00FF;} /* 鼠标划过链接 */`
   ` a:active {color:#0000FF;} /* 已选中的链接 */`
+
+### form表单标签
+
+- 作用：
+  收集用户信息，提交给服务器。`<form action="#" >`;
+  `action`为服务器地址
+- label提示：
+  `label`标签的for属性值和`input`标签的id值一致时，点击`label`输入框可以获取焦点
+  在`input:radio`中的`name`一致时，只能有一个选项可以被选中，按钮之间互斥，也就是单选
+- `input`：默认text文本，placeholder提示语，password密码
+
+
 
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,5 +36,160 @@
             <td></td>
         </tr>
     </table>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 300px;
+            height: 300px;
+        }
+        td{
+            width: 100px;
+        }
+        #a{
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" cellspacing="0">
+        <caption>表标题</caption>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>sex</th>
+                <th>age</th>
+            </tr> 
+        </thead>
+        <tbody>
+            <tr>
+                <td>ZhangSan</td>
+                <td>man</td>
+                <td>18</td>
+            </tr>
+            <tr id="a">
+                <td>ZhangSan</td>
+                <td>man</td>
+                <td>18</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">a表尾a</td>
+            </tr>
+        </tfoot>
+
+    </table>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin: 50px  auto;
+            height: 900px;
+            border: 1px solid black;
+            width: 700px;
+            border-collapse: collapse;
+        }
+
+        th,td{
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+        #a{
+            width: 150px;
+        }
+        #b{
+            width: 250px;
+        }
+        #c{
+            width: 100px;
+        }
+        img{
+            width:140px;
+            height: 300px;
+        }
+        caption{
+            word-spacing: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>面 试 人 员 资 料 登 记 表</caption>
+        <tbody>
+            <tr>
+                <th id="a">应聘岗位</th>
+                <td colspan="2" id="b">前端开发</td>
+                <th id="a">期望薪资</th>
+                <td id="a">12000</td>
+            </tr>
+            <tr>
+                <th>姓名</th>
+                <td id="a">张三</td>
+                <th id="c">性别</th>
+                <td >男</td>
+                <th rowspan="5">
+                    <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.2008php.com%2F09_Website_appreciate%2F10-07-11%2F1278861720_g.jpg&refer=http%3A%2F%2Fwww.2008php.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1665128325&t=50bfeae125b0422ec82a59bfe76ef6a5" alt="">
+                </th>
+            </tr>
+            <tr>
+                <th>出生日期</th>
+                <td>2000.01.01</td>
+                <th>年龄</th>
+                <td>18</td>
+            </tr>
+            <tr>
+                <th>籍贯</th>
+                <td>监狱</td>
+                <th>婚姻状况</th>
+                <td>未婚</td>
+            </tr>
+            <tr>
+                <th>户口所在地</th>
+                <td>bilibili</td>
+                <th>健康状态</th>
+                <td>健康</td>
+            </tr>
+            <tr>
+                <th>家庭电话</th>
+                <td>0123-456789</td>
+                <th>手机号</th>
+                <td>1234567890</td>
+            </tr>
+            <tr>
+                <th>语言程度</th>
+                <td colspan="4">只会中文</td>
+            </tr>
+            <tr>
+                <th>联系地址</th>
+                <td colspan="4">罗翔说刑法</td>
+            </tr>
+            <tr>
+                <th>家庭背景</th>
+                <td colspan="4">反面教材</td>
+            </tr>
+
+        </tbody>
+    </table>
+    
 </body>
 </html>
