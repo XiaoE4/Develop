@@ -29,7 +29,15 @@
   <font color='red'>
   `display: flex`：弹性布局，放在父级内，里面的子级会更有效地进行排序、对齐和分配空白空间。（相比于`relative`和`absolute`）
   </font>
-
+## div样式：
+- `border-radius:5px;` 全圆角（也可以分别设置四个方向）
+- `border-bottom-right-radius:5px;` 右下圆角（写时先写上下再写左右）
+- `overflow:hidden;`div中超出边框的部分隐藏
+- `text-align；`文本对齐（默认left左对齐，center居中，right右对齐）
+- `word-spacing:30px;`词间距，词之间保留空格
+- `writing-mode:vertical-lr`【竖直方向从左向右】/`vertical-rl`【竖直方向从右向左】;文字排列，
+- `text-decoration:underline line-through`(一个文本多个描述可以直接写，中间不需要加逗号)
+- img:只设置一个边，另一边会等比例缩放。
 
 - 标签转换
 ## 定位

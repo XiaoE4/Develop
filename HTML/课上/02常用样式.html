@@ -8,7 +8,7 @@
 
 <style>
 
-    div{
+    #zero{
         width: 800px;
         height: 400px;
         background-color: aqua;
@@ -51,13 +51,25 @@
         /* 取消列表样式 */
         list-style: none;
     }
+    #a{
+        width: 200px;
+        height: 100px;
+        border: 1px solid red;
+        writing-mode: vertical-lr;
+    }
+    section{
+        font-family: 楷体;
+    }
+    #b{
+        list-style:decimal;
+    }
 
 
 </style>
     
 </head>
 <body>
-    <div>明天不下雨</div>
+    <div id="zero">明天不下雨</div>
     <h1>明天下雨吗</h1>
     <a href="#">明天天气</a>
 
@@ -67,6 +79,11 @@
         <li>2</li>
         <li>3</li>
     </ul>
+    <div id="a">你好！</div>
+    <section>
+        你好！
+    </section>
+    <span id="b">你好！你好！你好！</span>
     
 </body>
 </html>
