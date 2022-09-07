@@ -147,8 +147,11 @@
 - label提示：
   `label`标签的for属性值和`input`标签的id值一致时，点击`label`输入框可以获取焦点
   在`input:radio`中的`name`一致时，只能有一个选项可以被选中，按钮之间互斥，也就是单选
-- `input`：默认text文本，placeholder提示语，password密码
-
+- `input`：默认text文本，placeholder提示语，password密码，`checkbox`（多选）里添加`checked`为默认选中状态
+- `textarea`：css样式中加入resize:none，可以取消重置文本域内容区，即不可拉伸
+  row为可以输入的行数（宽），col为可以输入的列数（长）
+![textarea说明](2022-09-07-17-26-14.png)
+  
 
 
 
