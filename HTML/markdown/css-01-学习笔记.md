@@ -176,3 +176,11 @@
 
 
 <font color='blue'></font>
+
+
+
+# 未分类
+- 1、
+如果你想控制内联元素的尺寸，你需要为元素设置display: block; （或者，display: inline-block; inline-block 混合了 inline 和 block 的特性。)
+- 2、
+设置一个元素为 flex 项目，那么他同样成为一个 flex 容器，它的孩子 (直接子节点) 也表现为 flexible box。

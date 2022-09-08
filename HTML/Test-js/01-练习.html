@@ -109,20 +109,98 @@
         // if (3<5) console.log(11);
 
 
-        switch (4) {
-            case 1:
-                alert(1)
-                break;
-            case 2:
-                alert(2)
-                break;
-            case 3:
-                alert(3)
-                break;
-            default:
-                alert('none')
-                break;
-        }
+        // switch (4) {
+        //     case 1:
+        //         alert(1)
+        //         break;
+        //     case 2:
+        //         alert(2)
+        //         break;
+        //     case 3:
+        //         alert(3)
+        //         break;
+        //     default:
+        //         alert('none')
+        //         break;
+        // }
+
+
+        // // 循环必须有三要素            
+        // // 变量的起始值
+        // let i=1
+        // // 终止条件
+        // while(i<=10){
+        //     document.write(`月薪过万，第${i}次。<br>`)
+        // // 变量变化
+        //     i++
+        // }
+
+
+            // // 1、输出1~100个数字
+            // let a=1
+            // while(a<=100){
+            //     document.write(`这个数字是${a}<br>`)
+            //     a++
+            // }
+
+
+            // // 2、输出1加到100的总和并输出
+            // let b=1
+            // let re=0
+            // while(b<=100){
+            //     re=re+b
+            //     b++
+                
+            // }
+            // document.write(re)
+
+
+            // // 3、计算1-100之间的所有偶数和
+            // let i=1
+            // let sum=0
+            // while(i<=100){
+            //     if(i%2===0){
+            //         sum=sum+i
+            //     }
+            //     i++
+            // }
+            // document.write(sum)
+
+            // while(true){
+            //     let a=prompt('你爱我吗')
+            //     if(a==='爱'){
+            //         alert('爱你！') 
+            //         break
+            //     }
+            // }
+
+            let m= 2000
+            while(true){
+                let i =prompt(`请选择你的操作:
+                            1、存款
+                            2、取款
+                            3、查看余额
+                            4、退出`)
+                    switch(i){
+                        case '1':
+                            let a=+prompt('输入存款金额')
+                            m=m+a
+                            continue
+                        case '2':
+                            let b=+prompt('输入取款金额')
+                            m=m-b
+                            continue
+                        case '3':
+                            let c=+prompt(`你当前的余额为${m}元！`)
+                            continue
+                    }
+                    if (i==='4'){
+                        break
+                    }
+            }
+
+
+
 
     </script>
 
