@@ -21,12 +21,19 @@
         // console.log(goods['weight']);
         // console.log(goods['address']);
 
-        
+
         // // 声明人对象
         //     let person={
         //         uname:'刘德华',
         //         age:18,
-        //         sex:'男'
+        //         sex:'男',
+        //         // 方法名:function(){   }
+        //         sayHi : function () {
+        //             console.log('hi~~~~');
+        //         },
+        //         mtv:function(s){
+        //             console.log(s);
+        //         }
         //     }
         // // 1.访问属性   得到值    对象.属性名
         // console.log(person.uname);
@@ -34,9 +41,92 @@
         // // 2.访问属性   得到值    对象['属性名']
         // console.log(person['sex']);
         // console.log(person['uname']);
+        // person.sayHi()
+        // person.mtv('逆天发言')
 
 
+        // // 对象是由属性和方法组成的,那么属性和方法都要写在对象里面
+        // let singer = {
+        //     // 属性
+        //     uname:'刘德华',
+        //     // 方法     方法名:function() {}
+        //     sing:function(){
+        //         console.log('唱歌');
+        //     },
+        //     dance:function(){
+        //         console.log();
+        //     }
+        // }
 
+        // // 外部使用    对象.方法名()
+        // singer.sing()
+        // singer.dance('恭喜发财')
+
+
+        // let obj={
+        //     uname:'小明',
+        //     age:18
+        // }
+        // console.log(obj.age);
+        // // 修改     对象.属性 = 新值
+        // obj.age=81
+        // console.log(obj);
+        // // 新增一个属性     js可以非常方便的动态新增属性或者方法
+        // // 先去对象里找有无属性值，如果有则更改属性值，如果没有则新增属性值
+        // obj.sex='男'
+        // obj.sing=function(){
+        //     console.log('Hi~');
+        // }
+        // console.log(obj);
+        // // 删除
+        // delete obj.uname
+        // console.log(obj);
+
+
+        // let obj={
+        //     uname:'小明',
+        //     age:18,
+        //     sex:'男'
+        // }
+        // // for in  循环语句
+        // // 语法
+        // // for (let k in 对象){}
+        // // k  变量     k  或者  key      value键值对
+        // for (let k in obj){
+        //     console.log(k);  // 属性名
+        //     // console.log(obj.k) // obj.k  意思是找obj里面的k属性
+        //     console.log(obj[k])  // 属性值     （k是变量不加'单引号）
+        //     // 为什么这么写？
+        //     // === 等价于
+        //     // k ==='uname' ==='age' ==='sex'
+        //     // obj.k
+        //     // obj['uname']
+        //     // obj['sex']  === 18
+        // }
+
+
+        // 数组 里面可以放任何的数据类型
+        // let arr=[1,'pink',true,undefined,null,{},[]]
+        // console.log(arr);
+
+
+        let students = [
+            { name: '小明', age: 18, gender: '男', hometown: '河北省' },
+            { name: '小红', age: 19, gender: '女', hometown: '河南省' },
+            { name: '小刚', age: 17, gender: '男', hometown: '山西省' },
+            { name: '小丽', age: 18, gender: '女', hometown: '山东省' }
+        ]
+        console.log(students[0]);
+        console.log(students[0].name);
+        
+        // 遍历数组
+        // 打印对象 其实里面的每一个对象都是数组里面的元素值
+        for(let i=0;i<students.length;i++){
+            console.log(students[i].name);
+            console.log(students[i].age);
+            console.log(students[i].gender);
+            console.log(students[i].hometown);
+        }
 
     </script>
 </body>
