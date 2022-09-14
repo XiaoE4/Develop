@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>我是一个盒子</div>
+    <div>我是二个盒子</div>
+    <div class="three">我是三个盒子</div>
+    <!-- ul>li{$}*3 -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <ul class="nav">
+        <li>我的首页</li>
+        <li>产品介绍</li>
+        <li>联系方式</li>
+    </ul>
+
+    
+    <script>
+        // //1、 js 获取第一个元素
+        // let div1 = document.querySelector('div')
+        // let div2 = document.querySelector('.three')
+        // console.log(div1);
+        // console.log(div2);
+
+        // let li = document.querySelector('ul li:last-child')
+        // console.log(li);
+
+        // // 2、 获取多个元素  伪数组
+        // let lis = document.querySelectorAll('ul li')
+        // console.log(lis);
+        // // 通过遍历的方式，获得里面的每一个dom对象 （元素）
+        // for (let i=0;i<lis.length;i++){
+        //     console.log(lis[i]);
+        // }
+
+
+        let lin = document.querySelectorAll('.nav li')
+        for (let i=0;i<lin.length;i++){
+            console.log(lin[i]);
+
+        }
+        
+
+
+
+    </script>
+
+</body>
+</html>
