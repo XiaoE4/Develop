@@ -5,8 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .box2{
+            display: inline-block;
+            width: 150px;
+            height: 30px;
+            border: 1px solid pink;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
 </head>
 <body>
-    
+    <!-- <div class="box1">
+        粉红色的回忆
+    </div> -->
+    抽中的选手是：<div class="box2"></div>
+    <script>
+        // // 
+        // // 1、获取标签
+        // let div1 = document.querySelector('div')
+        // // 2、修改标签内容      div1是对象，innerText是属性
+        // // 对象.属性 = 值    不识别标签
+        // div1.innerText = '有点意思'
+
+
+        // //
+        // 1、获取元素
+        let box2 = document.querySelector('.box2')
+        // 2、得到随机的名字
+        function getRandom(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min
+                
+            }
+
+        let arr=['赵云','黄忠','关羽','张飞','马超','刘备','曹操','曹丕']
+        let random=getRandom(0,arr.length -1)
+        box2.innerHTML = arr[random]
+
+        // 删除这个人的名字
+        // arr.splice(从哪里开始删， 删几个)
+        arr.splice(random,1)
+        
+        
+    </script>
 </body>
 </html>
