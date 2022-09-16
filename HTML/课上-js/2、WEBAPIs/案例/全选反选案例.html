@@ -75,6 +75,25 @@
     </tr>
   </table>
   <script>
+        // 1、获取元素   全选和小复选框
+        let all = document.querySelector('#checkAll')
+        let cks = document.querySelectorAll('.ck')
+        let span=document.querySelector('.all')
+        // 2、事件监听    全选按钮
+        all.addEventListener('click',function(){
+          // console.log(all.checked);
+          // 我们需要做的就是吧 all.checked 给小复选框
+          // 因为复选框在伪数组里面，我们需要遍历依次取出，给值
+          for (let i=0;i<cks.length;i++){
+            cks[i].checked = all.checked
+          }
+          // 当我们的全选按钮处于选中状态，则可以改为取消
+          if(all.checked){
+            span.innerHTML='取消'
+          }else{
+            span.innerHTML='全选'
+          }
+        })
 
   </script>
 </body>

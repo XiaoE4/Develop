@@ -29,7 +29,19 @@
     </div>
   </div>
   <script>
-
+      // 1、获取元素 文本域 count
+      let area = document.querySelector('#area')
+      let useCount = document.querySelector('.useCount')
+      // 2、绑定事件  用户输入事件input
+      area.addEventListener('input',function(){
+        // console.log('输入中...')
+        // 不断得到文本域里面的字符长度
+        // area.value  可以得到值
+        // console.log(area.value);
+        // area.value.length 得到输入字符的长度
+        // console.log(area.value.length);
+        useCount.innerHTML = area.value.length
+      })
 
   </script>
 </body>
