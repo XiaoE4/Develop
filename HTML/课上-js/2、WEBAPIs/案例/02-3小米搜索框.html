@@ -32,6 +32,7 @@
             line-height: 48px;
             border: 1px solid #e0e0e0;
             outline: none;
+            transition: all .5s;
         }
 
         .mi .search {
@@ -39,6 +40,7 @@
         }
 
         .result-list {
+            display: none;
             position: absolute;
             left: 0;
             top: 48px;
@@ -77,9 +79,23 @@
         </ul>
     </div>
     <script>
-
-
-
+        // 1、获取元素
+        let search =document.querySelector('input[type=search]')
+        let list = document.querySelector('.result-list')
+        // 2、事件监听  获得光标事件 focus
+        search.addEventListener('focus',function(){
+            // 显示下拉菜单
+            list.style.display='block'
+            // 文本框变色
+            search.classList.add('search')
+        })
+        // 3、事件监听 失去光标事件
+        search.addEventListener('blur',function(){
+            // 显示下拉菜单
+            list.style.display='none'
+            // 文本框变色
+            search.classList.remove('search')
+        })
     </script>
 </body>
 
