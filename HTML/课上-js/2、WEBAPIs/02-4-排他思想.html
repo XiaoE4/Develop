@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-    <button>第1个</button>
+    <button class="aqua">第1个</button>
     <button>第2个</button>
     <button>第3个</button>
     <button>第4个</button>
@@ -21,10 +21,12 @@
         let btns =document.querySelectorAll('button')
         for(let i =0;i<btns.length;i++){
             btns[i].addEventListener('click',function(){
-                // 干掉所有人
-                for(let j=0;j<btns.length;j++){
-                    btns[j].classList.remove('aqua')
-                }
+                // // 干掉所有人
+                // for(let j=0;j<btns.length;j++){
+                //     btns[j].classList.remove('aqua')
+                // }
+                // 找出唯一的aqua色，删除
+                document.querySelector('.aqua').classList.remove('aqua')
                 // 复活我自己
                 this.classList.add('aqua')
             })
