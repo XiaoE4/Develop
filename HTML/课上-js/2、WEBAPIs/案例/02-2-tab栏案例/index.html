@@ -99,25 +99,25 @@
 
 
 
-      // // 0、获取元素
-      // // 得到所有的li
-      // let lis=document.querySelectorAll('.tab .tab-item')
-      // let main=document.querySelectorAll('.products .main')
-      // // 1、头部tab栏切换模板
-      // // 1.1、先给4个li添加点击事件
-      // for (let i=0;i<lis.length;i++){
-      //   lis[i].addEventListener('click',function() {
-      //     // console.log(11);
-      //     // 找到以前的active类
-      //     document.querySelector('.tab .active').classList.remove('active')
-      //     this.classList.add('active')
-      //     // 2、底部显示隐藏模板
-      //     document.querySelector('.products .active').classList.remove('active')
-      //     // div对应序号里面添加active类
-      //     main[i].classList.add('active')
+      // 0、获取元素
+      // 得到所有的li
+      let lis=document.querySelectorAll('.tab .tab-item')
+      let main=document.querySelectorAll('.products .main')
+      // 1、头部tab栏切换模板
+      // 1.1、先给4个li添加点击事件
+      for (let i=0;i<lis.length;i++){
+        lis[i].addEventListener('click',function() {
+          // console.log(11);
+          // 找到以前的active类
+          document.querySelector('.tab .active').classList.remove('active')
+          this.classList.add('active')
+          // 2、底部显示隐藏模板
+          document.querySelector('.products .active').classList.remove('active')
+          // div对应序号里面添加active类
+          main[i].classList.add('active')
 
-      //   })
-      // }
+        })
+      }
       
   </script>
 
