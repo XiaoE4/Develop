@@ -40,6 +40,28 @@
     <input type="button" value="+" id="add">
     <input type="button" value="-" id="reduce" disabled>
     <script>
+      // 1、获取元素
+      let jia=document.querySelector('#add')
+      let jian=document.querySelector('#reduce')
+      let total=document.querySelector('#total')
+      // 2、点击加号，事件监听
+      jia.addEventListener('click',function(){
+        // console.log(typeof total.value);
+        // i++      隐式转换
+        total.value++
+        // 解除减号的disabled状态
+        reduce.disabled = false
+      })
+      // 3、点击减号，事件监听
+      jian.addEventListener('click',function(){
+        // console.log(typeof total.value);
+        // i++      隐式转换
+        total.value--
+        if(total.value<=1){
+          reduce.disabled = true
+        }
+      })
+
     </script>
   </div>
 </body>
