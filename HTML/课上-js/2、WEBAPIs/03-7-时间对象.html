@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+        // new 实例化时间对象
+        // 小括号为空可以得到当前的时间
+        let date = new Date()
+        console.log(date)
+        // 小括号里面写上时间，可以返回指定的时间
+        let last = new Date('2022-10-5 19:30:00') 
+        console.log(last);
+
+        console.log(date.getFullYear());
+        // month为0-11，所以要+1
+        console.log(date.getMonth()+1);
+        console.log(date.getDate());
+        // 时分秒
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+        // 星期几
+        console.log(date.getDay());
+
+    </script>
+</body>
+</html>
