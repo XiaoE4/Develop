@@ -7,7 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    
-    
+
+
+
+    <script>
+        // 时间戳是总的毫秒数   是独一无二的
+        // 计算倒计时： 核心思想
+        // 将来时间 9.22 12:00       有一个时间戳    2000000
+        // 现在的时间 9.21 12:00    有一个时间戳
+        // 可以利用将来的时间戳 减去 现在的时间戳 就是剩余的时间毫秒数
+        // 转换为时分秒就是剩余的时间了
+        // 1、getTime
+        let date=new Date()
+        console.log(date.getTime());
+        // 2.+new Date()
+        console.log(+new Date());
+        console.log(+new Date('2022-9-21 12:00:00'));
+        // 3.Date.now()
+        console.log(Date.now());
+    </script>
 </body>
 </html>
