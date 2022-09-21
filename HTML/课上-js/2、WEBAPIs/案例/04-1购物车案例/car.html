@@ -203,7 +203,7 @@
               <button class="add">+</button>
             </div>
           </td>
-          <td class="total">20￥</td>
+          <td class="total">10￥</td>
           <td>
             <a href="javascript:" class="del">删除</a>
           </td>
@@ -224,7 +224,7 @@
               <button class="add">+</button>
             </div>
           </td>
-          <td class="total">40￥</td>
+          <td class="total">20￥</td>
           <td>
             <a href="javascript:" class="del">删除</a>
           </td>
@@ -245,7 +245,7 @@
               <button class="add">+</button>
             </div>
           </td>
-          <td class="total">70￥</td>
+          <td class="total">35￥</td>
           <td>
             <a href="javascript:" class="del">删除</a>
           </td>
@@ -262,102 +262,99 @@
     </div>
   </div>
   <script>
-    // + - 删除是相同的，一一对应的 我们完全可以用一个for来遍历绑定事件
+    // + - 删除是相同的，  一一对应的 我们完全可以用一个for遍历绑定事件
     // +
-    let adds = document.querySelectorAll('.add')
+    let adds=document.querySelectorAll('.add')
     // -
-    let reduces = document.querySelectorAll('.reduce')
+    let reduces=document.querySelectorAll('.reduce')
     // del
-    let dels = document.querySelectorAll('.del')
-    // 输入框input
-    let inputs = document.querySelectorAll('.count-c input')
-
-    // 单价 price  5
-    let prices = document.querySelectorAll('.price')
-    // 小计 total  5 * 2 = 10
-    let totals = document.querySelectorAll('.total')
-    // 总价元素获取
-    let totalResult = document.querySelector('.total-price')
-    // 总的数量获取
-    let totalCount = document.querySelector('#totalCount')
+    let dels=document.querySelectorAll('.del')
+    // 输入框
+    let inputs=document.querySelectorAll('.count-c input')
+    // 单价 price
+    let prices=document.querySelectorAll('.price')
+    // 小计 total
+    let totals=document.querySelectorAll('.total')
+    // 总价
+    let totalResult=document.querySelector('#totalPrice')
+    // 数量
+    let totalCount=document.querySelector('#totalCount')
     // tbody 获取过来
-    let carBody = document.querySelector('#carBody')
-    for (let i = 0; i < adds.length; i++) {
-      // 总价和单价是一样的
-      totals[i].innerText = prices[i].innerText
-      //1. 加号的操作
-      adds[i].addEventListener('click', function () {
+    let carBody=document.querySelector('#carBody')
+
+    for(let i=0;i<adds.length;i++){
+      // 总价和单价一致
+      totals[i].innerText=prices[i].innerText
+      // 计算现在的总额
+      result()
+      // 1.加号的操作
+      adds[i].addEventListener('click',function(){
         // 点击了谁，就让对应的输入框自增就行了
         inputs[i].value++
         // 减号要启用
-        reduces[i].disabled = false
-        // prices[i].innerText  得到的是 5¥     parseInt('5¥')  === 5
-        console.log(parseInt(prices[i].innerText))
-        // 计算小计模块 
-        // totals[i].innerText =  单价 * 数量  
-        // totals[i].innerText = 20
-        totals[i].innerText = parseInt(prices[i].innerText) * inputs[i].value + '¥'
-        // 计算现在的总额 调用
+        reduces[i].disabled=false
+        // prices[i].innerText 得到的是5￥  parseInt('5￥') = 5
+        console.log(parseInt(prices[i].innerText));
+        // 计算小计
+        // totals[i].innerText= 单价 * 数量
+        totals[i].innerText=parseInt(prices[i].innerText) * inputs[i].value+'￥'
+        // 计算现在的总额
         result()
       })
-
-      //2. 减号的操作
-      reduces[i].addEventListener('click', function () {
+      // 2.减号的操作
+      reduces[i].addEventListener('click',function(){
         // 点击了谁，就让对应的输入框自增就行了
         inputs[i].value--
-        // prices[i].innerText  得到的是 5¥     parseInt('5¥')  === 5
-        // console.log(parseInt(prices[i].innerText))
-        // 判断如果表单里面的值 小于等于1 则，禁用按钮
-        if (inputs[i].value <= 1) {
-          this.disabled = true
+        // 减号的判断
+        if(inputs[i].value<=1){
+          reduces[i].disabled=true
         }
-        // 计算小计模块 
-        // totals[i].innerText =  单价 * 数量  
-        // totals[i].innerText = 20
-        totals[i].innerText = parseInt(prices[i].innerText) * inputs[i].value + '¥'
-
-        // 计算现在的总额 调用
+        // prices[i].innerText 得到的是5￥  parseInt('5￥') = 5
+        console.log(parseInt(prices[i].innerText));
+        // 计算小计
+        // totals[i].innerText= 单价 * 数量
+        totals[i].innerText=parseInt(prices[i].innerText) * inputs[i].value+'￥'
+        // 计算现在的总额
         result()
       })
-
-
-      // 3. 删除操作
-
-      dels[i].addEventListener('click', function () {
-        // 父元素.removeChild(子元素)  
-        // 我们要删除的是那个元素   tr  他的爸爸是 tbody
-        // 删除的是当前元素爸爸的爸爸  就是 tr 就是当前的tr
+      // 3.删除的操作
+      dels[i].addEventListener('click',function(){
+        // 父元素.removeChild(子元素)
+        // 我们要删除的是那个元素tr，他的父元素是tbody
+        // 删除的是当前元素爸爸的爸爸   就是tr
         carBody.removeChild(this.parentNode.parentNode)
-
-        // 调用总计模块
         result()
       })
+      
+
+
     }
-
-
     // div  span   ul  li  标签  有文字内容  怎么得到或则设置文字内容呢  元素.innerText   元素.innerHTML
     // 表单  input 单选 复选    textarea  select  怎么得到或则设置值   表单的value 
     // 特殊的  button 是通过inner来设置
-    // 以前数组求和的方式 累加
-    //  计算总价 result 函数  把所有的小计 totals 加起来的结果
-    function result() {
-      // 小计 total  5 * 2 = 10
-      let totals = document.querySelectorAll('.total')
-      // 输入框input
-      let inputs = document.querySelectorAll('.count-c input')
+
+    // 计算总价和数量 result函数   把所有的小计加起来的结果
+    function result(){
+      // 输入框
+      let inputs=document.querySelectorAll('.count-c input')
+      // 小计 total
+      let totals=document.querySelectorAll('.total')
       let sum = 0
       let num = 0
-      for (let i = 0; i < totals.length; i++) {
-        // sum = sum + 小计的数字  10￥
+      for(let i=0;i<totals.length;i++){
+        // sum=sum+ 小计的数字 
         sum = sum + parseInt(totals[i].innerText)
-        num = num + parseInt(inputs[i].value)
+        num=num + Number(inputs[i].value)
+        // console.log(sum);
+        // console.log(num);
+        // totalResult.innerText=sum+'￥'
       }
-      // console.log(sum)
-      totalResult.innerText = sum + '￥'
-      // console.log(num)
-      totalCount.innerText = num
+      totalResult.innerText=sum+'￥'
+      totalCount.innerText=num
     }
-    result()
+    
+
+
   </script>
 
 </body>
