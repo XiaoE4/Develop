@@ -250,22 +250,24 @@
     })
 
 
-    // 按下回车可以生成留言信息
-    // 事件侦听的三要素
-    // textarea.addEventListener('键盘事件', function() {发布信息})
-    textarea.addEventListener('keyup', function (e) {
-      // console.log(11)
-      // 俺们怎么知道用户按下了回车键呢？
-      // console.log(e.keyCode) 已经废弃    只要 e.key === 'Enter'
-      // console.log(e.key)
-      if (e.key === 'Enter') {
-        // alert(11)
-        // 发布新闻
-        // 自动触发点击按钮
-        send.click()
-      }
-
-    })
+      // 按下回车可以生成留言信息
+      // 事件侦听的三要素
+      // textarea.addEventListener('键盘事件',function(){发布信息})
+      textarea.addEventListener('keyup@',function(e){
+        // console.log(11);
+        // 怎么知道用户按下了回车键
+        // console.log(e.key);
+        if(e.key==='Enter'){
+          // alert(11)
+          // 发布新闻
+          // 自动触发点击按钮
+          send.click()
+          // 将userCount里面的内容重置为0
+          textarea.value = ''
+          //   同时下面红色为设置为0
+          useCount.innerHTML = 0
+        }
+      })
   </script>
 
 </body>
