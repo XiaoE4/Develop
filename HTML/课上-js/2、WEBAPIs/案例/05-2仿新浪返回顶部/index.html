@@ -50,32 +50,31 @@
         <a href="javascript:;"></a>
     </div>
     <script>
-        // 0 获取元素
-        let backtop = document.querySelector('.backtop')
-        // 一. 页面滚动事件
-        window.addEventListener('scroll', function () {
-            // 2. 页面检测滚动的距离
-            // console.log(document.documentElement.scrollTop)
-            let num = document.documentElement.scrollTop
-            // 3. 进行判断显示和隐藏
-            if (num >= 500) {
-                //显示那个元素
-                backtop.style.display = 'block'
-            } else {
+        // 获取元素
+        let backtop=document.querySelector('.backtop')
+        // 1、页面滚动事件
+        window.addEventListener('scroll',function(){
+            // 2、检测滚动的距离
+            // num是一个变量，如果在下面的点击事件中给num赋值的话，num只会等于这个值而不是scrollTop等于赋予的值
+            let num=document.documentElement.scrollTop
+            console.log(num)
+            // 3、进行判断显示和隐藏
+            if(num >=500){
+                // 显示返回顶部元素
+                backtop.style.display='block'
+            }else{
                 // 否则隐藏元素
-                backtop.style.display = 'none'
-
+                backtop.style.display='none'
             }
-
+           
         })
-
-
-        // 二、点击链接返回顶部 backtop.children[1]
-        backtop.children[1].addEventListener('click', function () {
-            // 返回顶部
-            // scrollTop 可读写
-            document.documentElement.scrollTop = 0
+        // 点击链接返回顶部
+        // 事件防灾滚动事件之外可以节约性能，如果放在内部的话，每次滚动都要执行一次，影响浏览器性能
+        backtop.children[1].addEventListener('click',function(){
+            document.documentElement.scrollTop=0
         })
+        
+        
     </script>
 </body>
 

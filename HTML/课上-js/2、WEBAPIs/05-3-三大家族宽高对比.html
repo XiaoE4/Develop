@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            overflow: auto;
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+        我里面可以放很多的文字
+    </div>
+
+    <script>
+        // scrollWidth  scrollHeight   内容的大小(了解)
+        let div = document.querySelector('div')
+        console.log(div.scrollWidth)    //内容的宽度
+        console.log(div.scrollHeight)   //内容的高度
+        console.log('--------------------------------')
+        // 盒子元素的大小 = 盒子本省的宽度和高度 +padding +border
+        console.log(div.offsetWidth)    //盒子的宽度
+        console.log(div.offsetHeight)   //黑子的高度
+        console.log(div.offsetTop)
+        console.log(div.offsetLeft)
+        // 2.被卷去的头部和左侧
+        // div.addEventListener('scroll',function(){
+        //     console.log(this.scrollTop);
+        // })
+
+    </script>
+</body>
+</html>
