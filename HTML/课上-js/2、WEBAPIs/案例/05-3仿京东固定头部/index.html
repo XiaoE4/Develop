@@ -75,22 +75,26 @@
         <a href="javascript:;"></a>
     </div>
     <script>
-        let sk = document.querySelector('.sk')
-        let header = document.querySelector('.header')
-        // 1. 页面滚动事件
-        window.addEventListener('scroll', function () {
-            // console.log(11)
-            // 要检测滚动的距离
-            // console.log(document.documentElement.scrollTop)
-            // console.log(sk.offsetTop)
-            // 2. 要检测滚动的距离 >= 秒杀模块的offsetTop 则滑入
-            if (document.documentElement.scrollTop >= sk.offsetTop) {
-                // alert('改吃饭了')
-                header.style.top = '0'
-            } else {
-                header.style.top = '-80px'
+        // 
+        let sk=document.querySelector('.sk')
+        let header=document.querySelector('.header')
+        // 1.页面滚动事件
+        window.addEventListener('scroll',function(){
+            // console.log(11);
+            // 2.要检测滚动的距离 >= 秒杀模块的offserTop
+            // console.log(document.documentElement.scrollTop);
+            // console.log(sk.offsetTop);
+            if(document.documentElement.scrollTop >= sk.offsetTop){
+                // alert('nihao')
+                header.style.top='0'
+            }else{
+                header.style.top='-80px'
             }
+
         })
+        
+
+
 
     </script>
 </body>
