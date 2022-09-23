@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 存储数据 localStorage.setItem('键','值')
+        localStorage.setItem('uname','xiaoE')
+        // 获取数据
+        // localStorage.getItem('键')
+        console.log(localStorage.getItem('uname'))
+        // 删除数据
+        localStorage.removeItem('uname')
+        
+        let obj={
+            uname:'小饿',
+            age:18,
+            address:'地球'
+        }
+        localStorage.setItem('object',JSON.stringify(obj))
+        // JSON 属性和值都是双引号进行包含
+        // let obj={
+        //     "uname":"小饿",
+        //     "age":"18",
+        //     "address":"地球"
+        // }
+        // 取数据   使用JSON.parse() 将json字符串转换为对象
+        console.log(JSON.parse(localStorage.getItem('object')))
+
+        let object={
+            age:114514
+        }
+        localStorage.setItem('key',JSON.stringify(object))
+        console.log(JSON.parse(localStorage.getItem('key')))
+
+    </script>
+</body>
+</html>
