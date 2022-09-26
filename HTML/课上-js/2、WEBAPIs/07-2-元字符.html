@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 边界符 -->
+    <script>
+        console.log(/哈/.test('哈哈'))
+        console.log(/哈/.test('二哈'))                  
+        // ^ 开头
+        console.log(/^哈/.test('二哈'))                 // false
+        console.log(/^哈/.test('我开心的哈哈大笑'))     // false
+        // $ 结尾
+        console.log(/^哈$/.test('哈哈'));               // false
+        console.log(/^哈$/.test('哈'));                 // true 精确匹配
+    </script>
+    <!-- 量词 -->
+    <script>
+        // 只针对前面的一个，如abc+只针对c，[1][2]{3,}只针对[2]
+        console.log(/a/.test('a'))
+        // 量词 *   n>=0
+        console.log(/a*/.test(''))              // true
+        console.log(/a*/.test('a'))             // true
+        console.log(/a*/.test('aa'))            // true
+        console.log(/a*/.test('aaaaaaaa'))      // true
+        console.log(/a*/.test('b'))             // true
+        // 量词 +   n>=1
+        console.log(/a+/.test(''))              // false
+        console.log(/a+/.test('a'))             // true
+        console.log(/a+/.test('aa'))            // true
+        console.log(/a+/.test('aaaaaaa'))       // true
+        console.log(/a+/.test('b'))             // false
+        // ? 出现 0 || 1 (0或1)
+        console.log(/^a?$/.test(''))            // true
+        console.log(/^a?$/.test('a'))           // true
+        console.log(/^a?$/.test('aa'))          // false
+        // {n}   只能出现n次
+        console.log(/^a{3}$/.test('aa'))        // false
+        console.log(/^a{3}$/.test('aaa'))       // true
+        console.log(/^a{3}$/.test('aaaa'))      // false
+        // {n,}   >=n
+        console.log(/^a{3,}$/.test('aa'))        // false
+        console.log(/^a{3,}$/.test('aaa'))       // true
+        console.log(/^a{3,}$/.test('aaaa'))      // true
+        // {n,m}   >=n  <=m     (逗号之间不加空格)
+        console.log(/^a{3,6}$/.test('aa'))        // false
+        console.log(/^a{3,6}$/.test('aaa'))       // true
+        console.log(/^a{3,6}$/.test('aaaa'))      // true
+        console.log(/^a{3,6}$/.test('aaaaaa'))    // true
+        console.log(/^a{3,6}$/.test('aaaaaaa'))   // false
+    </script>
+    <!-- 字符串 -->
+    <script>
+        // 字符类  []
+        console.log(/[abc]/.test(''))           // f
+        console.log(/[abc]/.test('andy'))       // t
+        console.log(/[abc]/.test('baby'))       // t
+        console.log(/[abc]/.test('cryin'))      // t
+        // 字符类  [-] 连字符
+        console.log(/^[abc]$/.test('abc'))      // f
+        console.log(/^[abc]$/.test('a'))        // t
+        console.log(/^[abc]$/.test('b'))        // t
+        console.log(/^[abc]$/.test('c'))        // t
+        // 26个英文字母只选一个
+        console.log(/^[a-z]$/.test('a'))                //t
+        console.log(/^[a-zA-Z]$/.test('A'))             //t
+        console.log(/^[a-zA-Z]$/.test('AD'))            //f
+        console.log(/^[a-zA-Z0-9]$/.test('6'))          //t
+        console.log(/^[a-zA-Z0-9-_]$/.test('6'))        //t
+        // 
+        // 1-9开头，后面的四个及以上(0086，不带开头)
+        console.log(/^[1-9][0-9]{4,}$/.test('10086'))       //t
+        console.log(/^[1-9][0-9]{4,}$/.test('1008'))        //f
+    </script>
+</body>
+</html>
