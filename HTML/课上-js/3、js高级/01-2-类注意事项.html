@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        let that;
+        let _that;
+        class Star{
+            constructor(uname, age){
+                // 保存全局变量，在外面也可以调用内容
+                that=this
+                console.log(this);
+                // console.log(that);
+
+
+                this.uname=uname;
+                this.age=age;
+                this.btn=document.querySelector('button')
+                this.btn.onclick=this.sing;
+            }
+            sing(){
+                // console.log(this.sing);      //undefined
+                console.log(that.uname);
+            }
+            dance(){
+                // 这个dance里面的this指向的是实例对象ldh，因为ldh调用了这个函数
+                _that=this;
+                console.log(this);
+            }
+        }
+        var ldh=new Star('刘德华')
+        console.log(that===ldh);    //true
+        ldh.dance()
+        console.log(_that===ldh);   //true
+    </script>
+</body>
+</html>
