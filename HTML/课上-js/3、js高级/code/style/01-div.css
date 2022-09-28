@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#page_video{
+    display: block;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    margin: 20px 100px;
+    background-color: aquamarine;
+    font-size: 30px;
+    line-height: 200px;
+    /* vertical-align: middle; */
+}
