@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">click</button>
+    <script>
+        // call apply bind
+        let name="1111111111"
+        var obj1={
+            name:"obj1",
+            getName:function(a,b,c){
+                console.log("getName1",this.name)
+                console.log("参数",a,b,c);
+            }
+        }
+        var obj2={
+            name:"obj2",
+            getName:function(){
+                console.log("getName2",this.name)
+            }
+        }
+
+        // call 执行函数，并改变this执行为函数的第一个参数
+        // 支持多个函数
+        obj1.getName.call(obj2,1,2,3)
+
+        // apply 执行函数，并改变this执行为函数的第一个参数
+
+        obj1.getName.apply(obj2,[1,2,3])
+
+        // obj1.getName.call(window)
+        // apply 改变this指向为函数的第一个参数，不会自动执行函数（倒计时执行或者事件执行）
+        // 支持多个函数
+        var fun1= obj1.getName.bind(obj2,1,2,3)
+        console.log(fun1());
+        // 直接使用call或apply会立即执行，导致事件失效
+        // btn.onclick=handler()    X
+        // btn.onclick=handler      √
+        btn.onclick=handler.bind(window)
+
+        function handler(){
+            console.log(11111,this);    //this指向window
+        }
+
+
+
+    </script>
+</body>
+</html>
