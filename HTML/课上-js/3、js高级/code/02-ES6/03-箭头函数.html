@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="mytext" type="text">
+    <div style="margin:20px 100px;">p122</div>
+    <script>
+        var test1= function(){
+            console.log("1111");
+        }
+        var test2=() =>{
+            console.log("2222");
+        }
+        test1()
+        test2()
+
+        /*
+            1.()在形参为一个时可以省略，两个就不能省略
+            2.{}可以省略。 只有一句代码或者只有返回值的时候
+            3.没有arguments
+            4.箭头函数没有this，
+              箭头函数this是父级作用域的
+
+        */
+
+        // 1.()在形参为一个时可以省略，两个就不能省略
+        var test3=a =>{
+            console.log("3333",a);
+        }
+        test3("hello world")
+
+        // 2.{}可以省略。 只有一句代码或者只有返回值的时候
+        var test4= a => 1111*a
+        // var test4=a =>{
+        //     return 1111*a
+        // }
+        console.log(test4(4));
+
+
+        var list =["aaa","bbb","ccc"]
+        // var newList=list.map(function(item){
+        //     return `<li>${item}</li>`
+        // })
+        var newList=list.map(item=>`<li>${item}</li>`)
+        console.log(newList)
+        var test5=()=>console.log("55555");
+        test5()
+        
+        // var test6={
+        //     name:"kerwin1"
+        // }
+        // console.log(test6);
+        var test6 = () =>({
+            name:"kerwin2"
+        })
+        console.log(test6());
+
+        // 3.没有arguments
+        var test7_1=function(a,b,c){
+            // console.log(a,b,c);
+        }
+        var test7_2= function() {
+            // console.log(a,b,c);
+            //     // 伪数组
+            console.log(arguments);
+            console.log(arguments[0],arguments[1],arguments[2]);
+            // 转换为真数组
+            console.log(Array.from(arguments));
+        }
+        // var test7_3 = () =>{
+        //     console.log(arguments);
+        // }
+        test7_1(1,2,3)
+        test7_2(1,2,3)
+        // test7_3(1,2,3)
+
+        // 4.箭头函数没有this，
+        // 箭头函数this是父级作用域的
+
+        // mytext.oninput=function(){
+        //     var that=this
+        //     setTimeout(function(){
+        //         // console.log(this.value);  //undefined，this对应的是window
+        //         console.log(that.value);
+        //     },1000)
+        // }
+        mytext.oninput=function(){
+            // var that=this
+            setTimeout(()=>{
+                console.log(this);
+                console.log(this.value);    //this对应的是mytext
+            },1000)
+        }
+
+        // 函数的默认参数
+        var test8=(a=0,b=0) => {
+            return a+b
+        }
+
+        console.log(test8(10,20));
+        console.log(test8());
+    </script>
+</body>
+</html>
