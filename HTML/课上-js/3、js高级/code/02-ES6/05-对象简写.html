@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="myusername">
+    <input type="password" id="mypassword">
+    <button id="mybtn">login</button>
+    <script>
+        mybtn.onclick = function(){
+            let username = myusername.value
+            let password= mypassword.value
+            console.log(username,password);
+
+            var obj={
+                username,
+                password
+            }
+            console.log("",obj);
+
+            
+
+        }
+        var obj={
+            a:1,
+            // getName:function(){
+            getName(){              //简写
+                console.log(this.a);
+            }
+        }
+        obj.getName()
+
+        
+    </script>
+</body>
+</html>

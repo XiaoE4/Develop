@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./js/A.js"></script>
+    <script src="./js/B.js"></script>
+    <script src="./js/C.js"></script> -->
+</head>
+<body>
+
+    <!-- <script>
+        // webpack
+        /*  模块化
+            1、私密不漏     export 和 import
+            2、重名不怕      test as A_test
+            3、依赖不乱
+        */
+        A1()
+        A2()
+        test()
+    </script> -->
+    <!-- <script src="./module/C.js" type="module"></script> -->
+    <script type="module">
+        // 1、私密不漏
+        import {A1, A2,test as A_test,A_A} from './module/A.js'
+        import {B1,B2,test as B_test,B_B  } from "./module/B.js"
+        import CCCC from './module/c.js'
+
+        A1()
+        A2()
+        A_test()
+        B_test()
+        CCCC()
+    </script>
+</body>
+</html>

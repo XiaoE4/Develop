@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+    </ul>
+
+    <h1>修改</h1>
+    <input type="text" id="myusername">
+    <input type="number" id="myage">
+    <button id="btn">修改</button>
+    <div id="box"></div>
+
+
+    <script>
+        // // ...  展开数组
+        // var a=[1,2,3]
+        // var b=[4,5,6]
+        // // console.log(a.concat(b))
+        // var c=[...a,...b]
+        // console.log(c);
+
+        // // ...复制
+        // let a=[1,2,3]
+        // // let b=a  // a也会变
+        // // let b=a.concat() // a不会变
+        // let b= [...a]
+        // b[0] = "xiaoE"
+        // console.log(a,b);
+
+        // ...参数-实参-形参
+        // 箭头函数和普通函数都可以
+        // let test=(...arr) =>{
+        //     console.log(arr);
+        // }
+        // test(1,2,3,4,5,6,7,8)
+
+
+        // let arr=[1,2,3]
+        // let test=function(a,b,c){
+        //     console.log(a,b,c);
+        // }
+        // test(arr[0],arr[1],arr[2])
+        // test(...arr)
+
+
+
+        // let arr =[1,2,3,4,1,765,2134,123,125]
+        // let res=Math.max(...arr)    //不用写arr的所有值arr[0]、arr[1]、arr[2]...arr[arr.length -1]
+        // console.log(res);
+
+        // 伪数组转换
+        // function test1(){
+        //     // let arr=Array.from(arguments)
+        //     let arr=[...arguments]
+        //     console.log(arr);
+        // }
+        // test1(1,2,54,6,3,5,98,10)
+
+        // let oli =document.querySelectorAll("li")
+        // console.log(oli.filter);        // undefined
+        // let oliarr=[...oli]
+        // console.log(oliarr);
+
+        // let obj1={
+        //     name:"xiaoE",
+        //     age:22
+        // }
+        // let obj2 = {
+        //     name:"Cat",     // 会覆盖掉obj1里面的name
+        //     location:"henan"
+        // }
+        // let obj={
+        //     ...obj1,
+        //     ...obj2
+        // }
+        // console.log(obj);
+
+
+        let obj={
+            name:"xiaoE",
+            age:22,
+            location:"henan",
+            id:"1234"
+        }
+
+        function render({name,age,location}){
+            // console.log(obj);
+            box.innerHTML =`name:${name},age:${age},location:${location}`
+        }
+
+        render(obj)
+
+        btn.onclick=function(){
+            var name = myusername.value     || obj.name
+            var age= myage.value            ||obj.age
+
+            let newobj={
+                // 对源数据没有影响
+                ...obj,
+                name,   //name=name
+                age     //age=age
+            }
+            console.log(newobj);
+            // 重新渲染页面
+            render(newobj)
+        }
+        
+
+    </script>
+</body>
+</html>
