@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 1、首字母大写
+        function CreateObj (name){
+            console.log(this);
+            this.name=name
+            
+        }
+        let obj1 = new CreateObj("张三")    //new过程===实例化过程
+        // 实例对象已经生成
+        console.log(obj1);
+
+        // 3、构造函数能当普通函数用？
+        function CreateObj (name){
+            // this指向
+            console.log(this);
+            this.name=name
+            
+        }
+        let obj2 = CreateObj("张三")
+        console.log(obj2,window.name);
+
+    </script>
+</body>
+</html>
