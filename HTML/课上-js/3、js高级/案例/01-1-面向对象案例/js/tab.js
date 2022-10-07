@@ -1,4 +1,6 @@
+
 var that=this;
+
 class Tab{
     constructor(id){
         that=this;
