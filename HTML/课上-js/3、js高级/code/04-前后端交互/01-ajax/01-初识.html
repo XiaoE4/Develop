@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // ajax === async javascript and xml(闭合标签)
+
+        // JSON.parse()
+
+        // 1.创建XHR  new XMLHttpRequest()
+
+        let xhr = new XMLHttpRequest()
+        console.log(xhr);
+
+        // 2.配置 open (请求方式，请求地址，是否异步)
+        // localhost 本机域名 127.0.0.1 本机ip (live server)
+        // baidu.com 域名  221...... ip
+
+        xhr.open("GET", "http://127.0.0.1:5500/HTML/%E8%AF%BE%E4%B8%8A-js/3%E3%80%81js%E9%AB%98%E7%BA%A7/code/04-%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/01-ajax/01.json")
+
+        // 3.send
+        xhr.send()
+
+        // 4.接收数据，注册一个事件
+
+        xhr.onreadystatechange =  fun1=> {
+            console.log(xhr.readyState)
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log("解析完成(๑′ᴗ‵๑)", xhr.responseText)
+
+                document.write(xhr.responseText)
+            } else if (xhr.readyState === 4 && xhr.status === 404) {
+                console.error("没有找到");
+                // location.href ="404.html"
+            }
+
+            // 200 ok
+            // 404 未找到页面
+        }
+        xhr.onload = fun2=> {
+            console.log("onload:", xhr.readyState);
+            if(xhr.status===200){
+                console.log(JSON.parse(xhr.responseText));
+            }else if (xhr.status===404){
+                console.error("not found")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
