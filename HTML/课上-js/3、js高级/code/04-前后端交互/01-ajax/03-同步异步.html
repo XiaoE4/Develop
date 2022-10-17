@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let xhr = new XMLHttpRequest()
+        xhr.open("GET", "http://127.0.0.1:5500/HTML/%E8%AF%BE%E4%B8%8A-js/3%E3%80%81js%E9%AB%98%E7%BA%A7/code/04-%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/01-ajax/03.json", true)
+
+        // true 表示异步请求
+        // false 表示同步请求
+
+        xhr.send()
+
+        xhr.onload = fn => {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            }
+        }
+        
+        // xhr.send()
+        
+        
+        console.log("1232535");
+    </script>
+</body>
+
+</html>
