@@ -10,6 +10,13 @@
 
 <body>
 
+    <button id="myget">get</button>
+    <button id="mypost">post</button>
+    <button id="myput">put</button>
+    <button id="mypatch">patch</button>
+    <button id="mydelete">delete</button>
+
+
     <script>
         // form get post
         // ajax
@@ -33,12 +40,79 @@
        */
 
 
-        let xhr = XMLHttpRequest()
+        myget.onclick= function(){
+            let xhr=new XMLHttpRequest()
+            xhr.open("GET","http://localhost:3000/users?username=xiaoE")
 
-        xhr.open("GET", "", true)
-        
-        xhr.send()
+            xhr.onload = function(){
+                if(/^2\d{2|$/.test(xhr.status)){
+                    console.log(JSON.parse(xhr.responseText));
+                }
+            }
+            xhr.send()
+        }
+        mypost.onclick= function(){
+            let xhr=new XMLHttpRequest()
+            xhr.open("POST","http://localhost:3000/users")
 
+            xhr.onload = function(){
+                if(/^2\d{2|$/.test(xhr.status)){
+                    console.log(JSON.parse(xhr.responseText));
+                }
+            }
+            // 提交信息
+            // post name=xiaoE&age=18
+            // post {"name":"xiaoE"}
+
+            // xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")// post name=xiaoE&age=18
+            // xhr.send(`username=xiaoB&password=123`)
+            xhr.setRequestHeader("Content-Type","application/json")
+            xhr.send(JSON.stringify({
+                username:"xiaoE",
+                password:"987"
+            }))
+        }
+        myput.onclick= function(){
+            let xhr=new XMLHttpRequest()
+            xhr.open("PUT","http://localhost:3000/users/1")//user/id
+
+            xhr.onload = function(){
+                if(/^2\d{2|$/.test(xhr.status)){
+                    console.log(JSON.parse(xhr.responseText));
+                }
+            }
+            xhr.setRequestHeader("Content-Type","application/json")
+            xhr.send(JSON.stringify({
+                username:"xiaoEqwq",
+                password:"852"
+            }))
+        }
+        mypatch.onclick= function(){
+            let xhr=new XMLHttpRequest()
+            xhr.open("PATCH","http://localhost:3000/users/1")//user/id
+
+            xhr.onload = function(){
+                if(/^2\d{2|$/.test(xhr.status)){
+                    console.log(JSON.parse(xhr.responseText));
+                }
+            }
+            xhr.setRequestHeader("Content-Type","application/json")
+            xhr.send(JSON.stringify({
+                username:"xiaoE123",
+            }))
+        }
+        mydelete.onclick= function(){
+            let xhr=new XMLHttpRequest()
+            xhr.open("DELETE","http://localhost:3000/users/1")//user/id
+
+            xhr.onload = function(){
+                if(/^2\d{2|$/.test(xhr.status)){
+                    console.log(JSON.parse(xhr.responseText));
+                }
+            }
+            xhr.setRequestHeader("Content-Type","application/json")
+            xhr.send()
+        }
     </script>
 </body>
 
