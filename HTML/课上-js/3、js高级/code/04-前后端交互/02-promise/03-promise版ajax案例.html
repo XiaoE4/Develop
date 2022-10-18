@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="mytext">
+    <button id="myadd">add</button>
+    <ul class="list">
+    </ul>
+    <script type="module">
+        import {pajax} from './util1.js'
+        // console.log(ajax);
+        let that
+        class TodoList {
+            constructor(select) {
+                // console.log(this);
+                this.listEle = document.querySelector(select)
+                this.listdata = []    //列表数据
+
+                this.init()
+            }
+            init(){
+                // 初始化
+                this.bindEvent()
+                // 获取数据的方法
+
+                this.getList()
+
+            }
+            bindEvent(){
+                this.listEle.onclick=(evt)=>{
+                    // console.log(evt.target);
+                    if(evt.target.nodeName==="BUTTON"){
+                        this.removeItem(evt.target)
+                    }
+                }
+            }
+            getList(){
+                // 获取数据
+                pajax({
+                    url:"http://localhost:3000/list",
+                }).then(res=>{
+                    this.listdata=res
+                    this.render()
+                })
+            }
+            // 渲染页面
+            render(){
+                // console.log("render");
+                this.listEle.innerHTML=this.listdata.map(item=>`
+                <li>
+                    ${item.text}
+                    <button data-index=${item.id}>del</button>
+                </li>
+                `).join("")
+            }
+
+            addItem(text){
+                // console.log(text);
+
+                // 先在数据库中添加后，成功回调里设置页面更新，页面添加
+                pajax({
+                    url:`http://localhost:3000/list`,
+                    method:"POST",
+                    data:{
+                        text
+                    }
+                }).then(res=>{
+                    console.log("成功",res);
+                    this.listdata =[...this.listdata,res]
+                    this.render()
+                })
+            }
+
+            removeItem(target){
+                target.parentNode.remove()
+                // console.log(target.dataset.index);
+                pajax({
+                    url:`http://localhost:3000/list/${target.dataset.index}`,
+                    method:"DELETE",
+                }).then(res=>{
+                    console.log("删除成功");
+                })
+            }
+            updateItem(){
+
+            }
+        }
+
+        let obj = new TodoList(".list")
+        console.log(obj);
+
+
+        myadd.onclick=function(){
+            // console.log(mytext.value);
+            obj.addItem(mytext.value)
+        }
+
+        console.log("正在加载中");
+
+        pajax({
+            url:"http:/localhost:3000/looplist"
+        }).then(res=>{
+            console.log(res);
+        })
+
+        pajax({
+            url:"http:/localhost:3000/datalist"
+        }).then(res=>{
+            console.log(res);
+        })
+
+        
+    </script>
+</body>
+
+</html>
