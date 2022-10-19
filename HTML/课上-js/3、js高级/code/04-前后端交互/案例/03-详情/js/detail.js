@@ -25,9 +25,11 @@ class Detail{
     async getList(){
         var res = await fetch(`http://localhost:3000/goods/${this.id}`)
         var info = await res.json()
+        // console.log("1",res,"2",info);
         return info
     }
 
+    // 渲染页面方法
     renderHTML(info){
         console.log(info)
         var {title,price,feature,desc} = info

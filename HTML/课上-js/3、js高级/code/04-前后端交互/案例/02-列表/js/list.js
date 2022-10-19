@@ -26,9 +26,9 @@ function renderHTML(arr) {
             <h3>${arr[i].title}</h3>`
 
         //事件绑定
-        oli.onclick =function(){
+        oli.onclick = function () {
             //跳转
-            location.href="detail.html"
+            location.href = "detail.html"
         }
 
         list.appendChild(oli)
@@ -37,8 +37,9 @@ function renderHTML(arr) {
 
 window.onscroll = function () {
     // console.log(list.children.length,total)
-    if(list.children.length===Number(total)){
-        return 
+    // total是字符串，要转换为数字或者 “ == ”
+    if (list.children.length === Number(total)) {
+        return
     }
 
 
@@ -63,10 +64,10 @@ window.onscroll = function () {
         // setTimeout(function () {
         //     renderHTML(arr2)
 
-            
+
         // }, 1000)
 
-        getList().then(()=>{
+        getList().then(() => {
             isLoading = false //下一次到底事件继续触发
         })
     }

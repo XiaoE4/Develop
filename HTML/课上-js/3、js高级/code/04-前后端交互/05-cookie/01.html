@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="savebtn">存储</button>
+    <button id="getbtn">获取</button>
+    <button id="delbtn">删除</button>
+    <script>
+        // http协议无状态
+
+        // localStorage：用户名和密码？     token 钥匙 ==> Nodejs token认证
+
+        // cookie 本地存储  sessionID 钥匙 ===>Nodejs cookie+session认证
+
+        // 存cookie
+
+
+        savebtn.onclick = function () {
+            // cookie: key=value
+            // 路径设置
+            // document.cookie="username=xiaoE;path=/05-cookie/01.html"
+            document.cookie = "age=18"
+
+            // 过期时间设置
+            var date = new Date()
+            date.setMinutes(date.getMinutes() + 10)
+            document.cookie = `username=xiaoE;expires=${date.toUTCString()}`
+        }
+        // 获取cookie
+        getbtn.onclick = function () {
+            // console.log(document.cookie);
+            console.log(getCookie("username"))
+        }
+
+        function getCookie(key) {
+            let str = document.cookie
+            let arr = str.split("; ")
+            console.log(str);
+            console.log(arr);
+            var obj = {}
+            for (let i = 0; i < arr.length; i++) {
+                let subArr = arr[i].split("=")
+                // console.log(subArr);
+                obj[subArr[0]] = subArr[1]
+            }
+            // console.log(obj);
+            return obj[key]
+        }
+
+        delbtn.onclick = function () {
+            var date = new Date()
+            date.setMinutes(date.getMinutes() - 1)
+            document.cookie = `username=xiaoE;expires=${date.toUTCString()}`
+            document.cookie = `age=114514;expires=${date.toUTCString()}`
+        }
+    </script>
+</body>
+
+</html>
