@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "username": "xiaoE11111",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "username": "banzang",
+      "age": 18,
+      "id": 2
+    },
+    {
+      "username": "adc",
+      "age": 18,
+      "id": 3
+    },
+    {
+      "username": "xiaoE",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "username": "tiechui",
+      "password": "321",
+      "id": 5
+    },
+    {
+      "username": "xigema",
+      "password": "234",
+      "id": 6
+    }
+  ],
+  "list": [
+    "1111",
+    "2222",
+    "3333"
+  ]
+}

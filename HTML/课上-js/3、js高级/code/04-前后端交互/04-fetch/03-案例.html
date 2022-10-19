@@ -14,7 +14,7 @@
     <ul class="list">
     </ul>
     <script type="module">
-        import { pajax } from './util1.js'
+        // import { pajax } from './util1.js'
         // console.log(ajax);
         let that
         class TodoList {
@@ -30,7 +30,10 @@
                 this.bindEvent()
                 // 获取数据的方法
 
-                this.getList()
+                this.getList().then(res=>{
+                    this.listdata = res
+                    this.render()
+                })
 
             }
             bindEvent() {
@@ -41,14 +44,13 @@
                     }
                 }
             }
-            getList() {
+            async getList() {
                 // 获取数据
-                pajax({
+                var res = await pajax({
                     url: "http://localhost:3000/list",
-                }).then(res => {
-                    this.listdata = res
-                    this.render()
                 })
+                console.log(res);
+                return res
             }
             // 渲染页面
             render() {
@@ -61,32 +63,31 @@
                 `).join("")
             }
 
-            addItem(text) {
+            async addItem(text) {
                 // console.log(text);
 
                 // 先在数据库中添加后，成功回调里设置页面更新，页面添加
-                pajax({
+                var res = await pajax({
                     url: `http://localhost:3000/list`,
                     method: "POST",
                     data: {
                         text
                     }
-                }).then(res => {
-                    console.log("成功", res);
-                    this.listdata = [...this.listdata, res]
-                    this.render()
                 })
+                this.listdata = [...this.listdata, res]
+                this.render()
+                
             }
 
-            removeItem(target) {
+            async removeItem(target) {
                 target.parentNode.remove()
                 // console.log(target.dataset.index);
-                pajax({
+                var res = await pajax({
                     url: `http://localhost:3000/list/${target.dataset.index}`,
                     method: "DELETE",
-                }).then(res => {
-                    console.log("删除成功");
                 })
+                console.log("删除成功");
+                
             }
             updateItem() {
 
@@ -112,12 +113,13 @@
             url: "http://localhost:3000/datalist"
         })
 
-        Promise.all([q1,q2]).then(res=>{
+
+        async function test(){
+            var res = await Promise.all([q1,q2])
             console.log(res);
             console.log("隐藏加载中");
-        }).catch(err=>{
-            console.log(err);
-        })
+        }
+        test()
 
 
     </script>
