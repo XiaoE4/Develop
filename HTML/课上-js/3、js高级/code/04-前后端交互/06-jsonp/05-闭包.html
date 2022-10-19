@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        /*
+            函数内部返回一个函数，被外界所引用。
+            这个内部函数就不会被销毁回收
+            内部函数所用到的外部函数的变量也不会被销毁。
+        */
+zd
+        function outer() {
+            let name = "xiaoL"
+            let age = 100
+            return function () {
+                return name + "2333"
+            }
+        }
+
+        var func = outer()
+
+        console.log(func());    // 闭包
+        func()
+        func()
+
+        /*
+            优点：让临时变量永驻内存
+            缺点：内存泄漏
+        */
+
+        // fetch("http://www.a.com/aaa")
+        // fetch("http://www.a.com/bbb")
+        // fetch("http://www.b.com/aaa")
+        // fetch("http://www.c.com/bbb")
+        // fetch("http://www.d.com/ccc")
+
+        function FetchContainer(url){
+            return function(path){
+                return fetch(url+path)
+            }
+        }
+
+        var fetcha=FetchContainer("http://www.a.com")
+
+        fetcha("/aaa").then(res=>res.json()).then(res=>console.log(res))    // Request URL: http://www.a.com/aaa
+        fetcha("/bbb").then(res=>res.json()).then(res=>console.log(res))    // Request URL: http://www.a.com/bbb
+        fetcha =null
+
+        var fetchb=FetchContainer("http://www.b.com")
+
+        fetchb("/aaa").then(res=>res.json()).then(res=>console.log(res))    // Request URL: http://www.b.com/aaa
+        fetchb("/bbb").then(res=>res.json()).then(res=>console.log(res))    // Request URL: http://www.b.com/bbb
+        fetchb=null
+        // 闭包应用：函数柯里化
+
+    </script>
+</body>
+
+</html>
