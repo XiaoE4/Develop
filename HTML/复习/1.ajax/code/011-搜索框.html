@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <input type="text" id="mysearch">
-    <ul id="list"></ul>
-    <script>
-        
 
-        
+<body>
+    <input type="text" id="mytext">
+    <ul id="list"></ul>
+
+    <script>
+        mytext.oninput = function () {
+            console.log(mytext.value);
+            if(!mytext.value){
+                list.innerHTML=""
+                return
+            }
+
+            let oscript=document.createElement("script")
+            oscript.src=`https://www.baidu.com/sugrec?pre=1&p=3&ie=utf-8&json=1&prod=pc&from=pc_web&sugsid=36542,36464,36673,36454,31660,36692,36166,36695,36697,36570,36074,36655,36345,26350,36469,36314&wd=${mytext.value}&req=2&csor=1&cb=test&_=1656294200527`
+
+            // console.log(oscript);
+            document.body.appendChild(oscript)
+
+            oscript.onload=function(){
+                oscript.remove()
+            }
+
+        }
+        function test(obj){
+            console.log(obj.g);
+            list.innerHTML=obj.g.map(item=>`<li>${item.q}</li>`).join("")
+        }
     </script>
 </body>
+
 </html>
