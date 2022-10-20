@@ -17,12 +17,12 @@
             这个内部函数就不会被销毁回收
             内部函数所用到的外部函数的变量也不会被销毁。
         */
-zd
+
         function outer() {
             let name = "xiaoL"
             let age = 100
             return function () {
-                return name + "2333"
+                return name + "+2333"
             }
         }
 
