@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let q=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                // pending("shabi")
+                resolve(["1111","2222","3333"])
+                reject("err0r")
+            },2000)
+        })
+
+        q.then(function(res){
+            console.log("suc",res);
+        }).catch(function(err){
+            console.log("cuo",err);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let xhr = new XMLHttpRequest()
+        console.log(xhr);
+        xhr.open("GET","http://127.0.0.1:5500/HTML/%E5%A4%8D%E4%B9%A0/1.ajax/data/01.json")
+
+        xhr.send()
+
+        xhr.onreadystatechange=function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState===4 && xhr.status===200){
+                console.log("already!",JSON.parse(xhr.responseText));
+            }else if(xhr.readyState===4 && xhr.status===404){
+                console.error("404 not found");
+            }
+        }
+        // onload  <===> xhr.readyState===4
+        xhr.onload=function(){
+            if(xhr.status===200){
+                console.log("already!",JSON.parse(xhr.responseText));
+            }else if(xhr.status===404){
+                console.error("404 not found");
+            }
+        }
+        
+
+    </script>
+    
+
+</body>
+</html>

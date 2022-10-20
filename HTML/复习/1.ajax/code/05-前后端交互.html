@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- used 03.json -->
+
+<body>
+    <input type="text" name="" id="mytext">
+    <button id="myadd">添加</button>
+    <ul class="list"></ul>
+        <!-- <script> -->
+        <script type="module">
+        // let that
+        // import {ajax} from "../js/util1.js"
+        // import { pajax } from '../js/util1.js'
+        class TodoList {
+            constructor(select) {
+                // that=this
+                this.listEle = document.querySelector(select)
+                this.listdata = []
+
+                this.init()
+            }
+            // 初始化
+            init() {
+                // 先删除在添加
+                this.initialize()
+                // this.getList()
+
+                this.getList().then(res=>{
+                    this.listdata=res
+                    this.render()
+                })
+
+            }
+            // 获取数据
+            async getList() {
+                // ajax({
+                //     url: "http://localhost:3000/list",
+                //     method: "GET",
+                //     success: (res) => {
+                //         console.log(this);
+                //         this.listdata = res
+                //         this.render()
+                //     },
+                //     error: function (err) {
+                //         console.log("error", err);
+                //     }
+                // })
+                // ----
+                // pajax({
+                //     url: "http://localhost:3000/list",
+                //     method:"GET"
+                // }).then((res) => {
+                //     this.listdata = res
+                //     this.render()
+                // })
+                // ---
+                // var res = await pajax({
+                //     url:"http://localhost:3000/list"
+                // })
+                // console.log(res);
+                // return res
+                // ---
+                var res=await fetch("http://localhost:3000/list").then(res=>res.json())
+                // .then(res=>{
+                //     console.log(res);
+                // })
+                return res
+
+            }
+            // 初始化列表
+            initialize() {
+                this.listEle.onclick = (evt) => {
+                    if (evt.target.nodeName === "BUTTON") {
+                        this.removeItem(evt.target)
+                    }
+                }
+            }
+            // 渲染页面
+            render() {
+                this.listEle.innerHTML = this.listdata.map(item => `
+                <li>
+                    ${item.text}
+                    <button data-index=${item.id}>del</button>
+                </li>
+                `).join("")
+            }
+            // 添加数据
+            async addItem(text) {
+                // ajax({
+                //     url: "http://localhost:3000/list",
+                //     method: "POST",
+                //     data: {
+                //         text
+                //     },
+                //     success: (res)=> {
+                //         console.log("成功", res);
+                //         this.listdata=[...this.listdata,res]
+                //         this.render()
+                //     },
+                //     error: function () {
+
+                //     }
+                // })
+                // ----
+                // pajax({
+                //     url: "http://localhost:3000/list",
+                //     method: "POST",
+                //     data: {
+                //         text
+                //     }
+                // }).then(res => {
+                //     console.log("成功添加",res);
+                //     this.listdata = [...this.listdata, res]
+                //     this.render()
+                // }).catch(err=>{
+                //     console.log("err0r",err);
+                // })
+                // -----
+                // var res=await pajax({
+                //     url: "http://localhost:3000/list",
+                //     method: "POST",
+                //     data: {
+                //         text
+                //     }
+                // })
+                // this.listdata = [...this.listdata, res]
+                // this.render()
+                var res=await fetch("http://localhost:3000/list",{
+                    method: "POST",
+                    headers:{
+                        "content-type":"application/json"
+                    },
+                    body:JSON.stringify({
+                        text
+                    })
+                }).then(res=>res.json())
+                this.listdata = [...this.listdata, res]
+                this.render()
+
+            }
+            async removeItem(target) {
+                target.parentNode.remove()
+                // console.log(target.parentNode);
+                // ajax({
+                //     url: `http://localhost:3000/list/${target.dataset.index}`,
+                //     method: "DELETE",
+                //     success: (res) => {
+                //         console.log("删除成功");
+                //     },
+                //     error: function () {
+
+                //     }
+                // })
+                // ----
+                // pajax({
+                //     url: `http://localhost:3000/list/${target.dataset.index}`,
+                //     method: "DELETE",
+                // }).then(res => {
+                //     console.log("删除成功");
+                // })
+                // -----
+                // var res=await pajax({
+                //     url: `http://localhost:3000/list/${target.dataset.index}`,
+                //     method: "DELETE",
+                // })
+                // console.log("删除成功");
+                // -----
+                var res=await fetch(`http://localhost:3000/list/${target.dataset.index}`,{
+                    method:"delete"
+                }).then(res=>res.json()).then(res=>{console.log("删除成功");})
+            }
+            updateItem() {
+
+            }
+
+        }
+
+        let obj = new TodoList(".list")
+        console.log(obj);
+
+        myadd.onclick = function () {
+            obj.addItem(mytext.value)
+            // console.log(mytext.value);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,34 +1,3 @@
-// function queryStringify(obj) {
-//     let str = ''
-//     for (let k in obj) str += `${k}=${obj[k]}&`
-  
-//     //username=kerwin&password=789&
-//     return str.slice(0, -1)
-//   }
-  
-//   // 封装 ajax
-//   function ajax(options) {
-//     let defaultoptions = {
-//       url: "",
-//       method: "GET",
-//       async: true,
-//       data: {},
-//       headers: {},
-//       success: function () { },
-//       error: function () { }
-//     }
-//     let { url, method, async, data, headers, success, error } = {
-//       ...defaultoptions,
-//       ...options
-//     }
-  
-//     console.log(url, method, async, data, headers, success, error)
-//   }
-
-/*
- * @作者: kerwin
- * @公众号: 大前端私房菜
- */
 function queryStringify(obj) {
     let str = ''
     for (let k in obj) str += `${k}=${obj[k]}&`

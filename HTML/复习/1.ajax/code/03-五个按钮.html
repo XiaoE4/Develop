@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- used 02.json -->
+<body>
+    <button id="myget">get</button>
+    <button id="mypost">post</button>
+    <button id="myput">put</button>
+    <button id="mypatch">patch</button>
+    <button id="mydelete">delete</button>
+    
+    <script src="../js/utiltest.js"></script>
+    <script>
+        myget.onclick=function(){
+            // --1--
+            // let xhr=new XMLHttpRequest()
+            // xhr.open("GET","http://localhost:3000/users")
+            // xhr.onload=function(){
+            //     console.log("Get:",JSON.parse(xhr.responseText));
+            // }
+            // xhr.send()
+            // -----
+            // ajax({
+            //     url:"http://localhost:3000/users",
+            //     method:"GET",
+            //     success:function(res){
+            //         console.log("success",res);
+            //     },
+            //     error:function(err){
+            //         console.log("error",err);
+            //     }
+            // })
+            // -----
+            // let username="adc"
+            fetch(`http://localhost:3000/users`)
+            .then(res=>{
+                console.log(res);
+                if(res.ok){
+                    // console.log(res.json());
+                    return res.json()
+                }else{
+                    return Promise.reject({
+                        a:1,
+                        status:res.status,
+                        statusText:res.statusText
+                    })
+                }
+            }).then(res=>{
+                console.log("suc",res);
+            }).catch(err=>{
+                console.log("err",err);
+            })
+        }
+        // 提交信息
+        mypost.onclick=function(){
+            // let xhr=new XMLHttpRequest()
+            // xhr.open("POST","http://localhost:3000/users")
+            // xhr.onload=function(){
+            //     console.log("POST:",JSON.parse(xhr.responseText));
+            // }
+            // xhr.setRequestHeader("Content-Type","application/json")
+
+            // xhr.send(JSON.stringify({
+            //     username:"Tian",
+            //     password:"147"
+            // }))
+            // -----
+            // ajax({
+            //     url:"http://localhost:3000/users",
+            //     method:"POST",
+            //     data:{
+            //         username:"Tian",
+            //         password:"147"
+            //     },
+            //     success:function(res){
+            //         console.log("success",res);
+            //     },
+            //     error:function(err){
+            //         console.log("error",err);
+            //     }
+            // })
+            // -----
+            fetch("http://localhost:3000/users",{
+                method:"POST",
+                headers:{"content-type":"application/json"},
+                body:JSON.stringify({
+                    username:"xiaoE",
+                    password:"qwer"
+                })
+            }).then(res=>res.json())
+            .then(res=>{
+                console.log(res);
+            })
+        }
+        myput.onclick=function(){
+            // let xhr=new XMLHttpRequest()
+            // xhr.open("PUT","http://localhost:3000/users/4")
+            // xhr.onload=function(){
+            //     console.log("Put:",JSON.parse(xhr.responseText));
+            // }
+            // xhr.setRequestHeader("Content-Type","application/json")
+
+            // xhr.send(JSON.stringify({
+            //     username:"WangBa"
+            // }))
+            // -----
+            // ajax({
+            //     url:"http://localhost:3000/users/4",
+            //     method:"PUT",
+            //     data:{
+            //         username:"王八",
+            //     },
+            //     success:function(res){
+            //         console.log("success",res);
+            //     },
+            //     error:function(err){
+            //         console.log("error",err);
+            //     }
+            // })
+            // -----
+            fetch("http://localhost:3000/users/4",{
+                method:"PUT",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify({
+                    username:"xiaoLuo",
+                    age:"20"
+                })
+            }).then(res=>res.json()).then(res=>{console.log(res);})
+        }
+        mypatch.onclick=function(){
+            // let xhr=new XMLHttpRequest()
+            // xhr.open("PATCH","http://localhost:3000/users/4")
+            // xhr.onload=function(){
+            //     console.log("Patch:",JSON.parse(xhr.responseText));
+            // }
+            // xhr.setRequestHeader("Content-Type","application/json")
+
+            // xhr.send(JSON.stringify({
+            //     username:"鳖"
+            // }))
+            // -----
+            // ajax({
+            //     url:"http://localhost:3000/users/4",
+            //     method:"PATCH",
+            //     data:{
+            //         username:"蒜头王八"
+            //     },
+            //     success:function(res){
+            //         console.log("success",res);
+            //     },
+            //     error:function(err){
+            //         console.log("error",err);
+            //     }
+            // })
+            // -----
+            fetch("http://localhost:3000/users/4",{
+                method:"PATCH",
+                headers:{
+                    "content-type":"application/json"
+                },
+                body:JSON.stringify({
+                    username:"xiaoHu"
+                })
+            }).then(res=>res.json()).then(res=>{console.log(res);})
+        }
+        mydelete.onclick=function(){
+            // let xhr=new XMLHttpRequest()
+            // xhr.open("DELETE","http://localhost:3000/users/4")
+            // xhr.onload=function(){
+            //     console.log("Delete:",JSON.parse(xhr.responseText));
+            // }
+            // xhr.send()
+            // -----
+            // ajax({
+            //     url:"http://localhost:3000/users/4",
+            //     method:"delete",
+            //     success:function(res){
+            //         console.log("success",res);
+            //     },
+            //     error:function(err){
+            //         console.log("error",err);
+            //     }
+            // })
+            // -----
+            fetch("http://localhost:3000/users/4",{
+                method:"delete"
+            }).then(res=>res.json()).then(res=>{console.log("删除成功");})
+        }
+
+    </script>
+</body>
+</html>

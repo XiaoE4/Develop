@@ -10,7 +10,8 @@
 
 <body>
     <script src="./util1.js"></script>
-    <script>
+    <script type="module">
+        import { ajax, pajax } from './util1.js'
         pajax({
             url: "http://localhost:3000/news",
             data: {
@@ -24,10 +25,10 @@
                     newsId: res[0].id
                 }
             })
-            }).then(res => {
-                console.log("success",res);
-        }).catch(err=>{
-            console.log("fail",err);
+        }).then(res => {
+            console.log("success", res);
+        }).catch(err => {
+            console.log("fail", err);
         })
     </script>
 </body>
