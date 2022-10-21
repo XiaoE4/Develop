@@ -27,7 +27,7 @@
         <button @click="showInfo2(123456,$event)">点我提示信息（传参）</button>
 
         <hr>
-        <input type="text" placeholder="回车返回log数值">
+        <input type="text" placeholder="回车返回log数值" @keyup.enter="showInfo3">
 
 
 
@@ -58,6 +58,9 @@
                     alert('click_2')
 
                 },
+                showInfo3(keyboard){
+                    console.log("输入的值为：",keyboard.target.value);
+                }
             }
             
 
