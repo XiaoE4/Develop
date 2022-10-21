@@ -8,6 +8,22 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
+    <div id="root">
+        <h1>你好，{{data1.name}}</h1>
+        <h1></h1>
+    </div>
+    <script>
+        const vm =new Vue({
+            el:"#root",
+            data:{
+                data1:{ 
+                    name:"xiaoE",
+
+                }
+            }
+        })
+
+    </script>
     
 </body>
 </html>

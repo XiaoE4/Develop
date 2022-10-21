@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="../js/vue.js"></script>
@@ -11,8 +11,13 @@
 <body>
     <!-- 准备好一个容器 -->
     <div id="root">
-        <h1>你好！这是{{name}}的标题</h1>
+        <!-- .toUpperCase字符串转换为大写并返回 -->
+        <h1>你好！这是{{name.toUpperCase()}}{{fruits}}</h1>
     </div>
+
+    <!-- <div id="root">
+        <h1>你好！这是{{name}}{{}}</h1>
+    </div> -->
     <script>
         // Vue.config.productionTip = false    // 阻止运行时生成生产信息
 
@@ -20,9 +25,11 @@
             el:'#root',  // el用于指定当前Vue实例为那个容器服务，通常为css选择器字符串
             // el:document.getElementById('root')
             data:{  // data中用于存储数据，数据供el所指定的容器使用，值暂时先写成一个对象
-                name:'第一个html'
+                name:"aaa",
+                fruits:"葡萄"
             }
         })
+        
 
         
         
