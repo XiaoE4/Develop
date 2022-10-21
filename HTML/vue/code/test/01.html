@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/HTML/vue/js/vue.js"></script>
+    <style>
+        .root{
+            margin: 0;
+            border: 0;
+        }
+        a{
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h1>你好！我是{{name}}</h1>
+        <h1>我住在{{intro.home}}，我喜欢吃{{intro.food}}</h1>
+        <hr>
+        <a v-bind:href="local.url" >点我跳转至{{local.name}}</a>
+        <hr>
+        <button v-on:click="showInfo1">点我提示信息（不传参）</button>
+        <button @click="showInfo2(123456,$event)">点我提示信息（传参）</button>
+
+        <hr>
+        <input type="text" placeholder="回车返回log数值">
+
+
+
+    </div>
+
+
+    <script>
+        const vm = new Vue({
+            el:'#root',
+            data:{
+                name:'xiaoE',
+                intro:{
+                    home:'翻斗花园',
+                    food:'曲奇',
+                },
+                local:{
+                    url:'00.html',
+                    name:'本地中转页面'
+                }
+            },
+            methods:{
+                showInfo1(event){
+                    console.log("click_1",event);
+                    alert('click_1')
+                },
+                showInfo2(number,e){
+                    console.log("click_2",number,e);
+                    alert('click_2')
+
+                },
+            }
+            
+
+            /* data:function(){
+                 return{
+                     name:'xiaoE',
+                     intro:{
+                         home:'翻斗花园',
+                         food:'曲奇',
+                     }
+                 }
+             }*/
+            
+        })
+        // vm.$mount('#root')
+    </script>
+</body>
+</html>
