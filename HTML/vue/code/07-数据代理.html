@@ -9,21 +9,33 @@
 </head>
 <body>
     <div id="root">
-        <h1>你好，{{data1.name}}</h1>
-        <h1></h1>
+        <h1>名字：{{name}}</h1>
+        <h1>地址：{{address}}</h1>
     </div>
     <script>
-        const vm =new Vue({
-            el:"#root",
-            data:{
-                data1:{ 
-                    name:"xiaoE",
+        let obj1={x:100}
+        let obj2={y:200}
 
-                }
+        Object.defineProperty(obj2,'x',{
+            get(){
+                return obj1.x
+            },
+            set(value){
+                obj1.x=value
             }
         })
-
     </script>
-    
+
+    <script>
+
+        const vm =new Vue({
+            el:'#root',
+            data:{
+                name:'xiaoE',
+                address:'翻斗花园'
+            }
+        })
+    </script>
+
 </body>
 </html>

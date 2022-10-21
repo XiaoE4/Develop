@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>你好，{{data1.name}}</h1>
+        <!-- 点击的时候寻找showInfo函数进行调用 -->
+        <button v-on:click="showInfo1">点我提示信息（不传参）</button><hr>
+        <button @click="showInfo2(123456,$event)">点我提示信息（传参）</button>
+                            <!-- 加括号可以传参 -->
+        <h1></h1>
+    </div>
+    <script>
+        const vm =new Vue({
+            el:"#root",
+            data:{
+                data1:{ 
+                    name:"xiaoE",
+
+                }
+            },
+            methods:{
+                showInfo1(event){
+                    console.log("event",event.target.innerText);
+                    console.log(this===vm);     //此处的this是vm对象
+                    alert('你好！')
+                },
+                showInfo2(number,e){
+                    console.log(number,e);
+                    // console.log("event",event);
+                    // console.log(this===vm);     //此处的this是vm对象
+                    alert('你好！')
+                }
+            }
+        })
+
+
+    </script>
+    
+</body>
+</html>

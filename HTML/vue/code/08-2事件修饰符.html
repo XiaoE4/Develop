@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        .demo1{
+            background-color: aquamarine;
+            padding: 20px;
+        }
+        .box1{
+            background-color: skyblue;
+            padding: 10px;
+        }
+        .box2{
+            background-color: blue;
+            padding: 10px;
+        }
+        .list{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            overflow: auto;
+        }
+        li{
+            height: 100px;
+        }
+    </style>
+</head>
+<!-- 
+			Vue中的事件修饰符：
+					1.prevent：阻止默认事件（常用）；
+					2.stop：阻止事件冒泡（常用）；
+					3.once：事件只触发一次（常用）；
+					4.capture：使用事件的捕获模式；
+					5.self：只有event.target是当前操作的元素时才触发事件；
+					6.passive：事件的默认行为立即执行，无需等待事件回调执行完毕；
+-->
+<body>
+    <div id="root">
+        <h1>你好，{{data1.name}}</h1>
+                        <!-- .prevent:阻止默认事件 -->
+        <a href="#" @click.prevent="showInfo">点我提示信息</a><hr>
+
+        <!-- 阻止事件冒泡，不阻止的话会弹窗两次 -->
+        <div class="demo1" @click="showInfo">
+            <button @click.stop="showInfo">点我提示信息</button>
+        </div><hr>
+        <!-- 事件只触发一次，再次使用不触发（常用） -->
+        <button @click.once="showInfo">点我提示信息</button>
+        <!--  capture：使用事件的捕获模式； -->
+        <div class="box1" @click.capture="showMsg(1)">
+            div1
+            <div class="box2" @click="showMsg(2)">
+                div2
+            </div>
+        </div>
+
+        <!-- self:只有event.target是当前操作的元素时才触发事件 -->
+        <div class="demo1" @click.self="showInfo">
+            <button @click="showInfo">点我提示信息</button>
+        </div><hr>
+        <!-- passive：事件的默认行为立即执行，无需等待事件回调执行完毕； -->
+        <!-- scroll:滚动，wheel：滚轮滚动 -->
+        <!-- 不加wheel就会先进行事件的回调，回调完才会进行操作wheel -->
+        <ul @wheel.passive="demo" class="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+
+
+    </div>
+    <script>
+        const vm =new Vue({
+            el:"#root",
+            data:{
+                data1:{ 
+                    name:"xiaoE",
+                    
+                }
+            },
+            methods: {
+                showInfo(e){
+                    alert('你好！')
+                    console.log(e.target);
+                },
+                showMsg(msg){
+                    console.log(msg);
+                },
+                demo(){
+                    for(let i=0;i<100;i++){
+                        console.log("#");
+                    }
+                    console.log("nb");
+                }
+            },
+        })
+
+    </script>
+    
+</body>
+</html>
