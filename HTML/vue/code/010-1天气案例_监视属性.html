@@ -11,7 +11,7 @@
 
 <body>
     <div id="root">
-        <h1>今天天气很{{info}},{{x}}</h1>
+        <h1>今天天气很{{info}},第{{x}}次点击</h1>
         <button @click="changeWeather">点击切换天气</button>
         <!-- @xxx='yyy'     yyy可以写一些简单的语句 -->
         <!-- <button @click="isHot=!isHot ; x++">点击切换天气</button> -->
@@ -26,7 +26,7 @@
             methods: {
                 changeWeather() {
                     this.isHot = !this.isHot
-                    x++
+                    this.x++
                 }
             },
             computed: {
@@ -34,6 +34,23 @@
                     return this.isHot ? '炎热' : '凉爽'
                 }
             },
+            watch:{
+                // isHot:{      //'isHot'
+                //     immediate:true,     // 初始化时让handler调用
+                //     // handeler什么时候调用：当isHot发生改变时
+                //     handler(newValue,oldValue){
+                //         console.log('isHot发生改变',newValue,oldValue);
+                //     }
+                // }
+            }
+        })
+
+        vm.$watch('isHot',{
+               immediate:true,     // 初始化时让handler调用
+                    // handeler什么时候调用：当isHot发生改变时
+                    handler(newValue,oldValue){
+                    console.log('isHot发生改变',newValue,oldValue);
+                    }
         })
 
     </script>
