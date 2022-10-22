@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/HTML/vue/js/vue.js"></script>
+    <style>
+        li {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root">
+        <ul>
+            <h2>人员列表</h2>
+            <input type="text" placeholder="请输入名字" v-model="keyWord">
+            <button @click="updateMei">更新马冬梅的信息</button>
+            <hr>
+            <!-- <li v-for="p in persons" :key="p.id"> -->
+            <li v-for="(p,index) in persons" :key="p.id">
+                {{p.name}}-{{p.age}}-{{p.sex}}
+            </li>
+        </ul>
+
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                keyWord: '',
+                sortType:0,
+                persons: [
+                    { id: '001', name: '马冬梅', age: 18, sex: '女' },
+                    { id: '002', name: '周冬雨', age: 25, sex: '女' },
+                    { id: '003', name: '周杰伦', age: 42, sex: '男' },
+                    { id: '004', name: '温兆伦', age: 37, sex: '男' },
+                ],
+            },
+           methods:{
+                updateMei(){
+                    // this.persons[0].name='芜湖大司马'
+                    // this.persons[0].age='45'
+                    // this.persons[0].sex='男'
+                    this.persons[0]={id:'001',name:'芜湖大司马',age:45,sex:'男'}
+                }
+           }
+        })
+    </script>
+</body>
+
+</html>

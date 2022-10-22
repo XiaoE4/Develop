@@ -25,7 +25,7 @@
 			<h3>b的值是:{{numbers.b}}</h3>
 			<button @click="numbers.b++">点我让b+1</button>
 			<button @click="numbers = {a:666,b:888}">彻底替换掉numbers</button>
-			{{numbers.c.d.e}}
+			<!-- {{numbers.c.d.e}} -->
 		</div>
 	</body>
 
@@ -39,11 +39,11 @@
 				numbers:{
 					a:1,
 					b:1,
-					c:{
-						d:{
-							e:100
-						}
-					}
+					// c:{
+					// 	d:{
+					// 		e:100
+					// 	}
+					// }
 				}
 			},
 			computed:{

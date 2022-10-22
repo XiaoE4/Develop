@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022.10.22</title>
+    <script src="/HTML/vue/js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        姓：<input type="text" v-model="name.firstName">
+        名：<input type="text" v-model="name.lastName">
+        <br>
+        <!-- 插值语法 -->
+        <span style="font-size:20px; color: blue;">姓名：{{name.firstName}}-{{name.lastName}}</span><br>
+        <!-- methods语法实现 -->
+        <span style="font-size:20px; color: red;" >姓名：{{fullName()}}</span>
+        <!-- 计算属性 -->
+        <span>姓名：{{fullName2}}</span>
+        <br><br><hr>
+        <h2>今天天气很{{feel}},第{{x}}次点击</h2>
+        <button @click="changeWeather">点我切换天气</button>
+        <h3>a的值为:{{number.a}}</h3>
+        <button @click="number.a++">点我a+1</button>
+        <h3>b的值为:{{number.b}}</h3>
+        <button @click="number.b++">点我b+1</button>
+        <button @click="number={a:0,b:0}">点我重置a和b</button>
+    </div>
+    <script>
+        const vm =new Vue({
+            el:"#root",
+            data:{
+                name:{
+                    firstName:'张',
+                    lastName:'三',
+                },
+                info:{
+                    isHot:true,
+                },
+                x:0,
+                number:{
+                    a:0,
+                    b:0
+                }
+            },
+            methods:{
+                fullName(){
+                    return this.name.firstName+ '-' +this.name.lastName
+                },
+                changeWeather(){
+                    this.info.isHot=!this.info.isHot
+                    this.x++
+                }
+            },
+            computed:{
+                fullName2:{
+                    get(){
+                        console.log('get');
+                        return this.name.firstName+ '-' +this.name.lastName
+                    },
+                    set(value){
+                        // vm.fullName2= 'aaa-bbb'
+                        console.log('set',value);
+                        const arr=value.split("-")
+                        this.name.firstName=arr[0]
+                        this.name.lastName=arr[1]
+                    }
+                },
+                feel(){
+                    return this.info.isHot? '凉爽':'炎热'
+                }
+            },
+            watch:{
+                'info.isHot':{
+                    immediate:true,
+                    handler(newValue,oldValue){
+                        console.log('天气改变了',newValue,oldValue);
+                    }
+                },
+                number:{
+                    deep:true,
+                    handler(){
+                        console.log("number改变了");
+                    }
+                }
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
