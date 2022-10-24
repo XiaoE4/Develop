@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/HTML/vue/js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>学校信息</h1>
+        <button @click="addAge">年龄+1岁</button><br>
+        <button @click="addSex">添加性别属性，默认值：男</button><br>
+        <button @click="student.sex='女'">修改性别</button><br>
+        <button @click="addFriend">在列表首位添加一个朋友</button><br>
+        <button>修改第一个朋友的名字为：张三</button><br>
+        <button>添加一个爱好</button><br>
+        <button>修改第一个爱好为：开车</button><br>
+        <button>过滤掉爱好中的乐</button><br>
+        <h2>学校：{{name}}</h2>
+        <h2>地址：{{address}}</h2>
+        <hr/>
+        <h1>学生信息</h1>
+        <button @click="addSex">添加性别</button>
+        <h2>名字：{{student.name}}</h2>
+        <h2>性别：{{student.sex}}</h2>
+        <h2>年龄：真实：{{student.age.rAge}}岁，对外：{{student.age.sAge}}岁</h2>
+        <h2>爱好</h2>
+        <ul>
+            <li v-for="(h,index) in student.hobby" :key="index">
+                {{h}}
+            </li>
+        </ul>
+        <h2>朋友</h2>
+        <ul>
+            <li v-for="(f,index) in student.friend" :key="index">
+                {{f.name}}-{{f.age}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const vm=new Vue({
+            el:'#root',
+            data:{
+                name:'翻斗幼儿园',
+                address:'翻斗花园',
+                student:{
+                    name:'胡图图',
+                    age:{
+                        rAge:5,
+                        sAge:6
+                    },
+                    hobby:['吃','喝','玩','乐'],
+                    friend:[
+                        {name:'mei',age:4},
+                        {name:'zhuang',age:7}
+                ]
+                }
+            },
+            methods: {
+                addSex(){
+                    Vue.set(this.student,'sex','男')
+                    // this.$set(this.student,'sex','男')
+                },
+                addAge(){
+                    return this.student.age.rAge ++
+                },
+                addFriend(){
+                    this.student.friend.unshift({name:'zhangsan',age:10})
+                }
+                
+            },
+        })
+    </script>
+</body>
+</html>

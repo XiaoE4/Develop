@@ -19,7 +19,7 @@
     <div id="root">
         <ul>
             <h2>人员列表</h2>
-            <input type="text" placeholder="请输入名字" v-model="keyWord">
+            <!-- <input type="text" placeholder="请输入名字" v-model="keyWord"> -->
             <button @click="updateMei">更新马冬梅的信息</button>
             <hr>
             <!-- <li v-for="p in persons" :key="p.id"> -->
@@ -34,7 +34,7 @@
         const vm = new Vue({
             el: '#root',
             data: {
-                keyWord: '',
+                // keyWord: '',
                 sortType:0,
                 persons: [
                     { id: '001', name: '马冬梅', age: 18, sex: '女' },
@@ -48,7 +48,7 @@
                     // this.persons[0].name='芜湖大司马'
                     // this.persons[0].age='45'
                     // this.persons[0].sex='男'
-                    this.persons[0]={id:'001',name:'芜湖大司马',age:45,sex:'男'}
+                    this.persons.splice=(0,1,{id:'001',name:'芜湖大司马',age:45,sex:'男'})
                 }
            }
         })
