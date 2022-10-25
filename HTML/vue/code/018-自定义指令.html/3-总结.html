@@ -13,7 +13,7 @@
 <body>
     <div id="root">
         <h2>当前的n值为:<span v-text="n"></span></h2>
-        <h2>放大10倍的n值为:<span v-big="n"></span></h2>
+        <h2>放大10倍的n值为:<span v-big-number="n"></span></h2>
         <button @click="n++">点我n+1</button>
         <hr>
         <input type="text" v-fbind:value="n">
@@ -25,14 +25,16 @@
                 n: 1
             },
             directives: {
-                big(element, binding) {
-                    console.log("big");
+                'big-number'(element, binding){
+                    console.log("bi-number",this);          // 此处的this是window
                     element.innerText = binding.value * 10
                     // console.log(element, binding);
+
                 },
                 fbind:{
                     // 指令与元素成功绑定时（一上来）
                     bind(element,binding){
+                        console.log('fbid-bind',this);      // 这三个的this都是window
                         element.value=binding.value *10
                     },
                     // 指令所在元素被插入页面时

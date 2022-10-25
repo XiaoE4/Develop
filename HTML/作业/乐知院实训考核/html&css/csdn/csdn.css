@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 顶部导航栏 */
+#toolbarBox{
+    /* background-color: aqua; */
+    height: 50px;
+    width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 1px 2px #888888;
+}
+.toolbarBox-left{
+    float: left;
+    display: block;
+    width: 800px;
+    height: 50px;
+}
+.toolbarBox-left a{
+    /* display: inline-block; */
+    line-height: 50px;
+    height: 50px;
+    padding: 0 20px;
+    color: #222226;
+}
+.toolbarBox-left a img{
+    /* display: inline-block; */
+    line-height: 0px;
+    height: 20px; 
+    width: 100px;
+    
+}
+.toolbarBox-right{
+    float:right;
+    display: block;
+    width: 500px;
+    height: 50px;
+}
+.toolbarBox-right a{
+    /* display: inline-block; */
+    line-height: 50px;
+    height: 50px;
+    padding: 0 20px;
+    color: #222226;
+}
+a{
+    text-decoration: none;
+}
+/* 内容栏 */
+#app{
+    /* position: relative; */
+    background-color: aqua;
+    width: 1550px;
+    height: 1000px;
+    margin: auto;
+}
+/* 头条,热点和直播 */
+#daohang{
+    /* position: absolute; */
+    background-color: black;
+    width: 1550px;
+    height: 500px;
+}
+#daohang .app-left{
+    display: block;
+    width: 780px;
+    height: 500px;
+    background-color: aquamarine;
+    float: left;
+}
+#daohang .biaoti{
+    height: 30px;
+    
+}
+#daohang .biaoti img{
+    height: 24px;
+    width: 24px;
+    display: block;
+}
+#biaoti .biaoti ul{
+    display: block;
+}
+#daohang .neirong{
+    height: 400px;
+}
+#daohang .app-center{
+    float: right;
+    display: block;
+    width: 375px;
+    height: 500px;
+    background-color: aquamarine;
+}
+#daohang .app-right{
+    float: right;
+    display: block;
+    width: 375px;
+    height: 500px;
+    background-color: aquamarine;
+}
