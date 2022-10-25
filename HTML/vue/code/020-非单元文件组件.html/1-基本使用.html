@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="../js/vue.js"></script> -->
+    <script src="/HTML/vue/js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- 3.使用 -->
+        <hello></hello>
+        <school></school>
+        <hr>
+        <student></student>
+    </div>
+
+    <div id="root2">
+        <hello></hello>
+    </div>
+
+
+    <script>
+        // 1.创建组件
+        // 创建school组件
+        const school = Vue.extend({
+            template: `
+            <div>
+                <h1>学校名称：{{schoolName}}</h1>
+                <h1>学校地址：{{address}}</h1>
+                <button @click="showName">点我提示学校名</button>
+            </div>
+            `,
+            // el: "#root",     // 一定不要写el配置项，因为最终所有的组件都要被一个vm管理，由vm决定服务
+            data() {
+                return {
+                    schoolName: '第一高中',
+                    address: '地球村'
+                }
+            },
+            methods: {
+                showName() {
+                    alert(this.schoolName)
+                }
+            }
+        })
+        // 创建student组件
+        const student = Vue.extend({
+            template: `
+            <div>
+                <h1>学生姓名：{{studentName}}</h1>
+                <h1>学生年龄：{{age}}</h1>
+            </div>
+            
+            `,
+            data() {
+                return {
+                    studentName: '张三',
+                    age: 16
+                }
+            }
+        })
+
+        const hello = Vue.extend({
+            template: `
+            <div>
+                <h1>你好啊，{{name}}</h1>
+                </div>
+            `,
+            data() {
+                return {
+                    name: 'Tom'
+                }
+            }
+        })
+
+        // 全局注册
+        Vue.component('hello',hello)
+
+        // 创建vm
+        const vm = new Vue({
+            el: "#root",
+            // 2.注册组件
+            components: {
+                // school:school,
+                school,
+                student
+            },
+
+
+        })
+
+        new Vue({
+            el:'#root2'
+        })
+
+    </script>
+
+</body>
+
+</html>

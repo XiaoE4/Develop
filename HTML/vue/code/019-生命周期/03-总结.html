@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="../js/vue.js"></script> -->
+    <script src="/HTML/vue/js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1 :style="{opacity}">你好，{{name}}</h1>   
+        <button @click="stop">点我停止变化</button>
+        <br> 
+        <button @click="opacity=1">透明度为1</button> 
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#root",
+            data: {
+                name: "xiaoE",
+                opacity: 1
+            },
+            methods: {
+                stop(){
+                    // clearInterval(this.timer)
+                    this.$destroy()
+                }
+            },
+            // Vue完成模板解析并把真实的DOM元素放入页面后（挂载完毕）调用mounted
+            mounted(){  
+                    console.log('mounted');
+                    this.timer=setInterval(() => {
+                        this.opacity -= 0.01
+                        if (this.opacity <= 0) this.opacity = 1
+                    }, 16)
+            },
+            beforeDestroy() {
+                console.log('vm即将结束');
+                clearInterval(this.timer)
+            },
+        })
+
+        
+
+    </script>
+
+</body>
+
+</html>

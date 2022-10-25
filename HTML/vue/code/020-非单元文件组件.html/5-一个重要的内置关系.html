@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="../js/vue.js"></script> -->
+    <script src="/HTML/vue/js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <school></school>
+    </div>
+    <script>
+
+        /* function Demo() {
+            this.a = 1
+            this.b = 2
+        }
+
+        const d = new Demo()
+        console.log(Demo.prototype);        //显示原型属性
+        console.log(d.__proto__);
+        console.log(Demo.prototype===d.__proto__);
+
+        Demo.prototype.x = 99
+
+        console.log('x:',d.x);
+        console.log('x:',d); */
+
+        Vue.prototype.x=99
+
+        const school=Vue.extend({
+            template:`
+            <div>
+            <h2>学校名称：{{name}}</h2>
+            <h2>学校地址：{{address}}</h2>
+            <button @click="showX">点我输出x</button>
+            </div>
+            `,
+            data(){
+                return{
+                    name:'第一高中',
+                    address:'南街村'
+                }
+            },
+            methods:{
+                showX(){
+                    console.log(this.x)
+                }
+            }
+        })
+
+        const vm=new Vue({
+            el:'#root',
+            data:{
+                msg:'你好'
+            },
+            components:{
+                school
+            }
+        })
+
+        // console.log(school.prototype.__proto__===Vue.prototype);
+
+
+    </script>
+
+</body>
+
+</html>
