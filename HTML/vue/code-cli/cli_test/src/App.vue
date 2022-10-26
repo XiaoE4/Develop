@@ -1,29 +1,33 @@
 <template>
   <div>
-    <Student/>
-    <hr>
-    <School/>
+    
   </div>
 </template>
 
 <script>
-  import Student from './components/Student.vue'
-  import School from './components/School.vue'
+// import MyHeader from './components/MyHeader.vue'
+// import MyList from './components/MyHeader.List'
+// import MyFooter from './components/MyHeader.Footer'
 
 export default {
   name: 'WorkspaceJsonApp',
-  components:{Student,School},
+
   data() {
     return {
       
     };
   },
 
-  methods: {
+  mounted() {
+    
+  },
 
+  methods: {
+    
   },
 };
 </script>
 
+<style lang="scss" scoped>
 
-
+</style>
