@@ -47,6 +47,7 @@
 				type:String,
 				required:true
 			}
-		}
+		},
+		
 	}
 </script>
