@@ -38,28 +38,40 @@ body{
     margin: 0 .3em;
     color: #424242;
 }
+@keyframes yidong{
+    from{top: 0;}
+    to{top:calc(100% + 5px);}
+}
 .daohang-top .left a  img{
-    z-index: 999;
-    display: block;
+    /* border: 10px solid orange; */
+    z-index:2;
+    opacity: 1;
+    display: none;
     width: 64px;
     height: 64px;
-    transform: calc(0);
-    opacity: 0;
+    /* transform: calc(0); */
     margin: 8px 8px 8px 8px;
     /* position: absolute; */
     /* top: calc(100% + 12px);
     right: calc(100% - 55px); */
     /* background-color: orange; */
+    /* transition: display 2s ease;
+    -webkit-transition:display 2s ease; */
+    /* transform-origin: center left; */
 }
 .daohang-top .left a span{
-    z-index: 999;
+    z-index: 2;
     position: absolute;
     display: none;
     background-color: #ff6700;
     width: 80px;
     height: 80px;
     top:calc(100% + 5px);
-    right: calc(100% - 55px);
+    right: calc(100% - 60px);
+    animation: yidong 1s;
+    /* transition: display 2s ease;
+    -webkit-transition:display 2s ease; */
+    /* transform-origin: center left; */
 }
 
 
@@ -111,6 +123,7 @@ body{
     display: block;
 }
 .mulu .right a span{
+    z-index: 3;
     width: auto;
     position: absolute;
     display: block;
@@ -124,16 +137,17 @@ body{
     background-color: aqua;
 }
 .mulu .right a .all{
-    width: auto;
+    z-index: 999;
+    width: 200px;
+    height: 200px;
     position: absolute;
-    display: block;
-    white-space: nowrap;
-    top: calc(100%+20px);
+    display: none;
+    /* white-space: nowrap; */
+    /* top: calc(100%+20px); */
     transform: scale(0);
-    opacity: 0;
     transition: 0.5s ease ;
     transform-origin: center left;
-    /* -webkit-transition:ease 2s; */
+    -webkit-transition:ease 2s;
     background-color: aqua;
 }
 /* 右侧标签结束 */
@@ -401,7 +415,7 @@ body{
     margin: auto;
 }
 /* 右侧轮播图 */
-.lunbo .right{
+.lunbo #beijing{
     /* top: -200px; */
     display: block;
     position: relative;
@@ -414,43 +428,60 @@ body{
     animation: 30s lbt infinite;
 }
 /* 左侧导航目录 */
-
-.lunbo .right .mulu{
-    /* position: absolute; */
-    opacity: 0.5;
-    display: block;
-    float: left;
+#lunbo-left>ul{
+    /* float: left; */
+    width: 250px;
     height: 460px;
-    width: 250px;
-    background-color: #333;
+    background-color: #757575;
+    /* opacity: 0.5; */
 }
-.lunbo .right .mulu .item{
-    margin-top: 3px;
-    display: block;
+#lunbo-left>ul>li{
     width: 250px;
-    height: 42px;
+    height: 45px;
+    list-style-type: none;
+    text-align: left;
+    text-indent: 50px;
+    line-height: 45px;  
 }
-.lunbo .right .mulu a{
+#lunbo-left ul li a{
     text-decoration: none;
-    margin-left: 20px;
-    float: left;
-    display: block;
-    color: white;
-    width: 200px;
-    line-height: 42px;
+    color: #fff;
 }
-.lunbo .right .mulu em{
-    line-height: 42px;
+#lunbo-left li .right{
+    /* left:calc() */
+    /* right: 360px; */
+    position: absolute;
+    z-index: 8;
+    /* background-color: #ff6700; */
     float: right;
-    color: white;
-    display: block;
-    width: 30px;
-}
-.lunbo .right .neirong{
-    float: right;
-    height: 460px;
+    display: none;
+    /* position: absolute; */
     width: 950px;
+    height: 460px;
 }
+#lunbo-left .right ul{
+    width: 950px;
+    height: 460px;
+    display: block;
+    box-shadow: 5px 5px 5px black;
+}
+#lunbo-left .right ul li{
+
+    margin: 0;
+    padding: 0;
+    width: 237.5px;
+    height: 76.5px;
+    display: block;
+    float: left;
+    background-color: white;
+    text-indent: 0;
+}
+#lunbo-left img{
+    margin: 15px 0 0 10px;
+}
+
+
+
 @keyframes lbt{
     0%{background-image: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/053d963a35ffe0654dfc2ac3d20466ee.jpg?w=2452&h=920);}
     25%{background-image: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/485756314f3e3f870d298db61339b891.jpg?thumb=1&w=1379&h=518&f=webp&q=90);}
@@ -655,6 +686,7 @@ body{
 
 /* 导航栏鼠标停留改变字体颜色 */
 .daohang-top .left a:hover,
+
 .daohang-top .left a:focus,
 .daohang-top .left a:active{
     color: aliceblue;
@@ -669,8 +701,7 @@ body{
 .daohang-top .left a:hover img,
 .daohang-top .left a:focus img,
 .daohang-top .left a:active img{
-    transform: scale(1);
-    opacity: 1;
+    display: block;
 }
 /* 下载app停留显示二维码结束 */
 
@@ -691,6 +722,23 @@ body{
     transform: scale(1);
     opacity: 1;
 }
+.mulu .right .all:hover ,
+.mulu .right .all:focus ,
+.mulu .right .all:active {
+    color: black;
+    transform: scale(1);
+    display: block;
+}
 /* 目录鼠标停留显示详情结束 */
+
+#lunbo-left ul li:hover .right{
+    display: block;
+    position: absolute;
+    right: 0px;
+    top:0;
+    opacity: 1;
+}
+
+
 
 /* 动画结束 */

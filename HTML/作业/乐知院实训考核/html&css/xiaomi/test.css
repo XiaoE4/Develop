@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#box{
+    height: 500px;
+    width: 1200px;
+    background-color: aqua;
+    margin: auto;
+}
+.left{
+    width: 250px;
+    height: 500px;
+    background-color: antiquewhite;
+}
+.left ul li{
+    width: 250px;
+    height: 50px;
+    border-bottom: 1px solid red;
+    text-align: center;
+    line-height: 50px;
+    list-style-type: none;
+}
+a{
+    position: relative;
+}
+.right{
+    /* left:calc() */
+    /* right: 360px; */
+    background-color: blue;
+    float: right;
+    display: none;
+    /* position: absolute; */
+    width: 950px;
+    height: 500px;
+}
+
+
+.left ul li:hover .right{
+    display: block;
+    position: absolute;
+    right: 360px;
+    top:0;
+}
