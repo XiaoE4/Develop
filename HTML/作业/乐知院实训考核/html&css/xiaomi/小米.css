@@ -191,7 +191,8 @@ body{
     background-color: #5f5750;
 }
 #home .home1 .title1{
-    display: inline-block;
+    float: left;
+    display: block;
     width: 78px;
     height: 78px;
     margin-top: 5px;
