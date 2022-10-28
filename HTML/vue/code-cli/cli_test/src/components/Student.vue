@@ -2,7 +2,6 @@
   <div class="student">
     <h2>学生姓名：{{name}}</h2>
     <h2>学生性别：{{sex}}</h2>
-    
   </div>
 </template>
 
@@ -12,8 +11,11 @@ export default {
     data() {
         return {
           name:'张三',
-          sex:'男'
+          sex:'男',
         };
+    },
+    mounted() {
+      console.log('student',this.x)
     },
 };
 </script>
