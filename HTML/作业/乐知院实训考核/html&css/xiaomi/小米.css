@@ -42,7 +42,7 @@ body{
     from{top: 0;}
     to{top:calc(100% + 5px);}
 }
-.daohang-top .left a  img{
+.daohang-top .left a img{
     /* border: 10px solid orange; */
     z-index:2;
     opacity: 1;
@@ -111,45 +111,70 @@ body{
 .mulu .right a{
     text-decoration: none;
     color: #333;
-    display:inline-block;
     position: relative;
     list-style: none;
+    max-width: 160px;
+    height: 100px;
+    display: block;
+    float: left;
+    opacity: 1;
+    text-align: center;
 }
-.mulu .right a li{
-    font-size: 20px;
+.mulu .right a>li{
+    font-size: 18px;
     padding: 30px;
     line-height: 40px;
     position: relative;
-    display: block;
+    display: inline-block;
+    opacity: 1;
 }
-.mulu .right a span{
-    z-index: 3;
-    width: auto;
-    position: absolute;
-    display: block;
-    white-space: nowrap;
-    top: calc(100%+20px);
-    transform: scale(0);
-    opacity: 0;
-    transition: 0.5s ease ;
-    transform-origin: center left;
-    /* -webkit-transition:ease 2s; */
-    background-color: aqua;
+@keyframes page{
+    from{height: 0;}
+    to{height: 200px;}
 }
 .mulu .right a .all{
+    /* left:0; */
     z-index: 999;
-    width: 200px;
+    width: 1200px;
     height: 200px;
     position: absolute;
     display: none;
-    /* white-space: nowrap; */
-    /* top: calc(100%+20px); */
-    transform: scale(0);
+    /* left: -100px; */
+    background-color: white;
     transition: 0.5s ease ;
     transform-origin: center left;
-    -webkit-transition:ease 2s;
-    background-color: aqua;
+    animation: page 1s;
 }
+.mulu .right a .all ul{
+    display: block;
+    /* float: left; */
+    width: 1200px;
+    height: 200px;
+}
+
+.mulu .right  .all ul li{
+    margin: 0;
+    padding: 0;
+    display: block;
+    float: left;
+    width: 198px;
+    height: 200px;
+    animation: page2 1.5s;
+    opacity: 1;
+}
+@keyframes page2 {
+    from{opacity: 0;}
+    50%{opacity: 0;}
+    75%{opacity: 0.8;}
+    to{opacity: 1;}
+}
+.mulu .right  .all li img{
+    margin: 10px 0 0 30px;
+    padding: 0;
+    width: 130px;
+    height: 180px;
+}
+
 /* 右侧标签结束 */
 /* 右侧搜索框 */
 .mulu .sousuo{
@@ -221,7 +246,7 @@ body{
 #home .home2{
     float: right;
     display: block;
-    height: 170px;
+    min-height: 170px;
     width: 950px;
     /* background-color: aqua; */
 }
@@ -232,6 +257,7 @@ body{
     display: block;
     background-color: aqua;
     margin-left: 16px;
+    /* transform: ; */
 }
 #home .home2 .img img{
     width: 300px;
@@ -509,7 +535,8 @@ body{
 }
 #footer .top a{
     border-left: 1px solid #B0B0B0;
-    border-right: 1px solid #B0B0B0;
+    border-right: 1px solid #B0B0B0; 
+    /* border: 1px solid #ff6700; */
     float: left;
     margin: 0;
     display: block;
@@ -517,6 +544,7 @@ body{
     height: 80px;
     text-decoration: none;
     color: #5f5750;
+    transition: border-left 1s,border-right 1s;
 }
 #footer .top a img{
     height: 40px;
@@ -529,7 +557,14 @@ body{
     float: right;
     display: block;
     line-height: 80px;
+    /* transition: color 1s,animation 1s; */
+    transition: all 1s;
+
 }
+/* @keyframes zhuan {
+    from{transform: rotate(0); }
+    to{transform: rotate(360deg); }
+} */
 /* 底部的头层结束 */
 /* 底部的中部 */
 #footer .mid{
@@ -594,10 +629,19 @@ body{
     border: 1px solid #ff6700;
     padding:5px;
     color: #ff6700;
+    background-color: white;
     font-size: 12px;
     text-align: center;
     line-height: 20px;
+    transition: color 1s, background-color 1s;
 }
+/* @keyframes button{
+    from{color: #ff6700;
+    }
+    to{color: white;
+        background-color: #ff6700;
+    }
+} */
 
 /* 右侧结束 */
 
@@ -643,7 +687,6 @@ body{
     text-decoration: none;
     font-size: 12px;
     color: #757575;
-
 }
 #footer2 span{
     font-size: 12px;
@@ -661,9 +704,7 @@ body{
 
 
 /* 底部结束 */
-
-
-
+/* ==============分=========割==========线=================== */
 
 
 
@@ -692,6 +733,10 @@ body{
 .daohang-top .left a:active{
     color: aliceblue;
 }
+
+.daohang-top .right a:hover{
+    color: aliceblue;
+}
 /* 导航栏鼠标停留改变字体颜色结束 */
 /* 下载app停留显示二维码 */
 .daohang-top .left a:hover span,
@@ -707,29 +752,31 @@ body{
 /* 下载app停留显示二维码结束 */
 
 /* 目录鼠标停留改变颜色 */
-.mulu .right a:hover,
-.mulu .right a:focus,
-.mulu .right a:active{
+.mulu .right a:hover{
     color: orange;
     outline: none;
+    opacity: 1;
+    z-index: 999;
 }
 /* 目录鼠标停留改变颜色结束 */
 
 /* 目录鼠标停留显示详情 */
-.mulu .right a:hover span,
-.mulu .right a:focus span,
-.mulu .right a:active span{
-    color: black;
-    transform: scale(1);
-    opacity: 1;
-}
-.mulu .right .all:hover ,
-.mulu .right .all:focus ,
-.mulu .right .all:active {
-    color: black;
-    transform: scale(1);
+
+.mulu .right a:hover .all{
+    left:352px;
     display: block;
+    position:fixed;
+    /* transform: scale(1); */
+    /* opacity: 1; */
+    /* animation: page 1s; */
 }
+.mulu .right li:hover .all{
+    z-index: 999;
+    opacity: 1;
+    animation: page2 1s;
+}
+
+
 /* 目录鼠标停留显示详情结束 */
 
 #lunbo-left ul li:hover .right{
@@ -740,6 +787,18 @@ body{
     opacity: 1;
 }
 
+#footer .mid .right a:hover {
+    color: white;
+    background-color: #ff6700;
+}
 
+#footer .top a ul:hover{
+    color:#ff6700;
+    transform: rotate(360deg);
+}
+#footer .top a:hover{
+    border-left: 1px solid #ff6700;
+    border-right: 1px solid #ff6700;
+}
 
 /* 动画结束 */

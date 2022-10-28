@@ -17,7 +17,10 @@ export default {
         };
     },
     mounted() {
-      console.log('school',this.x)
+      // console.log('school',this.x)
+      this.$bus.$on('hello',(data)=>{
+        console.log('school收到了数据',data);
+      })
     },
 };
 </script>

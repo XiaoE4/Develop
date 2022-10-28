@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import pubsub from 'pubsub-js';
 import MyHeader from './components/MyHeader'
 import MyList from './components/MyList'
 import MyFooter from './components/MyFooter'
@@ -24,7 +23,7 @@ export default {
       todos:JSON.parse(localStorage.getItem('todos')) || []
     };
   },
-  methods:{
+  methods: {
     // 添加一个todo
     addTodo(x){
       // console.log("收到了数据",x);
@@ -37,7 +36,7 @@ export default {
       })
     },
     // 删除一个todo
-    deleteTodo(_,id){
+    deleteTodo(id){
       this.todos=this.todos.filter(todo => todo.id !== id)
     },
     // 全选or取消全选
@@ -50,12 +49,6 @@ export default {
     clearAllTodo(){
       this.todos=this.todos.filter((todo)=>{
         return !todo.done
-      })
-    },
-    // 更新一个todo
-    updateTodo(id,title){
-      this.todos.forEach((todo)=>{
-        if(todo.id===id) todo.title =title
       })
     }
   },
@@ -70,15 +63,11 @@ export default {
   },
   mounted() {
     this.$bus.$on('checkTodo',this.checkTodo)
-    this.$bus.$on('updateTodo',this.updateTodo)
-    // this.$bus.$on('deleteTodo',this.deleteTodo)
-    this.pubId=pubsub.subscribe('deleteTodo',this.deleteTodo)
+    this.$bus.$on('deleteTodo',this.deleteTodo)
   },
   beforeDestroy(){
     this.$bus.$off('checkTodo')
-    this.$bus.$off('updateTodo')
-    // this.$bus.$off('deleteTodo')
-    pubsub.unsubscribe(this.pubId)
+    this.$bus.$off('deleteTodo')
   }
 };
 
@@ -107,12 +96,6 @@ body {
   color: #fff;
   background-color: #da4f49;
   border: 1px solid #bd362f;
-}
-
-.btn-edit {
-  color: #fff;
-  background-color: skyblue;
-  border: 1px solid rgb(82, 123, 139);
 }
 
 .btn-danger:hover {
