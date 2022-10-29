@@ -3,7 +3,11 @@
           <label>
             <input type="checkbox" :checked="todo.done" @click="handleCheck(todo.id)" />
             <span v-show="!todo.isEdit">{{todo.title}}</span>
-            <input v-show="todo.isEdit"  type="text" :value="todo.title" @blur="handleBlur(todo,$event)">
+            <input v-show="todo.isEdit"  
+            type="text" :value="todo.title" 
+            @blur="handleBlur(todo,$event)"
+            ref="inputTitle"
+            >
           </label>
           <button class="btn btn-danger" @click="handleDelete(todo.id)" >删除</button>
           <button v-show="!todo.isEdit" class="btn btn-edit" @click="handleEdit(todo)">编辑</button>
@@ -49,6 +53,10 @@ export default {
         }else{
           this.$set(todo,'isEdit',true)
         }
+        // 指定的回调会在dom节点更新后执行
+        this.$nextTick(function(){
+          this.$refs.inputTitle.focus()
+        })
       },
       // 失去焦点回调，指正执行修改逻辑
       handleBlur(todo,e){

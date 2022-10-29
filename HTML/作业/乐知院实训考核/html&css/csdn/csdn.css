@@ -1,6 +1,14 @@
+/* 全局样式 */
 *{
     margin: 0;
     padding: 0;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #222226;
 }
 /* 顶部导航栏 */
 
@@ -219,10 +227,14 @@ a{
     width: 1100px;
     /* background-color: aquamarine; */
     border-bottom: 1px solid rgb(235, 235, 235);
+    background-color: white;
+    transition: background-color 1s;
+    display: block;
+    padding: 20px 0;
 }
 #neirong .neirong-left .neirong-box2 .biaoti{
     height: 30px;
-    margin: 20px 0;
+    padding-bottom: 20px;
 }
 #neirong .neirong-left .neirong-box2 .neirong{
     height: 90px;
@@ -238,17 +250,24 @@ a{
     height: 90px;
     width: 130px;
 }
-#neirong .neirong-left .neirong-box2 .neirong .neirong2-ul{
-    height: 60px;
-    width: 1000px;
+#neirong .neirong-left .neirong-box2 .neirong .neirong2-span{
+    margin-bottom: 25px;
+    display: block;
+    float: left;
+    height: 40px;
+    width: 800px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }
 #neirong .neirong-left .neirong-box2 .neirong .hudong{
+    display: block;
     height: 30px;
-    width: 1000px;
+    width: 800px;
+    float: left;
 }
-#neirong .neirong-left .neirong-box2 .hudong{
-    height: 20px;
-}
+
 
 
 
@@ -275,6 +294,7 @@ a{
     font-weight: bolder;
     margin-left: 30px;
 }
+/* 第一种推荐盒子 */
 #neirong .neirong-right .event1-box{
     height: 30px;
     margin:10px 0;
@@ -292,4 +312,54 @@ a{
     margin:auto
 }
 
+#neirong .neirong-right .event1-box img{
+    height: 25px;
+    width: 25px;
+    display: block;
+    float: left;
+    margin-left: 30px;
+    margin-top: 2.5px;
+}
+#neirong .neirong-right .event1-neirong{
+    display: block;
+    float: left;
+    margin-left: 10px;
+    height: 30px;
+    line-height: 30px;
+}
+#neirong .neirong-right .event1-box a{
+    text-decoration: none;
+}
+/* 第一种推荐盒子结束 */
+/* 第二种推荐盒子 */
+#neirong .neirong-right .neirong .event2-box{
+    height: 70px;
+    margin:10px 0;
+}
+#neirong .neirong-right .neirong .event2-box img{
+    height: 68px;
+    width: 120px;
+    display: block;
+    float: left;
+    margin-left: 30px;
+}
+#neirong .neirong-right .event2-box a{
+    text-decoration: none;
+    font-size: 14px;
+}
 
+
+/* 第二种推荐盒子结束 */
+
+
+
+
+/* 动画效果 */
+
+#neirong .neirong-bottom .neirong-box2:hover{
+    background-color: #ebebeb;
+}
+
+a:hover{
+    text-decoration: underline;
+}
