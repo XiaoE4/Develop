@@ -288,8 +288,20 @@ a{
     line-height: 30px;
     border-bottom: 1px solid rgb(235, 235, 235);
 }
-#neirong .neirong-right .biaoti ul{
+#neirong .neirong-right .biaoti{
+    height: 50px;
+    line-height: 30px;
+    border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+#neirong .neirong-right .biaoti span{
     line-height: 50px;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-left: 30px;
+}
+#neirong .neirong-right .biaoti2 span{
+    line-height: 80px;
     font-size: 18px;
     font-weight: bolder;
     margin-left: 30px;
@@ -311,7 +323,6 @@ a{
     width: 25px;
     margin:auto
 }
-
 #neirong .neirong-right .event1-box img{
     height: 25px;
     width: 25px;
@@ -342,14 +353,79 @@ a{
     display: block;
     float: left;
     margin-left: 30px;
+    
 }
+
+
 #neirong .neirong-right .event2-box a{
     text-decoration: none;
     font-size: 14px;
 }
-
-
 /* 第二种推荐盒子结束 */
+/* 评价盒子 */
+
+#neirong .event .neirong .event3-box{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    margin-left: 10px;
+    /* float: left; */
+}
+#neirong .event .neirong .event3-box img{
+    height: 40px;
+    width: 40px;
+    display: block;
+    margin-left: 10px;
+    /* animation: img-zhuan 1s; */
+}
+@keyframes img-zhuan{
+    from{transform: rotate(0);}
+    to{transform: rotate(360deg);}
+}
+#neirong .event .neirong .event3-box span{
+    display: block;
+    width: 60px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* 评价盒子结束 */
+
+/* 说明盒子 */
+
+.event4-box1{
+    display: block;
+    width: 375px;
+}
+.event4-box1 span{
+    display: block;
+    font-size: 14px;
+    color: #888888;
+    margin: 10px 0 10px 20px;
+
+}
+.event4-box2{
+    display: block;
+    width: 335px;
+    height: 30px;
+    padding: 0 20px 0 20px;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+}
+.event4-box2 span{
+    margin: 0 3px 0 3px;
+    line-height: 30px;
+    color: #999AAA;
+}
+.event4-box2 a{
+    display: inline-block;
+    line-height: 30px;
+    font-size: 15px;
+    /* margin-left: 10px ; */
+}
+
+
+/* 说明盒子结束 */
 
 
 
@@ -362,4 +438,8 @@ a{
 
 a:hover{
     text-decoration: underline;
+}
+
+#neirong .neirong-right .event3-box img:hover{
+    animation: img-zhuan .5s;
 }

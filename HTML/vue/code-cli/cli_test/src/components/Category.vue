@@ -1,20 +1,24 @@
 <template>
     <div class="category">
-        <h3>{{title}}分类</h3>
-        <slot :games="games" >qwerdfas</slot>
+        <h3>{{title}}</h3>
+       <slot name="center"></slot>
+       <slot name="footer"></slot>
     </div>
+    
 </template>
 
 <script>
 export default {
+    // <img v-show="title ==='美食'" src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202210262033_ef39fca0e37395d07682124770fd3ad9.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
     name: 'WorkspaceJsonCategory',
-    props:['title'],
+    props:['category','listData','title'],
     data() {
         return {
-            games: ['红色警戒', '穿越火线', '劲舞团','穿越火线']
+           
         };
     },
-}
+
+};
 </script>
 
 <style scoped>
