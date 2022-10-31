@@ -8,18 +8,23 @@ import Vue from 'vue'
 import App from './App.vue'
 // 引入插件
 import vueResource from 'vue-resource'
+// 引入store
+import store from './store/index'
 // 使用插件
 Vue.use(vueResource)
+
+
 // 关闭vue的生产提示
 Vue.config.productionTip = false
 
 
 // 创建Vue实例对象---vm
 new Vue({
-  el:'#app',
+  el: '#app',
   // 将App组件放入容器中
   render: h => h(App),
-  beforeCreate(){
-    Vue.prototype.$bus=this
+  store,
+  beforeCreate() {
+    Vue.prototype.$bus = this
   }
 })
