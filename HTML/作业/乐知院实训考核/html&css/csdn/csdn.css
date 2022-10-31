@@ -6,10 +6,6 @@
 li{
     list-style-type: none;
 }
-a{
-    text-decoration: none;
-    color: #222226;
-}
 /* 顶部导航栏 */
 
 #toolbarBox{
@@ -23,22 +19,33 @@ a{
 .toolbarBox-left{
     float: left;
     display: block;
-    width: 800px;
+    width: 850px;
     height: 50px;
 }
 .toolbarBox-left a{
-    /* display: inline-block; */
+    display: block;
+    float: left;
     line-height: 50px;
     height: 50px;
     padding: 0 20px;
     color: #222226;
+    min-width: 60px;
+    max-width: 120px;
+    text-align: center;
+    transition: background-color .5s;
+}
+.toolbarBox-left a:first-child{
+    height: 44px;
+    width: 80px;
+    display: block;
+    float: left;
+    margin-top: 3px;
 }
 .toolbarBox-left a img{
     /* display: inline-block; */
     line-height: 0px;
-    height: 20px; 
-    width: 100px;
-    
+    height: 44px; 
+    width: 80px;
 }
 .toolbarBox-right{
     float:right;
@@ -47,14 +54,13 @@ a{
     height: 50px;
 }
 .toolbarBox-right a{
-    /* display: inline-block; */
     line-height: 50px;
     height: 50px;
     padding: 0 20px;
-    color: #222226;
 }
 a{
     text-decoration: none;
+    color: #222226;
 }
 /* 内容栏 */
 #app{
@@ -115,7 +121,7 @@ a{
     font-size: 17px;
 }
 #daohang .app-left .neirong-img ul{
-    margin-top: 6px;
+    margin-top: 20px;
     font-size: 14px;
     color: #888888;
 }
@@ -126,12 +132,16 @@ a{
     float: right;    
 }
 #daohang  .daohang-zhu{
+    display: block;
+    max-width: 280px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 #daohang  .daohang-fu{
-    margin-top: 2px;
+    display: block;
+    max-width: 280px;
+    margin-top: 10px;
     font-size: 14px;
     color: #888888;
     overflow: hidden;
@@ -175,6 +185,7 @@ a{
     width: 120px;
     float: left;
     display: block;
+    margin-left: 20px;
 }
 #daohang .app-right .neirong-img2 img{
     height: 75px;
@@ -221,6 +232,10 @@ a{
     line-height: 40px;
     color: #999AAA; 
     /* border-bottom: 1px solid black; */
+}
+#neirong .neirong-left .neirong-top .tuijian{
+    height: 38px;
+    border-bottom: 2px solid black  ;
 }
 #neirong .neirong-left .neirong-box2{
     height: 160px;
@@ -277,22 +292,49 @@ a{
     float: right;
     display: block;
     width: 375px;
+    height: 3100px;
 }
 #neirong .neirong-right .event{
     width: 375px;
     border: 1px solid rgb(235, 235, 235);
     margin:30px 0;
+    display: block;
+}
+#neirong .neirong-right .event2{
+    width: 375px;
+    border: 1px solid rgb(235, 235, 235);
+    margin:30px 0;
+    position: sticky;
+    top: 10px;
+    display: block;
+}
+#neirong .neirong-right .event3{
+    width: 375px;
+    border: 1px solid rgb(235, 235, 235);
+    margin:30px 0;
+    position: sticky;
+    top: 420px;
+    display: block;
+}
+#neirong .neirong-right .event4{
+    width: 375px;
+    border: 1px solid rgb(235, 235, 235);
+    margin:30px 0;
+    position: sticky;
+    top: 590px;
+    display: block;
 }
 #neirong .neirong-right .biaoti{
+    
     height: 50px;
     line-height: 30px;
     border-bottom: 1px solid rgb(235, 235, 235);
 }
-#neirong .neirong-right .biaoti{
+/* #neirong .neirong-right .biaoti{
     height: 50px;
     line-height: 30px;
     border-bottom: 1px solid rgb(235, 235, 235);
-}
+} */
 
 #neirong .neirong-right .biaoti span{
     line-height: 50px;
@@ -353,25 +395,27 @@ a{
     display: block;
     float: left;
     margin-left: 30px;
-    
 }
-
-
 #neirong .neirong-right .event2-box a{
     text-decoration: none;
     font-size: 14px;
+    display: block;
+    width: 180px;
+    height: 68px;
+    line-height: 20px;
+
 }
 /* 第二种推荐盒子结束 */
 /* 评价盒子 */
 
-#neirong .event .neirong .event3-box{
+#neirong .neirong-right .neirong .event3-box{
     height: 60px;
     width: 60px;
     display: inline-block;
     margin-left: 10px;
     /* float: left; */
 }
-#neirong .event .neirong .event3-box img{
+#neirong .neirong-right .neirong .event3-box img{
     height: 40px;
     width: 40px;
     display: block;
@@ -382,7 +426,7 @@ a{
     from{transform: rotate(0);}
     to{transform: rotate(360deg);}
 }
-#neirong .event .neirong .event3-box span{
+#neirong .neirong-right .neirong .event3-box span{
     display: block;
     width: 60px;
     font-size: 12px;
@@ -432,14 +476,27 @@ a{
 
 /* 动画效果 */
 
+/* 下部内容鼠标停顿显示背景 */
 #neirong .neirong-bottom .neirong-box2:hover{
     background-color: #ebebeb;
 }
-
-a:hover{
+/* 右侧悬浮内容栏鼠标停顿显示下划线 */
+#neirong .neirong a:hover{
     text-decoration: underline;
 }
-
+/* 右侧悬浮内容栏鼠标停顿显示下划线 */
+#neirong  a:hover{
+    text-decoration: underline;
+}
+/* 打分帖表情旋转动画 */
 #neirong .neirong-right .event3-box img:hover{
     animation: img-zhuan .5s;
+}
+/* 头条热点和直播，鼠标停顿标题显示下划线 */
+#daohang .neirong .daohang-zhu:hover{
+    text-decoration: underline;
+}
+/* 导航栏左侧鼠标停顿显示背景 */
+#toolbarBox .toolbarBox-left a:hover{
+    background-color: #ebebeb;
 }
