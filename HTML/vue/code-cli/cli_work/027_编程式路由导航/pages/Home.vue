@@ -10,11 +10,7 @@
           <router-link class="list-group-item" active-class="active" to="/home/message">Message</router-link>
         </li>
       </ul>
-        <!-- include里面的名字是组件名 -->
-      <!-- <keep-alive include="WorkspaceJsonNews"> -->
-        <keep-alive :include="['WorkspaceJsonNews','WorkspaceJsonMessage']">
-        <router-view></router-view>
-      </keep-alive>
+      <router-view></router-view>
     </div>
   </div>
 </template>

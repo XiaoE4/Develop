@@ -38,9 +38,8 @@ export default {
     };
   },
 
-  beforeDestroy(){
-    console.log('Message组件即将被销毁了');
-  },
+  mounted() {},
+
   methods: {
     pushShow(m) {
       this.$router.push({
