@@ -15,7 +15,7 @@
     display: block;
     float: left;
     padding-top: 50px;
-    background-color: aqua;
+    background-color: antiquewhite;
 }
 .root-left li.active{
     background-color: #ff6700;

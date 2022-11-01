@@ -1,21 +1,59 @@
 .right-todo{
     height: 800px;
     width: 1300px;
-    /*display: block;*/
+    display: block;
     /*background-color: wheat;*/
 }
-/* 上部分显示清单 */
-.right-todo #list-show{
+/* 左侧页面 */
+.right-todo .list-left{
     display: block;
-    height: 600px;
-    width: 1300px;
+    float: left;
+    height: 800px;
+    width: 200px;
     background-color: orange;
 }
-/* 下部分清单 */
-#list-clock{
-    float: bottom;
+.right-todo .list-left .list-catalog{
     display: block;
-    height: 200px;
-    width: 1300px;
-    background-color: #7ec6bc;
+    float: top;
+    height: 750px;
+    width: 200px;
+    background-color: aqua;
 }
+.right-todo .list-left .list-label{
+    display: block;
+    float: top;
+    height: 50px;
+    width: 200px;
+    background-color: aquamarine;
+}
+
+/* 右侧页面 */
+.right-todo .list-right{
+    display: block;
+    float: right;
+    height: 800px;
+    width: 1100px;
+    background-color: palegreen;
+}
+.right-todo .list-right .list-top{
+    display: block;
+    float: top;
+    height: 50px;
+    width: 1100px;
+    background-color: gray;
+}
+.right-todo .list-right .list-add{
+    display: block;
+    float: top;
+    height: 50px;
+    width: 1100px;
+    background-color: blue;
+}
+
+
+
+
+/* 右侧页面结束 */
+
+
+
