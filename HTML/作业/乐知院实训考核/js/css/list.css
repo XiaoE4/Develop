@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* 主页面 */
+.root{
+    height: 800px;
+    width: 1500px;
+    margin: auto;
+}
+/*左侧部分页面*/
+.root-left{
+    height: 800px;
+    width: 200px;
+    display: block;
+    float: left;
+    background-color: #ff6700;
+}
+/*右侧部分页面*/
+.root-right{
+    height: 800px;
+    width: 1300px;
+    display: block;
+    float: right;
+    background-color: wheat;
+}

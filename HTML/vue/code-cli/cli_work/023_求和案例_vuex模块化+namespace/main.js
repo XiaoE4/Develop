@@ -7,12 +7,11 @@ import Vue from 'vue'
 // 引入App组件，它是所有组件的父组件
 import App from './App.vue'
 // 引入插件
-import VueRouter from 'vue-router'
-// 引入路由器
-import router from './router'
-
+import vueResource from 'vue-resource'
+// 引入store
+import store from './store/index'
 // 使用插件
-Vue.use(VueRouter)
+Vue.use(vueResource)
 
 
 // 关闭vue的生产提示
@@ -24,6 +23,8 @@ new Vue({
   el: '#app',
   // 将App组件放入容器中
   render: h => h(App),
-  router,
-
+  store,
+  beforeCreate() {
+    Vue.prototype.$bus = this
+  }
 })

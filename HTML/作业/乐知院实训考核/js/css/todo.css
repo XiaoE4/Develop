@@ -1,0 +1,23 @@
+.right-todo{
+    height: 800px;
+    width: 1300px;
+    /*display: block;*/
+    /*background-color: wheat;*/
+}
+/* 上部分显示清单 */
+.right-todo #list-show{
+    float: top;
+    display: block;
+    height: 600px;
+    width: 1200px;
+    background-color: orange;
+}
+
+/* 下部分添加清单 */
+#list-clock{
+    float: bottom;
+    display: block;
+    height: 200px;
+    width: 1200px;
+    background-color: #7ec6bc;
+}
