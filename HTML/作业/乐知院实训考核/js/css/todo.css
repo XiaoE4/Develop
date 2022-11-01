@@ -6,18 +6,16 @@
 }
 /* 上部分显示清单 */
 .right-todo #list-show{
-    float: top;
     display: block;
     height: 600px;
-    width: 1200px;
+    width: 1300px;
     background-color: orange;
 }
-
-/* 下部分添加清单 */
+/* 下部分清单 */
 #list-clock{
     float: bottom;
     display: block;
     height: 200px;
-    width: 1200px;
+    width: 1300px;
     background-color: #7ec6bc;
 }
