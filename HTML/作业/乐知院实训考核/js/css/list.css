@@ -6,7 +6,9 @@
 .root{
     height: 800px;
     width: 1500px;
+    display: block;
     margin: auto;
+    border: 10px solid greenyellow;
 }
 /*左侧部分页面*/
 .root-left{
@@ -25,13 +27,14 @@
     width: 200px;
     height: 50px;
 }
+
 /*右侧部分页面*/
 .root-right{
     height: 800px;
     width: 1300px;
     display: block;
     float: right;
-    background-color: wheat;
+    /* background-color: wheat; */
 }
 
 
