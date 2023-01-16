@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#box{
+    width: 500px;
+    height: 100px;
+    margin: auto;
+    background-color: aqua;
+}
+li{
+    list-style-type: none;
+}
+#box .box1{
+    width: 500px;
+    height: 100px;
+}
+#box .li1{
+    width: 100px;
+    height: 100px;
+    display: block;
+    float: left;
+    background-color: antiquewhite;
+}
+a{
+    line-height: 100px;
+    text-align: center;
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform:rotate(0);
+    /* animation: transform 1s; */
+    transition: all 1s;
+}
+.box2{
+    width: 500px;
+    height: 200px;
+    /* background-color: orange; */
+    display: none;
+    position: absolute;
+    background-color: aqua;
+
+}
+.li2{
+    width: 100px;
+    height: 100px;
+    display: none;
+    float: left;
+    /* background-color: aquamarine; */
+    opacity: 0;
+}
+
+
+
+#box .li1 a:hover .box2{
+    display: block;
+    position: absolute;
+    animation: ceshi 1s;
+}
+#box .li1 a:hover .li2{
+    display: block;
+    /* position: absolute; */
+
+    animation: ceshi2 1s;
+}
+/* #box .li1 a:focus,
+#box .li1 a:active #page{
+    transform: scale(1);
+    opacity: 1;
+} */
+@keyframes ceshi{
+    0%{
+        height: 0px;
+    }
+    100%{
+        height: 200px;
+    }
+}
+@keyframes ceshi2{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.box1 .li1 a:hover{
+    /* transform: rotate(360deg); */
+    /* animation: zhuan 1s; */
+    transform: rotate(360deg);
+}
+/* @keyframes zhuan{
+    from{transform: rotate(0); }
+    to{transform: rotate(360deg); }
+} */
+
+

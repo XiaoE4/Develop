@@ -9,7 +9,7 @@
   </div>
 </template>
   
-  <script>
+<script>
 export default {
   name: "WorkspaceJsonNews",
 
@@ -29,19 +29,19 @@ export default {
     }, 16);
   }, */
   activated() {
-    console.log('news组件被激活了');
+    console.log("news组件被激活了");
     this.timer = setInterval(() => {
-      console.log('@');
+      console.log("@");
       this.opacity -= 0.01;
       if (this.opacity <= 0) this.opacity = 1;
     }, 16);
   },
   deactivated() {
-    console.log('news组件失活了');
+    console.log("news组件失活了");
     clearInterval(this.timer);
   },
 };
 </script>
   
-  <style lang="scss" scoped>
+<style lang="scss" scoped>
 </style>

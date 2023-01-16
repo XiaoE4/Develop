@@ -1,0 +1,239 @@
+.right-todo{
+    height: 800px;
+    width: 1300px;
+    display: block;
+    /*background-color: wheat;*/
+}
+/* 左侧页面 */
+.right-todo .list-left{
+    display: block;
+    float: left;
+    height: 800px;
+    width: 200px;
+    /* background-color: orange; */
+    border-right: 5px solid rgba(235, 235, 235,1);
+}
+/* 上方清单目录 */
+.right-todo .list-left .list-catalog{
+    display: block;
+    /*float: top;*/
+    height: 750px;
+    width: 200px;
+    /* background-color: aqua; */
+    transition: height 1s;
+}
+.right-todo .list-left .list-catalog .catalog-all{
+    float: top;
+    display: block;
+    width: 200px;
+    /*height: 50px;*/
+    padding: 30px 0 30px 0;
+    border-bottom: 1px solid rgba(235, 235, 235,1);
+}
+
+.catalog-all .active{
+    background-color: #757575;
+}
+.right-todo .list-left .list-catalog .catalog-all a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.right-todo .list-left .list-catalog .catalog-one{
+    width: 200px;
+    display: block;
+}
+.right-todo .list-left .list-catalog li{
+    display: block;
+    width: 200px;
+    height: 40px;
+
+}
+.right-todo .list-left .list-catalog a{
+    display: block;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+}
+.right-todo .list-left .list-catalog .catalog-add{
+    height: 50px;
+    width: 200px;
+    display: block;
+    margin-top: 30px;
+    /* border-top: 1px solid rgba(235, 235, 235,1); */
+}
+/* 上方清单目录结束 */
+
+
+/* 下方标签管理 */
+.right-todo .list-left .list-label{
+    display: block;
+    height: 45px;
+    width: 200px;
+    background-color: aquamarine;
+    border-top: 5px solid rgba(235, 235, 235, 1);
+    transition: height 1s;
+}
+.right-todo .list-left .list-label a{
+    display: block;
+    height: 45px;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 45px;
+}
+.right-todo .list-left .list-label #labelAddInput{
+    display: none;
+    height: 20px;
+    width: 100px;
+    margin: 0 auto 0 auto;
+}
+.right-todo .list-left .list-label a:nth-child(3){
+    display: none;
+    /*transition: display 1s;*/
+}
+.right-todo .list-left .list-label ul{
+    display: none;
+    /*transition: display 1s;*/
+}
+/* 下方标签管理结束 */
+/* 左侧页面结束 */
+
+/* ****************************** */
+
+/* 右侧页面 */
+.right-todo .list-right{
+    display: block;
+    float: right;
+    height: 800px;
+    width: 1095px;
+    /* background-color: palegreen; */
+}
+/* 上方按钮 */
+.right-todo .list-right .list-top{
+    display: block;
+    float: top;
+    height: 50px;
+    width: 1100px;
+    
+    background-color: rgba(235, 235, 235, 1);
+}
+/* left */
+.list-right .list-top .riqi{
+    width: 300px;
+    height: 50px;
+    display: block;
+    float: left;
+}
+.list-right .list-top .riqi a{
+    height: 50px;
+    width: 60px;
+    display: block;
+    float: left;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    line-height: 50px;
+}
+.list-right .list-top .riqi img{
+    height: 30px;
+    width: 30px;
+    display: block;
+    float: left;
+    margin: 10px 20px 10px 0;
+}
+.list-right .list-top .riqi .active{
+    background-color: skyblue;
+    color: green;
+}
+
+
+/* left-end */
+/* right */
+.list-right .list-top .zujian{
+    height: 50px;
+    width: 500px;
+    display: block;
+    float: right;
+}
+.list-right .list-top .zujian .search{
+    width: 50px;
+    height: 40px;
+    display: block;
+    float: left;
+    padding-top: 10px;
+}
+.list-right .list-top .zujian .search img{
+    width: 30px;
+    height: 30px;
+}
+.list-right .list-top .zujian .paixu {
+    display: block;
+    float: left;
+    width: 60px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/* right-end */
+/* 上方按钮结束*/
+
+
+/* 内容部分 */
+/* 添加清单 */
+.right-todo .list-right .list-add{
+    display: block;
+    float: top;
+    height: 50px;
+    width: 1100px;
+    background-color: blue;
+    margin-bottom: 30px;
+}
+.right-todo .list-right .list-add .input-add{
+    margin-top: 6px;
+    margin-left: 20px;
+    height: 40px;
+    width: 800px;
+}
+
+/* 添加清单结束 */
+/* 展示清单 */
+.right-todo .list-right .list-content{
+    display: block;
+    height: 670px;
+    width: 1095px;
+    background-color: #7ec6bc;
+}
+.right-todo .list-right .list-content .content-li{
+    display: none;
+    height: 50px;
+    width: 1095px;
+}
+.right-todo .list-right .list-content .active{
+    display: block;
+}
+
+
+/* 展示清单结束 */
+/* 内容部分结束 */
+
+/* 右侧页面结束 */
+
+
+/* 动画 */
+.list-catalog .catalog-one li:hover{
+    background-color: aqua;
+}
+
+
+/*.list-catalog .catalog-all a:hover{*/
+/*    background-color: beige;*/
+/*}*/
+/*.list-catalog .catalog-add a:hover{*/
+/*    background-color: beige;*/
+/*}*/

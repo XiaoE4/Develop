@@ -88,8 +88,8 @@ function pajax(options){
 
 export {ajax,pajax}
 
-// pajax().then(function(){
+pajax().then(function(){
 
-// }).catch(err=>{
+}).catch(err=>{
 
-// })
+})

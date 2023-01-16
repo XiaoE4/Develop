@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "element-ui": "^2.15.12",
     "nanoid": "^4.0.0"
   }
 }

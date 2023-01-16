@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>日历</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.box{line-height: 40px;font-size: 16px;text-align: center;width: 280px;height: 320px; border: 1px #ccc solid;position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);color: #000;padding: 20px;}
+			.top{font-size: 0;}
+			.top button{width: 25%;display: inline-block;font-size: 16px;}
+			.top #month{width: 50%;display: inline-block;font-size: 16px;}
+			.evrday{width: 40px;height: 40px;float: left;}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="top">
+				<button type="button" onclick="prev()">上个月</button>
+				<div id="month"></div>
+				<button type="button" onclick="next()">下个月</button>
+			</div>
+			<div class="week">
+				<div class="evrday">日</div>
+				<div class="evrday">一</div>
+				<div class="evrday">二</div>
+				<div class="evrday">三</div>
+				<div class="evrday">四</div>
+				<div class="evrday">五</div>
+				<div class="evrday">六</div>
+			</div>
+			<div id="day"></div>
+		</div>
+		
+		<script type="text/javascript">
+			var tody=new Date();//获取当前时间
+			var year=tody.getFullYear();//获取当前年份
+			var month=tody.getMonth()+1;//获取当前月份
+			var day=tody.getDate();//获取当前日
+			var allday=0;
+			
+			function showmonth(){
+				if(month<10){		//给小于10的数字前面加0
+					var year_month=year+" 年 "+"0"+month+" 月 ";
+				}else{
+					var year_month=year+" 年 "+month+" 月 ";
+				}
+				document.getElementById("month").innerHTML=year_month;//当前年月赋到页面
+			}
+			
+			function count(){
+				if(month!=2){
+					if(month==4||month==6||month==9||month==11)//判断月是30天还是31天,2月除外
+						allday=30;
+					else
+						allday=31;
+				}else{
+					if((year%4==0&&year%100!=0)||(year%400==0))//判断是否是闰年，进行相应的改变
+					allday=29;
+					else
+					allday=28;
+				}
+			}
+			//显示相应月份的天数
+			function showday(){
+				showmonth()
+				count();
+			  var fistdate=new Date(year,month-1,1);
+			  var xinqi=fistdate.getDay();
+			  var daterow=document.getElementById("day");
+				
+			  for(var i=0;i<xinqi;i++)//循环输出天数
+			  {
+				  var dayElement=document.createElement("div");
+					dayElement.className="evrday";
+					daterow.appendChild(dayElement);
+			  }
+			  
+			  for(var j=1;j<=allday;j++)
+			  {	
+				  var dayElement=document.createElement("div");
+					if(j<10){		//给小于10的数字前面加0
+						dayElement.innerHTML="0"+j;
+					}else{
+						dayElement.innerHTML=j;
+					}
+					
+					dayElement.className="evrday";
+					if(j==day)//当前日，标红
+					dayElement.style.color="red";
+					daterow.appendChild(dayElement);
+			  }
+			}
+			showday();
+			
+			//下个月
+			function next(){
+				document.getElementById("day").innerHTML="";//先清空day里面的内容
+				if(month<12){
+					month=month+1;
+				}else{
+					month=1;
+					year=year+1;
+				}
+				showday();//再把下个月的月份放到day里
+			}
+			//上个月
+			function prev(){
+				document.getElementById("day").innerHTML="";
+				if(month>1){
+					month=month-1;
+				}else{
+					month=12;
+					year=year-1;
+				}
+				showday();
+			}
+		</script>
+	</body>
+</html>

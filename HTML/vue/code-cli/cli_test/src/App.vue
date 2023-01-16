@@ -1,25 +1,33 @@
 <template>
   <div>
-    <Count/>
-    <Person/>
+    <WorkspaceJsonBanner/>
   </div>
 </template>
 
 <script>
-import Count from "./components/Count.vue";
-import Person from "./components/Person.vue";
+
+import WorkspaceJsonBanner from "@/components/Banner.vue";
+
 export default {
-  name: "WorkspaceJsonApp",
-  components:{Count,Person},
+  name: 'WorkspaceJsonApp',
+  components: {WorkspaceJsonBanner},
+
   data() {
-    return {};
+    return {
+      
+    };
   },
 
-  mounted() {},
+  mounted() {
+    
+  },
 
-  methods: {},
+  methods: {
+    
+  },
 };
 </script>
 
-<style lang="scss" scoped>
+<style>
+
 </style>

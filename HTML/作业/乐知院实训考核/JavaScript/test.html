@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <ul id="ul">
+
+    </ul>
+
+    <ul id="test1">
+    </ul>
+    <script>
+        let arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        // 先调用，就省去了1秒的空白期
+        getTime()
+        setInterval(getTime, 1000)
+
+        function getTime() {
+
+            // 实例化时间对象   new Date()一定要写到定时器里面才可以
+            let date = new Date()
+            let year = date.getFullYear()
+            let mon = date.getMonth() + 1
+            let date1 = date.getDate()
+            let hour = date.getHours()
+            let min = date.getMinutes()
+            let sec = date.getSeconds()
+            let day = date.getDay()
+            let div = document.querySelector('div')
+            div.innerHTML = `今天是： ${year}年${mon}月${date1}日  ${hour}:${min}:${sec} ${arr[day]}`
+        }
+    </script>
+
+    <script src="./js/util.js"></script>
+    <script type="module">
+        import {pajax} from "./js/util.js";
+        pajax({
+            url:"http://localhost:3000/lists",
+            method:"GET"
+        }).then(list=>{
+            // console.log("list:",list)
+            let listdata=list
+            // console.log(listdata)
+            return fn(listdata)
+        })
+        // fn()
+       function fn(listdata){
+           // console.log("list",listdata[1].list)
+           var result=[];
+           var obj={};
+           for(let i=0;i<listdata.length;i++)
+           {
+               // if(listdata[i].list)
+               // console.log(listdata[i].list)
+
+                   // console.log(listdata)
+                    ul.innerHTML=listdata.map(item=>
+                    `
+                    <li>${listdata}</li>
+                    `)
+           }
+           // console.log(result)
+       }
+        let test1=document.querySelector('#test1')
+        // console.log(test1)
+        function fn1(){
+            let a=['1','2','3','4','5']
+            test1.innerHTML=a.map(item=>
+                `<li>${item}</li>`
+            ).join("")
+
+        }
+        fn1()
+
+        let ul1=document.getElementById('test1')
+        console.log(ul1)
+        let li1=ul1.getElementsByTagName('li')
+        console.log(li1[0].innerText)
+        console.log(typeof li1)
+
+
+
+    </script>
+</body>
+
+</html>

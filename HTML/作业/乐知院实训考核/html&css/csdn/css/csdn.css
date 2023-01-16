@@ -1,0 +1,502 @@
+/* 全局样式 */
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+/* 顶部导航栏 */
+
+#toolbarBox{
+    /* background-color: aqua; */
+    height: 50px;
+    width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 1px 2px #888888;
+}
+.toolbarBox-left{
+    float: left;
+    display: block;
+    width: 850px;
+    height: 50px;
+}
+.toolbarBox-left a{
+    display: block;
+    float: left;
+    line-height: 50px;
+    height: 50px;
+    padding: 0 20px;
+    color: #222226;
+    min-width: 60px;
+    max-width: 120px;
+    text-align: center;
+    transition: background-color .5s;
+}
+.toolbarBox-left a:first-child{
+    height: 44px;
+    width: 80px;
+    display: block;
+    float: left;
+    margin-top: 3px;
+}
+.toolbarBox-left a img{
+    /* display: inline-block; */
+    line-height: 0px;
+    height: 44px; 
+    width: 80px;
+}
+.toolbarBox-right{
+    float:right;
+    display: block;
+    width: 500px;
+    height: 50px;
+}
+.toolbarBox-right a{
+    line-height: 50px;
+    height: 50px;
+    padding: 0 20px;
+}
+a{
+    text-decoration: none;
+    color: #222226;
+}
+/* 内容栏 */
+#app{
+    /* position: relative; */
+    /* background-color: aqua; */
+    width: 1550px;
+    height: 1000px;
+    margin: 20px auto;
+}
+/* 头条,热点和直播 */
+#daohang{
+    /* position: absolute; */
+    /* background-color: black; */
+    width: 1550px;
+    height: 450px;
+    background-color: hsla(0,0%,98%,.8);
+}
+#daohang .biaoti{
+    height: 30px;
+    display: block;
+    margin-bottom: 20px;
+}
+#daohang .biaoti img{
+    height: 24px;
+    width: 24px;
+    display: block;
+    float: left;
+}
+#daohang .biaoti ul{
+    display: block;
+    font-size: 18px;
+    font-weight:bolder;
+    
+}
+#daohang .neirong{
+    height: 400px;
+}
+/* 左侧导航栏 */
+#daohang .app-left{
+    display: block;
+    width: 780px;
+    height: 450px;
+    background-color: hsla(0,0%,98%,.8);
+    float: left;
+}
+#daohang .app-left .neirong .neirong-img{
+    float: left;
+    display: block;
+    width: 450px;
+    height: 300px;
+}
+#daohang .app-left .neirong .neirong-img img{
+    width: 450px;
+    height: 250px;
+    border-radius: 5px;
+}
+#daohang .app-left .neirong-img h3{
+    font-size: 17px;
+}
+#daohang .app-left .neirong-img ul{
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888888;
+}
+#daohang  .neirong .neirong-box{
+    height: 75px;
+    width: 300px;
+    display: block;
+    float: right;    
+}
+#daohang  .daohang-zhu{
+    display: block;
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#daohang  .daohang-fu{
+    display: block;
+    max-width: 280px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888888;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#daohang .app2{
+    height: 450px;
+    width: 700px;
+    display: block;
+    float: right;
+}
+/* 中间导航栏 */
+#daohang .app-center{
+    float: left;
+    display: block;
+    width: 300px;
+    height: 450px;
+    /* background-color: aquamarine; */
+}
+/* 右侧导航栏 */
+#daohang .app-right{
+    float: right;
+    display: block;
+    width: 375px;
+    height: 450px;
+    /* background-color: aquamarine; */
+    border: 1px solid rgba(235, 235, 235,1) ;
+}
+#daohang .app-right .biaoti{
+    border-bottom: 1px solid rgba(235, 235, 235,1) ;
+}
+#daohang .app-right .neirong-box{
+    width: 375px;
+    height: 75px;
+    margin-bottom: 10px;
+}
+#daohang .app-right .neirong-img2{
+    height: 75px;
+    width: 120px;
+    float: left;
+    display: block;
+    margin-left: 20px;
+}
+#daohang .app-right .neirong-img2 img{
+    height: 75px;
+    width: 120px;
+}
+#daohang .app-right .neirong-right{
+    height: 75px;
+    width: 220px;
+    float: right;
+    display: block;
+}
+#daohang .app-right .neirong-right .daohang-zhu{
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 40px;
+    font-size: 14px;
+}
+
+/* 下方资讯等 */
+/* 主样式 */
+#neirong{
+    width: 1550px;
+    margin: 30px auto;
+}
+/* 左侧样式 */
+#neirong .neirong-left{
+    float: left;
+    display: block;
+    /* background-color: aqua; */
+    width: 1175px;
+}
+#neirong .neirong-left .neirong-top{
+    height: 40px;
+    width: 1100px;
+    border-bottom: 1px solid rgba(235, 235, 235,1);
+}
+#neirong .neirong-left .neirong-top ul{
+    width: 80px;
+    height: 40px;
+    float: left;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    color: #999AAA; 
+    /* border-bottom: 1px solid black; */
+}
+#neirong .neirong-left .neirong-top .tuijian{
+    height: 38px;
+    border-bottom: 2px solid black  ;
+}
+#neirong .neirong-left .neirong-box2{
+    height: 160px;
+    width: 1100px;
+    /* background-color: aquamarine; */
+    border-bottom: 1px solid rgba(235, 235, 235,1);
+    background-color: white;
+    transition: background-color 1s;
+    display: block;
+    padding: 20px 0;
+}
+#neirong .neirong-left .neirong-box2 .biaoti{
+    height: 30px;
+    padding-bottom: 20px;
+}
+#neirong .neirong-left .neirong-box2 .neirong{
+    height: 90px;
+}
+#neirong .neirong-left .neirong-box2 .neirong2-img{
+    height: 90px;
+    width: 130px;
+    float:left;
+    display: block;
+    margin-right: 20px;
+}
+#neirong .neirong-left .neirong-box2 .neirong2-img img{
+    height: 90px;
+    width: 130px;
+}
+#neirong .neirong-left .neirong-box2 .neirong .neirong2-span{
+    margin-bottom: 25px;
+    display: block;
+    float: left;
+    height: 40px;
+    width: 800px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+#neirong .neirong-left .neirong-box2 .neirong .hudong{
+    display: block;
+    height: 30px;
+    width: 800px;
+    float: left;
+}
+
+
+
+
+
+/* 右侧样式 */
+#neirong .neirong-right{
+    float: right;
+    display: block;
+    width: 375px;
+    height: 3100px;
+}
+#neirong .neirong-right .event{
+    width: 375px;
+    border: 1px solid rgba(235, 235, 235,1);
+    margin:30px 0;
+    display: block;
+}
+#neirong .neirong-right .event2{
+    width: 375px;
+    border: 1px solid rgba(235, 235, 235,1);
+    margin:30px 0;
+    position: sticky;
+    top: 10px;
+    display: block;
+}
+#neirong .neirong-right .event3{
+    width: 375px;
+    border: 1px solid rgba(235, 235, 235,1);
+    margin:30px 0;
+    position: sticky;
+    top: 420px;
+    display: block;
+}
+#neirong .neirong-right .event4{
+    width: 375px;
+    border: 1px solid rgba(235, 235, 235,1);
+    margin:30px 0;
+    position: sticky;
+    top: 590px;
+    display: block;
+}
+#neirong .neirong-right .biaoti{
+    
+    height: 50px;
+    line-height: 30px;
+    border-bottom: 1px solid rgba(235, 235, 235,1);
+}
+/* #neirong .neirong-right .biaoti{
+    height: 50px;
+    line-height: 30px;
+    border-bottom: 1px solid rgba(235, 235, 235,1);
+} */
+
+#neirong .neirong-right .biaoti span{
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-left: 30px;
+}
+#neirong .neirong-right .biaoti2 span{
+    line-height: 80px;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-left: 30px;
+}
+/* 第一种推荐盒子 */
+#neirong .neirong-right .event1-box{
+    height: 30px;
+    margin:10px 0;
+}
+#neirong .neirong-right .event1-box .img{
+    float: left;
+    display: block;
+    height: 25px;
+    width: 30px;
+    margin-left: 30px;
+}
+#neirong .neirong-right .event1-box .img img{
+    height: 25px;
+    width: 25px;
+    margin:auto
+}
+#neirong .neirong-right .event1-box img{
+    height: 25px;
+    width: 25px;
+    display: block;
+    float: left;
+    margin-left: 30px;
+    margin-top: 2.5px;
+}
+#neirong .neirong-right .event1-neirong{
+    display: block;
+    float: left;
+    margin-left: 10px;
+    height: 30px;
+    line-height: 30px;
+}
+#neirong .neirong-right .event1-box a{
+    text-decoration: none;
+}
+/* 第一种推荐盒子结束 */
+/* 第二种推荐盒子 */
+#neirong .neirong-right .neirong .event2-box{
+    height: 70px;
+    margin:10px 0;
+}
+#neirong .neirong-right .neirong .event2-box img{
+    height: 68px;
+    width: 120px;
+    display: block;
+    float: left;
+    margin-left: 30px;
+}
+#neirong .neirong-right .event2-box a{
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    width: 180px;
+    height: 68px;
+    line-height: 20px;
+
+}
+/* 第二种推荐盒子结束 */
+/* 评价盒子 */
+
+#neirong .neirong-right .neirong .event3-box{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    margin-left: 10px;
+    /* float: left; */
+}
+#neirong .neirong-right .neirong .event3-box img{
+    height: 40px;
+    width: 40px;
+    display: block;
+    margin-left: 10px;
+    /* animation: img-zhuan 1s; */
+}
+@keyframes img-zhuan{
+    from{transform: rotate(0);}
+    to{transform: rotate(360deg);}
+}
+#neirong .neirong-right .neirong .event3-box span{
+    display: block;
+    width: 60px;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* 评价盒子结束 */
+
+/* 说明盒子 */
+
+.event4-box1{
+    display: block;
+    width: 375px;
+}
+.event4-box1 span{
+    display: block;
+    font-size: 14px;
+    color: #888888;
+    margin: 10px 0 10px 20px;
+
+}
+.event4-box2{
+    display: block;
+    width: 335px;
+    height: 30px;
+    padding: 0 20px 0 20px;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+}
+.event4-box2 span{
+    margin: 0 3px 0 3px;
+    line-height: 30px;
+    color: #999AAA;
+}
+.event4-box2 a{
+    display: inline-block;
+    line-height: 30px;
+    font-size: 15px;
+    /* margin-left: 10px ; */
+}
+
+
+/* 说明盒子结束 */
+
+
+
+
+/* 动画效果 */
+
+/* 下部内容鼠标停顿显示背景 */
+#neirong .neirong-bottom .neirong-box2:hover{
+    background-color: #ebebeb;
+}
+/* 右侧悬浮内容栏鼠标停顿显示下划线 */
+#neirong .neirong a:hover{
+    text-decoration: underline;
+}
+/* 右侧悬浮内容栏鼠标停顿显示下划线 */
+#neirong  a:hover{
+    text-decoration: underline;
+}
+/* 打分帖表情旋转动画 */
+#neirong .neirong-right .event3-box img:hover{
+    animation: img-zhuan .5s;
+}
+/* 头条热点和直播，鼠标停顿标题显示下划线 */
+#daohang .neirong .daohang-zhu:hover{
+    text-decoration: underline;
+}
+/* 导航栏左侧鼠标停顿显示背景 */
+#toolbarBox .toolbarBox-left a:hover{
+    background-color: #ebebeb;
+}

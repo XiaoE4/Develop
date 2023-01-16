@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/list.css">
+    <link rel="stylesheet" href="./css/todo.css">
+</head>
+
+<body>
+    <div class="root">
+        <div class="root-left">
+            <ul>
+                <li class="active">清单</li>
+                <li>日历</li>
+                <li>四象限</li>
+            </ul>
+        </div>
+        <div class="root-right">
+            <div class="right-todo">
+                <!--  左侧页面-->
+                <div class="list-left">
+                    <!--  左侧展示清单目录-->
+                    <div class="list-catalog">
+                        <div class="catalog-one">
+                            <ul id="catalog1">
+<!--                                <li><a href="#">任务箱</a></li>-->
+<!--                                <li><a href="#">清单1</a></li>-->
+<!--                                <li><a href="#">清单2</a></li>-->
+                            </ul>
+                        <div class="catalog-add">
+                            <a href="" >添加清单</a>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- 左侧展示标签管理-->
+                    <div class="list-label">
+                        <a href="#">标签管理</a>
+                        <ul>
+<!--                            <li>标签1</li>-->
+<!--                            <li>标签2</li>-->
+<!--                            <li>标签3</li>-->
+                        </ul>
+                        <a href="#">添加标签</a>
+                        <input id="labelAddInput" value="">
+                    </div>
+                </div>
+                <!-- 右侧页面-->
+                <div class="list-right">
+                    <!-- 上方点击切换日期栏 -->
+                    <div class="list-top">
+                        <div class="riqi">
+                            <img src="./img/column-horizontal.png" alt="">
+                            <a href="" class="active">全部</a>
+                            <a href="">今天</a>
+                            <a href="">本周</a>
+                            <a href="">本月</a>
+                        </div>
+                        <div class="zujian">
+                            <div class="search">
+                                <img src="./img/search.png" alt="">
+                            </div>
+                            <select name="" id="seecta" class="paixu">
+                                <option value="">清单</option>
+                                <option value="" selected>默认</option>
+                                <option value="">开始时间</option>
+                                <option value="">标题</option>
+                                <option value="">优先级</option>
+                            </select>
+                            <select name="" id="selectb" class="paixu">
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- 上方添加清单-->
+                    <div class="list-add">
+                        <input type="text" placeholder="添加到任务箱" class="input-add">
+                        
+                    </div>
+                    <!--  展示清单内容-->
+                    <div class="list-content">
+<!--                        <div class="content-li active">测试1</div>-->
+<!--                        <div class="content-li ">测试2</div>-->
+<!--                        <div class="content-li ">测试3</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="list">
+             清单显示 
+            <div id="list-show">
+                <div class="show-left">
+                    左侧清单
+                </div>
+                <div class="show-right">
+                    右侧操作界面
+                </div>
+            </div>
+             添加清单 
+            <div id="list-add">
+                添加清单
+            </div>
+            <div id="list-clock">
+                定时器
+            </div>
+        </div> -->
+
+    </div>
+
+    <script type="module" src="./js/index.js"></script>
+    <script src="./js/util.js"></script>
+<!--    <script type="module">-->
+<!--        // import {ajax,pajax} from "./js/util.js"-->
+<!--    </script>-->
+</body>
+
+</html>
