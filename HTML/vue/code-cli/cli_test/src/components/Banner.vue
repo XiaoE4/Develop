@@ -1,17 +1,22 @@
+<!-- Banner是未登录时的主页 -->
 <template>
   <div>
+    <!-- 上方的搜索框 -->
     <div id="search">
       <Search/>
     </div>
-
+    <!-- 下方的内容框和尾页 -->
     <div id="content">
+      <!-- 左侧的榜单 -->
       <div id="left">
           <Bangdan/>
       </div>
+      <!-- 中间的内容 -->
       <div id="bottom">
         <NewsFenye/>
         <News/>
       </div>
+      <!-- 右侧的热搜和尾页 -->
       <div id="right">
         <Resou/>
       </div>

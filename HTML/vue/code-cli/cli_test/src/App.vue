@@ -1,16 +1,16 @@
 <template>
   <div>
-    <WorkspaceJsonBanner/>
+    <Banner/>
   </div>
 </template>
 
 <script>
 
-import WorkspaceJsonBanner from "@/components/Banner.vue";
+import Banner from "@/components/Banner.vue";
 
 export default {
-  name: 'WorkspaceJsonApp',
-  components: {WorkspaceJsonBanner},
+  name: 'App',
+  components: {Banner},
 
   data() {
     return {
