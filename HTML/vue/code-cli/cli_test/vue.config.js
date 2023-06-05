@@ -6,6 +6,7 @@ module.exports = defineConfig({
   /* devServer: {
     proxy: 'http://localhost:5000'
   } */
+  //
 
   // 开启代理服务器 (方式二)
   devServer: {
@@ -13,8 +14,9 @@ module.exports = defineConfig({
       '/daili': {
         target: 'http://localhost:5000',
         pathRewrite:{'^/daili':''},
-        // ws: true,    // 用于支持websocket
-        // changeOrigin: true   // 用于控制请求头中的host值
+        open:false,
+        ws: true,    // 用于支持websocket
+        changeOrigin: true   // 用于控制请求头中的host值
       },
       // '/foo': {
       //   target: '<other_url>'
@@ -22,8 +24,9 @@ module.exports = defineConfig({
       '/demo': {
         target: 'http://localhost:5001',
         pathRewrite:{'^/demo':''},
-        // ws: true,    // 用于支持websocket
-        // changeOrigin: true   // 用于控制请求头中的host值
+        open:false,
+        ws: true,    // 用于支持websocket
+        changeOrigin: true   // 用于控制请求头中的host值
       },
     },
     

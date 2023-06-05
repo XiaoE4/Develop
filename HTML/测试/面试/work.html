@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        //background-color: rgb(250,250,250);
+            background-color: black;
+        }
+        .word{
+            padding: 10px;
+            background-color: rgb(32, 223, 134);
+            margin-bottom: 10px;
+            width: 1000px;
+        }
+        .title{
+            font-size: 22px;
+            color: red;
+            margin-bottom: 10px;
+        }
+        .content{
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 1100px;margin: auto;">
+        
+    </div>
+
+    
+    <script src="./dist_axios.min.js"></script>
+    <script>
+        // json-server --watch work.json
+        let baseURL = "http://localhost:3000";
+        let div=document.querySelector('div')
+        let data1=[]
+        function ass() {
+            axios.get("/jsonData",{baseURL})
+            .then(res=>
+                {
+                    console.log(res);
+                for(let i=0;i<res.data.length;i++){
+                   data1.push(res.data[i])
+                }    
+                div.innerHTML=data1.map(item=>
+                    `
+                        <div class="word">
+                            <div class="title">
+                                ${item.title}
+                            </div>
+                            <div class="content" v-html="item.content">
+                                ${item.content}
+                            </div>
+                        </div>
+                    `
+                   ).join("")
+
+                })
+            .catch(err=>
+                {console.log(err);})
+        }
+        ass()
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button>点我</button>
+    <input type="button" id="btn" value="点击生成随机四位数" />
+    <span id="num"></span>    
+    <main></main>
+
+    <script>
+
+    let clock=document.querySelector('button')
+    // console.log(clock);
+    // clock.onclick = fn2()
+    // clock.onclick=console.log("111");
+    clock.addEventListener('click',function(){
+        // console.log("a");
+        let i=6;
+        let timer=setInterval(function(){
+                i--
+                console.log("timer",timer);
+                console.log("i:",i);
+                if(i===1){
+                    clearInterval(timer)
+                    // i=5
+                    console.log(timer);
+                }
+            },1000)
+    })
+
+    function rand(min,max) {
+        return Math.floor(Math.random()*(max-min))+min;
+    }
+
+    var btn=document.getElementById("btn");
+    btn.onclick=function(){
+        var randnum=rand(0,9999);
+        // console.log(randnum);
+        // console.log(typeof(randnum));
+        // console.log(randnum.toString().length);
+        if(randnum.toString().length===4){
+            console.log(randnum);
+            console.log(typeof(randnum));
+        }else if(randnum.toString().length===3){
+            randnum= "0"+randnum
+            console.log(randnum);
+            console.log(typeof(randnum));
+        }else if(randnum.toString().length===2){
+            randnum = '00' + randnum
+            console.log(randnum);
+            console.log(typeof(randnum));
+        }else if(randnum.toString().length===1){
+            randnum= "000"+randnum
+            console.log(randnum);
+            console.log(typeof(randnum));
+        }
+    }
+
+
+
+    // countDown(){
+    //         let veriCodeTips = document.querySelector('.veri-code-tips');
+    //         veriCodeTips.innerHTML = `RESEND(${this.reckonTimeFlag})`;
+    //         this.reckonTimeFlag--;
+    //         console.log("剩余：",this.reckonTimeFlag)
+    //         console.log(veriCodeTips)
+    //         // console.log("this.reckonTime",this.reckonTime)
+    //         if (this.reckonTimeFlag < 0) {
+    //             clearInterval(this.reckonTime);
+    //             console.log("break",this.reckonTime)
+    //             this.reckonTimeFlag = 5;
+    //             console.log(this.reckonTimeFlag)
+    //             veriCodeTips.innerHTML = `Click To Get`;
+    //             veriCodeTips.style.color = "rgb(39, 150, 247)";
+    //             veriCodeTips.onclick = this.veriCodeTipsClick;
+    //             // this.veriCodeTips=this.veriCodeTipsClick;
+    //         }
+    //     },
+    //         // 2.点击改变验证码提示
+    //     veriCodeTipsClick(){
+    //         let veriCodeTips = document.querySelector('.veri-code-tips');
+    //         this.veriCodeTips = null;
+    //         console.log(this.veriCodeTips)
+    //         veriCodeTips.style.color = "rgb(153, 151, 151)";
+    //         this.reckonTime = setInterval(this.countDown, 1000);
+    //         this.countDown();
+    //     },
+    //         // 3.点击获取验证码
+    //     veriCodeTips(){
+    //         this.veriCodeTipsClick()
+    //     },
+
+
+
+    </script>
+</body>
+</html>

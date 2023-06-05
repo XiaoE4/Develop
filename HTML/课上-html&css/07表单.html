@@ -42,10 +42,22 @@
             <textarea name="" id="" cols="10" rows="3"></textarea>
         </p>
         <p>
-            <input type="date" name="" id="">
+            <input type="date" name="" id="date">
         </p>
+        
 
 
     </form>
+    <button id="a">submit</button>
 </body>
+
+<script>
+    let btn=document.querySelector('#a')
+    let date=document.querySelector('#date')
+    btn.onclick=function(){
+        console.log();
+        console.log(date.innerHTML);
+    }
+    
+</script>
 </html>

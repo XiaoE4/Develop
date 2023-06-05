@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show">
+
+    </div>
+</body>
+<script>
+
+    let [a,b]=["dasdasdas",124143141334]
+    let c="adsasdas"
+    let d=213123213
+    let oa=typeof a
+    console.log(oa);
+    // let ob= a instanceof c
+    // console.log(ob);
+    let oc= Object.prototype.toString.call(c)
+    console.log(oc);
+
+
+    let show=document.querySelector('#show')
+    show.innerHTML=`${oa}<br><br>${oc}`
+
+</script>
+</html>

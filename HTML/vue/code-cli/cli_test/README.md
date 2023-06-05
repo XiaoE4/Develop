@@ -2,12 +2,16 @@
 
 ## Project setup
 ```
-npm install
+npm install element-ui
+npm install vuex
+npm install express
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+first come to ./server  node app.js
+second come to ./server/api node userApi.js
+npm run serve 
 ```
 
 ### Compiles and minifies for production

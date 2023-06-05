@@ -1,16 +1,19 @@
 <template>
   <div>
-    <Banner/>
+      <router-view></router-view>
   </div>
 </template>
 
 <script>
 
-import Banner from "@/components/Banner.vue";
+// import Banner from "@/pages/Banner.vue";
+// import Login from "@/pages/Login.vue"
+// import CreateAccount from "@/pages/CreateAccount.vue";
 
 export default {
   name: 'App',
-  components: {Banner},
+  // components: {Login},
+  // components:{Login} ,
 
   data() {
     return {
