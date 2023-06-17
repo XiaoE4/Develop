@@ -45,12 +45,16 @@ export default {
       }
     },
     watch:{
-        // allArticle:{
-        //     deep:true,
-        //     handler(){
-        //         this.setArt()
-        //     }
-        // }
+        allArticle:{
+            deep:true,
+            handler(){
+              // 半秒刷新
+              setTimeout(function(){
+                this.setArt()
+              },500)
+
+            }
+        }
     },
 
 
