@@ -38,6 +38,7 @@ export default {
 
     mounted(){
         this.setData()
+        this.setArt()
     },
     provide(){
       return {
@@ -49,10 +50,9 @@ export default {
             deep:true,
             handler(){
               // 半秒刷新
-              setTimeout(function(){
-                this.setArt()
-              },500)
-
+              // setTimeout(function(){
+              // this.setArt()
+              // },500)
             }
         }
     },

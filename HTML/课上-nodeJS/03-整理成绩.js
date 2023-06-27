@@ -14,4 +14,9 @@ fs.readFile('./assets/files/成绩.txt','utf8',function(err,rst){
     })
     arrNew = arrNew.join('\r\n')
     console.log(arrNew)
+    fs.writeFile('./assets/files/成绩-ok.txt',arrNew,function(err,rst2){
+        if(err){return err.message}
+        console.log("success!\n",rst2)
+
+    })
 })
