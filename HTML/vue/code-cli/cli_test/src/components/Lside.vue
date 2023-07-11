@@ -54,7 +54,7 @@
                     <el-form action="Lside.vue" ref="form" :model="form">
                         <input type="text" name="title" placeholder="标题" style="height: 30px" v-model="form.title">
                         <br>
-                        <Editor id="tinymce" v-model="form.content" name="content" :init="init" style="width: 100%;height: 200px;"></Editor>
+                        <Editor id="tinymce" v-model="form.content" name="content" :init="init" style="width: 100%;height: 150px;"></Editor>
 <!--                        <textarea name="content" rows="5" v-model="form.content"-->
 <!--                                  style="width: 498px;resize:none;font-size:16px;outline: none;border: solid rgba(31,31,31,.3);border:0">-->
 <!--                        </textarea>-->
@@ -580,6 +580,7 @@ export default {
             console.log(file);
             // console.log("a====",a[0].dataset.index)
             let uploadFiles = this.$refs.pictureUpload.uploadFiles
+            console.log(this.$refs.pictureUpload)
             console.log("uploadFiles=======",uploadFiles)
             // 删除文件
             for (var i = 0; i < uploadFiles.length; i++) {

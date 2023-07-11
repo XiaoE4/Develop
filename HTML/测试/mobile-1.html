@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+    initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*
+            display: flex;
+            justify-content: space-between;
+            //padding: 2vh 2vw;
+        */
+        .box{
+            width: 100vw;
+            height: 30vh;
+            border-bottom: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            //align-items: center;
+        }
+        .box div{
+            background-color: #409EFF;
+            width: 25vw;
+            height: 10vh;
+            //text-align: center;
+        }
+        .box div:nth-child(2){
+            align-self: center;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+
 
 <script>
 
