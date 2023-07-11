@@ -1,0 +1,18 @@
+<view>
+    <!-- 轮播图区域 -->
+    <swiper class="banners" indicator-dots 	indicator-color='ivory' 	indicator-active-color='#d43c33'>
+        <swiper-item>
+            <image src="/static/images/nvsheng.jpg" mode="" />
+        </swiper-item>
+        <swiper-item>
+            <image src="/static/images/nvsheng.jpg" mode="" />
+        </swiper-item>
+        <swiper-item>
+            <image src="/static/images/nvsheng.jpg" mode="" />
+        </swiper-item>
+    </swiper>
+    <!-- 五个图标导航区域 -->
+    <view class="navContainer">
+        
+    </view>
+</view>

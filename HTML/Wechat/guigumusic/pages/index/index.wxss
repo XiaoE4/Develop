@@ -1,0 +1,9 @@
+
+.banners{
+  width: 100vw;
+  height: 300rpx;
+}
+.banners image{
+  width: 100vw;
+  height: 100%;
+}
