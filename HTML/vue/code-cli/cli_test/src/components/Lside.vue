@@ -191,7 +191,7 @@
                     <p style="user-select: none" @click="showFans(m.account,m.username,m.Apic)">粉丝：{{m.fensi}}</p>
                 </div>
             </div>
-            <div class="content_show"  >
+            <div class="content_show" >
                 <div class="content_Cpic" v-if="m.Cpic" @click="toArticle(m)">
                         <img :src="require('../assets/pic-content/'+ m.Cpic[0] +'.jpg')" alt="">
                 </div>

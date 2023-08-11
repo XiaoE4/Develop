@@ -1,0 +1,99 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "index": "0",
+      "text": "全部清单",
+      "icon":"List"
+    },
+    {
+      "id": 2,
+      "index": "1",
+      "text": "父清单1",
+      "icon":"List"
+    },
+    {
+      "id": 3,
+      "index": "1-1",
+      "text": "子清单1-1",
+      "icon":"List"
+    },
+    {
+      "id": 4,
+      "index": "1-2",
+      "text": "子清单1-2",
+      "icon":"icon-menu"
+    },
+    {
+      "id": 5,
+      "index": "1-3",
+      "text": "子清单1-3",
+      "icon":"icon-menu"
+    },
+    {
+      "id": 6,
+      "index": "1-4",
+      "text": "子清单1-4",
+      "icon":"icon-menu"
+    },
+    {
+      "id": 7,
+      "index": "2",
+      "text": "父清单2",
+      "icon":"icon-menu"
+    },
+    {
+      "id": 8,
+      "index": "3",
+      "text": "父清单3",
+      "icon":"List"
+    },
+    {
+      "id": 9,
+      "index": "4",
+      "text": "父清单4",
+      "icon":"icon-menu"
+    }
+  ],
+  "tag": [
+    {
+      "id": 1,
+      "icon": "Mic",
+      "color": "red",
+      "name": "标签1"
+    },{
+      "id": 2,
+      "icon": "Mic",
+      "color": "blue",
+      "name": "标签2"
+    },{
+      "id": 3,
+      "icon": "Mic",
+      "color": "yellow",
+      "name": "标签3"
+    }
+  ],
+  "content": [
+    {
+      "id": 1,
+      "index": "1-1",
+      "content": "我是list 1-1 的内容",
+      "tag": 1
+    },{
+      "id": 2,
+      "index": "2",
+      "content": "我是list 2 的内容",
+      "tag": 0
+    },{
+      "id": 3,
+      "index": "1-4-1",
+      "content": "我是list 1-4-1 的内容",
+      "tag": 0
+    },{
+      "id": 4,
+      "index": "3",
+      "content": "我是list 3 的内容",
+      "tag": 0
+    }
+  ]
+}
