@@ -100,7 +100,7 @@
 <script lang="ts" setup>
 import {Document, List,  Menu as IconMenu, Setting} from '@element-plus/icons-vue'
 import { ElMessageBox } from 'element-plus'
-import {onMounted, ref, reactive} from 'vue'
+import {onMounted, ref, reactive, UnwrapRef, Ref} from 'vue'
 import request from "../utils/request.ts";
 
 // 添加标签
@@ -110,12 +110,12 @@ let form = reactive({
 })
 let menuDataShow_1 = ref([])    // 父级菜单
 let indexShow = ref('')         // 点击的menu标识
-let contentAll=ref([])          // 全部内容
+let contentAll =ref([])          // 全部内容
 let contentShow =ref([])        // 将要显示的内容
 let menuLoading = ref(true)
 let contentLoading = ref(true)
 let drawer = ref(false)
-let value = ref([])
+// let value:Ref<UnwrapRef<any[]>> = ref([])
 const dialogVisible = ref(false)
 let predefineColors = ref([
     '#ff4500',
@@ -130,10 +130,10 @@ let predefineColors = ref([
 
 onMounted(async () => {
     // 获取菜单信息
-    let menuData = await getListMenu()
+    let menuData = await getListMenuTest()
     menuLoading.value = false
     // 获取内容信息
-    let contentData = await getListContent()
+    let contentData:object = await getListContent()
     // setTimeout(function(){
         contentLoading.value = false
     // },2000)
@@ -155,14 +155,18 @@ onMounted(async () => {
 // }
 
 // 渲染list菜单数据
-let showListMenu = (data:object) => {
+let showListMenu = (data:any) => {
     // 获取菜单数据
     // let data = menuDataShow.value
     console.log("传递的菜单数据：",data)
-
-    let secondData = data.filter((currentValue: any) => {
-        return currentValue.index.charAt(1) === "-"
-    })
+    let secondData:any
+    if(data){
+        secondData = data.filter((currentValue: any) => {
+            return currentValue.index.charAt(1) === "-"
+        })
+    }else{
+        return false
+    }
     // 所有的子级菜单
     console.log(secondData)
 
@@ -220,7 +224,6 @@ let showListContent = (index:string)=>{
 }
 // 点击“添加标签”后 展示标签内容和添加标签按钮
 
-
 // Element-PLUS 组件函数  ↓↓↓↓↓↓↓↓
 // 点击
 const handleCloseDialog = (done: () => void) => {
@@ -276,6 +279,20 @@ const getListContent = async () => {
 const getListMenu = async () => {
     // console.log(data)
     return await request('http://localhost:3000/menu')
+}
+let getListMenuTest = async ()=>{
+    await request({
+        url:'http://127.0.0.1:10521/api/user/list/all',
+        method:'post',
+        data:{
+            userId: 1
+        }
+    }).then((res)=>{
+        console.log("list菜单：",res)
+        return res
+    }).catch((err)=>{
+        console.log("请求失败！",err)
+    })
 }
 
 
